@@ -10,14 +10,14 @@ import UIKit
 
 class rjSettingsTableViewController: UITableViewController {
     let NumberOfAlertsTitleIndex = 0;
-    let NumberOfAlertsInputIndex = 1;
-    let AlertStartTimeTitleIndex = 2;
-    let AlertEndTimeTitleIndex = 4;
     let ScheduleAlertsButtonIndex = 1;
     let ShowRemindersButtonIndex = 2;
+    let TutorialButtonIndex = 3;
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rjCommon.registerCommonTitleCell(tableView: tableView)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -25,18 +25,20 @@ class rjSettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
         case NumberOfAlertsTitleIndex:
-            return makeTitleCell(tableView: tableView, indexPath: indexPath, title: "Settings")
+            return rjCommon.makeCommonTitleCell(tableView: tableView, cellForRowAt: indexPath, title: "Settings")
         case ScheduleAlertsButtonIndex:
             return makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: getReminderStatusBtnText(), btnAction: #selector(handleRemindersStatus))
         case ShowRemindersButtonIndex:
-            return makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Show Reminder Schedule", btnAction: #selector(showReminderSchedule))
+            return makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Reminder Schedule", btnAction: #selector(showReminderSchedule))
+        case TutorialButtonIndex:
+            return makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Tutorial", btnAction: #selector(showTutorial))
             
         default:
             return tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
@@ -45,12 +47,6 @@ class rjSettingsTableViewController: UITableViewController {
     
     func getReminderStatusBtnText() -> String {
         return rjAppSettings().areRemindersEnabled() ? "Disable Reminders" : "Enable Reminders"
-    }
-    
-    func makeTitleCell(tableView : UITableView, indexPath : IndexPath, title : String) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "title", for: indexPath) as! rjSettingsTitleTableViewCell
-        cell.lblTitle.text = title
-        return cell
     }
     
     func makeNumberOfAlertsCell(tableView : UITableView, indexPath : IndexPath) -> UITableViewCell {
@@ -90,5 +86,11 @@ class rjSettingsTableViewController: UITableViewController {
             self.present(alert, animated: true, completion: nil)
         }
         
+    }
+    
+    @objc func showTutorial() {
+        let tutorialViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rjTutorialViewController")
+        self.present(tutorialViewController, animated: true, completion: nil)
+        //self.performSegue(withIdentifier: "tutorial", sender: nil)
     }
 }

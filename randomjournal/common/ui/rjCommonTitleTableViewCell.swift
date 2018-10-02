@@ -1,14 +1,14 @@
 //
-//  rjSettingsTitleViewCellTableViewCell.swift
+//  rjCommonTitleTableViewCell.swift
 //  randomjournal
 //
-//  Created by Tom Plaskon on 2018-09-08.
+//  Created by Tom Plaskon on 2018-10-02.
 //  Copyright © 2018 Tom Plaskon. All rights reserved.
 //
 
 import UIKit
 
-class rjSettingsTitleTableViewCell: UITableViewCell {
+class rjCommonTitleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
     
@@ -22,5 +22,5 @@ class rjSettingsTitleTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

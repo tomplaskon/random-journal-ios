@@ -38,7 +38,7 @@ class rjAppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func handleUpdatingReminders() {
-        if (rjAppSettings().areRemindersEnabled()) {
+        if rjAppSettings().areRemindersEnabled() {
             rjReminderScheduler().updateReminders()
         }
     }

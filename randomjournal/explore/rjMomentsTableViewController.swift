@@ -8,7 +8,7 @@
 
 import UIKit
 
-class rjMomentsViewController: UITableViewController {
+class rjMomentsTableViewController: UITableViewController {
 
     var moments = rjMomentMgr().allMoments()
     
@@ -80,4 +80,19 @@ class rjMomentsViewController: UITableViewController {
         return 88.0
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "viewmoment", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segueId = segue.identifier {
+            if segueId == "viewmoment" {
+                if let viewMomentVC = segue.destination as? rjViewMomentTableViewController {
+                    let momentIndex = self.tableView.indexPathForSelectedRow!.row
+                    let moment = moments[momentIndex]
+                    viewMomentVC.moment = moment
+                }
+            }
+        }
+    }
 }

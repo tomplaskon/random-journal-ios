@@ -21,11 +21,10 @@
 		007DDCCF21419E5400047CE4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007DDCBC21417F3E00047CE4 /* RealmSwift.framework */; };
 		007DDCD221419F3F00047CE4 /* rjTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD021419F3F00047CE4 /* rjTestCase.swift */; };
 		007DDCD52141A0E700047CE4 /* rjCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD42141A0E700047CE4 /* rjCommon.swift */; };
-		007DDCDD2142CDCD00047CE4 /* rjMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCDC2142CDCD00047CE4 /* rjMomentsViewController.swift */; };
+		007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCDC2142CDCD00047CE4 /* rjMomentsTableViewController.swift */; };
 		007DDCE12142D03B00047CE4 /* rjMomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCDF2142D03B00047CE4 /* rjMomentTableViewCell.swift */; };
 		007DDCE22142D03B00047CE4 /* rjMomentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007DDCE02142D03B00047CE4 /* rjMomentTableViewCell.xib */; };
 		007DDCE521441FD000047CE4 /* rjReminderScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCE421441FD000047CE4 /* rjReminderScheduler.swift */; };
-		007DDCE72144227600047CE4 /* rjSettingsTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCE62144227600047CE4 /* rjSettingsTitleTableViewCell.swift */; };
 		007DDCE9214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCE8214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift */; };
 		007DDCEB214424DA00047CE4 /* rjSettingsTimeInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCEA214424DA00047CE4 /* rjSettingsTimeInputTableViewCell.swift */; };
 		007DDCED21442AD900047CE4 /* rjSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCEC21442AD900047CE4 /* rjSettingsTableViewController.swift */; };
@@ -35,6 +34,13 @@
 		007DDCF521514F5100047CE4 /* rjSettingsButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCF421514F5100047CE4 /* rjSettingsButtonTableViewCell.swift */; };
 		007DDCF721516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCF621516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift */; };
 		007DDCF9215FBB2000047CE4 /* rjLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007DDCF8215FBB1E00047CE4 /* rjLaunchScreen.storyboard */; };
+		007DDD002162AE9300047CE4 /* rjTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCFF2162AE9300047CE4 /* rjTabBarController.swift */; };
+		007DDD022162B1BA00047CE4 /* rjTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD012162B1BA00047CE4 /* rjTutorialViewController.swift */; };
+		007DDD042162C05F00047CE4 /* rjTutorialFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD032162C05F00047CE4 /* rjTutorialFinishViewController.swift */; };
+		007DDD442163C20200047CE4 /* rjViewMomentDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD432163C20200047CE4 /* rjViewMomentDetailsTableViewCell.swift */; };
+		007DDD482163C6FF00047CE4 /* rjViewMomentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD472163C6FF00047CE4 /* rjViewMomentTableViewController.swift */; };
+		007DDD4F2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD4D2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift */; };
+		007DDD502163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007DDD4E2163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,11 +94,10 @@
 		007DDCCB2141934700047CE4 /* rjMomentMgrTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentMgrTest.swift; sourceTree = "<group>"; };
 		007DDCD021419F3F00047CE4 /* rjTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTestCase.swift; sourceTree = "<group>"; };
 		007DDCD42141A0E700047CE4 /* rjCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommon.swift; sourceTree = "<group>"; };
-		007DDCDC2142CDCD00047CE4 /* rjMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentsViewController.swift; sourceTree = "<group>"; };
+		007DDCDC2142CDCD00047CE4 /* rjMomentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentsTableViewController.swift; sourceTree = "<group>"; };
 		007DDCDF2142D03B00047CE4 /* rjMomentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentTableViewCell.swift; sourceTree = "<group>"; };
 		007DDCE02142D03B00047CE4 /* rjMomentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rjMomentTableViewCell.xib; sourceTree = "<group>"; };
 		007DDCE421441FD000047CE4 /* rjReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderScheduler.swift; sourceTree = "<group>"; };
-		007DDCE62144227600047CE4 /* rjSettingsTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjSettingsTitleTableViewCell.swift; sourceTree = "<group>"; };
 		007DDCE8214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjSettingsNumberInputTableViewCell.swift; sourceTree = "<group>"; };
 		007DDCEA214424DA00047CE4 /* rjSettingsTimeInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjSettingsTimeInputTableViewCell.swift; sourceTree = "<group>"; };
 		007DDCEC21442AD900047CE4 /* rjSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjSettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +107,13 @@
 		007DDCF421514F5100047CE4 /* rjSettingsButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjSettingsButtonTableViewCell.swift; sourceTree = "<group>"; };
 		007DDCF621516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderNotificationCenterDelegate.swift; sourceTree = "<group>"; };
 		007DDCF8215FBB1E00047CE4 /* rjLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = rjLaunchScreen.storyboard; sourceTree = "<group>"; };
+		007DDCFF2162AE9300047CE4 /* rjTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTabBarController.swift; sourceTree = "<group>"; };
+		007DDD012162B1BA00047CE4 /* rjTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTutorialViewController.swift; sourceTree = "<group>"; };
+		007DDD032162C05F00047CE4 /* rjTutorialFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTutorialFinishViewController.swift; sourceTree = "<group>"; };
+		007DDD432163C20200047CE4 /* rjViewMomentDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjViewMomentDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		007DDD472163C6FF00047CE4 /* rjViewMomentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjViewMomentTableViewController.swift; sourceTree = "<group>"; };
+		007DDD4D2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommonTitleTableViewCell.swift; sourceTree = "<group>"; };
+		007DDD4E2163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rjCommonTitleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +168,11 @@
 		007DDC8B2140575800047CE4 /* randomjournal */ = {
 			isa = PBXGroup;
 			children = (
+				007DDCFA2162990E00047CE4 /* tutorial */,
 				007DDCDA2142CCF800047CE4 /* explore */,
 				007DDCDB2142CD1700047CE4 /* capture */,
 				007DDCE321441F2200047CE4 /* settings */,
+				007DDD492163DE1B00047CE4 /* common */,
 				007DDCD32141A0C300047CE4 /* core */,
 				007DDCC4214180A300047CE4 /* data */,
 				007DDC8C2140575800047CE4 /* rjAppDelegate.swift */,
@@ -166,6 +180,7 @@
 				007DDC932140575E00047CE4 /* Assets.xcassets */,
 				007DDCF8215FBB1E00047CE4 /* rjLaunchScreen.storyboard */,
 				007DDC982140575E00047CE4 /* Info.plist */,
+				007DDCFF2162AE9300047CE4 /* rjTabBarController.swift */,
 			);
 			path = randomjournal;
 			sourceTree = "<group>";
@@ -211,7 +226,6 @@
 		007DDCD32141A0C300047CE4 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				007DDCD42141A0E700047CE4 /* rjCommon.swift */,
 				007DDCE421441FD000047CE4 /* rjReminderScheduler.swift */,
 				007DDCF02144379800047CE4 /* rjReminder.swift */,
 				007DDCEE2144339F00047CE4 /* rjAppSettings.swift */,
@@ -223,9 +237,11 @@
 		007DDCDA2142CCF800047CE4 /* explore */ = {
 			isa = PBXGroup;
 			children = (
-				007DDCDC2142CDCD00047CE4 /* rjMomentsViewController.swift */,
+				007DDCDC2142CDCD00047CE4 /* rjMomentsTableViewController.swift */,
 				007DDCDF2142D03B00047CE4 /* rjMomentTableViewCell.swift */,
 				007DDCE02142D03B00047CE4 /* rjMomentTableViewCell.xib */,
+				007DDD432163C20200047CE4 /* rjViewMomentDetailsTableViewCell.swift */,
+				007DDD472163C6FF00047CE4 /* rjViewMomentTableViewController.swift */,
 			);
 			path = explore;
 			sourceTree = "<group>";
@@ -241,13 +257,39 @@
 		007DDCE321441F2200047CE4 /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				007DDCE62144227600047CE4 /* rjSettingsTitleTableViewCell.swift */,
 				007DDCE8214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift */,
 				007DDCEA214424DA00047CE4 /* rjSettingsTimeInputTableViewCell.swift */,
 				007DDCEC21442AD900047CE4 /* rjSettingsTableViewController.swift */,
 				007DDCF421514F5100047CE4 /* rjSettingsButtonTableViewCell.swift */,
 			);
 			path = settings;
+			sourceTree = "<group>";
+		};
+		007DDCFA2162990E00047CE4 /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				007DDD012162B1BA00047CE4 /* rjTutorialViewController.swift */,
+				007DDD032162C05F00047CE4 /* rjTutorialFinishViewController.swift */,
+			);
+			path = tutorial;
+			sourceTree = "<group>";
+		};
+		007DDD492163DE1B00047CE4 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				007DDD4A2163DE4400047CE4 /* ui */,
+				007DDCD42141A0E700047CE4 /* rjCommon.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		007DDD4A2163DE4400047CE4 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				007DDD4D2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift */,
+				007DDD4E2163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007DDD502163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib in Resources */,
 				007DDCE22142D03B00047CE4 /* rjMomentTableViewCell.xib in Resources */,
 				007DDC942140575E00047CE4 /* Assets.xcassets in Resources */,
 				007DDCF9215FBB2000047CE4 /* rjLaunchScreen.storyboard in Resources */,
@@ -401,22 +444,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007DDD022162B1BA00047CE4 /* rjTutorialViewController.swift in Sources */,
 				007DDCEF2144339F00047CE4 /* rjAppSettings.swift in Sources */,
+				007DDD4F2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift in Sources */,
+				007DDD002162AE9300047CE4 /* rjTabBarController.swift in Sources */,
 				007DDCC92141853700047CE4 /* rjMomentMgr.swift in Sources */,
 				007DDCC62141822800047CE4 /* rjMoment.swift in Sources */,
+				007DDD442163C20200047CE4 /* rjViewMomentDetailsTableViewCell.swift in Sources */,
 				007DDCED21442AD900047CE4 /* rjSettingsTableViewController.swift in Sources */,
+				007DDD482163C6FF00047CE4 /* rjViewMomentTableViewController.swift in Sources */,
 				007DDC8D2140575800047CE4 /* rjAppDelegate.swift in Sources */,
 				007DDCBB2140881500047CE4 /* rjAddMomentViewController.swift in Sources */,
 				007DDCE12142D03B00047CE4 /* rjMomentTableViewCell.swift in Sources */,
 				007DDCEB214424DA00047CE4 /* rjSettingsTimeInputTableViewCell.swift in Sources */,
 				007DDCF521514F5100047CE4 /* rjSettingsButtonTableViewCell.swift in Sources */,
+				007DDD042162C05F00047CE4 /* rjTutorialFinishViewController.swift in Sources */,
 				007DDCE521441FD000047CE4 /* rjReminderScheduler.swift in Sources */,
 				007DDCF721516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift in Sources */,
 				007DDCF12144379800047CE4 /* rjReminder.swift in Sources */,
 				007DDCE9214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift in Sources */,
 				007DDCD52141A0E700047CE4 /* rjCommon.swift in Sources */,
-				007DDCDD2142CDCD00047CE4 /* rjMomentsViewController.swift in Sources */,
-				007DDCE72144227600047CE4 /* rjSettingsTitleTableViewCell.swift in Sources */,
+				007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

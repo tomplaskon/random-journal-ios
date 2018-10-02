@@ -9,10 +9,12 @@
 import UIKit
 
 class rjCommon {
+    /*
     static let hasSetDefaultsSettingsKey = "rjHasSetDefaultSettings"
     static let numDailyAlertsSettingsKey = "rjNumDailyAlerts"
     static let alertStartTimeSettingsKey = "rjAlertStartTime"
     static let alertEndTimeSettingsKey = "rjAlertEndTime"
+    */
     
     static func unixTimestamp() -> Int {
         return Int(Date().timeIntervalSince1970)
@@ -29,4 +31,17 @@ class rjCommon {
         return Int(beginningOfDay!.timeIntervalSince1970)
     }
     
+    static let commonTitleReuseId = "commontitle"
+    static func registerCommonTitleCell(tableView: UITableView) {
+        let commonTitleNib = UINib.init(nibName: "rjCommonTitleTableViewCell", bundle: nil)
+        tableView.register(commonTitleNib, forCellReuseIdentifier: commonTitleReuseId)
+    }
+    
+    static func makeCommonTitleCell(tableView: UITableView, cellForRowAt indexPath: IndexPath, title: String) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: commonTitleReuseId, for: indexPath) as! rjCommonTitleTableViewCell
+        
+        cell.lblTitle.text = title
+        
+        return cell
+    }
 }

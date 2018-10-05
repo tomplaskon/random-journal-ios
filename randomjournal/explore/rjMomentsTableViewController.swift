@@ -59,13 +59,7 @@ class rjMomentsTableViewController: UITableViewController {
     func makeMomentCell(tableView : UITableView, indexPath : IndexPath, moment : rjMoment) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "momentcell", for: indexPath) as! rjMomentTableViewCell
         
-        let date = Date(timeIntervalSince1970: TimeInterval(moment.when))
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd YYYY hh:mm a"
-        let dateString = dateFormatter.string(from: date)
-        
-        cell.lblDate.text = dateString
+        cell.lblDate.text = moment.whenReadableLong()
         
         cell.lblDetails.text = moment.details
         

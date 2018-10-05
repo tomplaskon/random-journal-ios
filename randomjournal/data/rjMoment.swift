@@ -26,4 +26,14 @@ class rjMoment: Object {
             realm.add(self, update: true)
         }
     }
+    
+    func whenReadableLong() -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(when))
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd YYYY hh:mm a"
+        let dateString = dateFormatter.string(from: date)
+        
+        return dateString
+    }
 }

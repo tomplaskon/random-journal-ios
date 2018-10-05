@@ -9,13 +9,6 @@
 import UIKit
 
 class rjCommon {
-    /*
-    static let hasSetDefaultsSettingsKey = "rjHasSetDefaultSettings"
-    static let numDailyAlertsSettingsKey = "rjNumDailyAlerts"
-    static let alertStartTimeSettingsKey = "rjAlertStartTime"
-    static let alertEndTimeSettingsKey = "rjAlertEndTime"
-    */
-    
     static func unixTimestamp() -> Int {
         return Int(Date().timeIntervalSince1970)
     }
@@ -43,5 +36,31 @@ class rjCommon {
         cell.lblTitle.text = title
         
         return cell
+    }
+    
+    
+    static let commonButtonReuseId = "commonbutton"
+    static func registerCommonButtonCell(tableView: UITableView) {
+        let commonTitleNib = UINib.init(nibName: "rjCommonButtonTableViewCell", bundle: nil)
+        tableView.register(commonTitleNib, forCellReuseIdentifier: commonButtonReuseId)
+    }
+    
+    static func makeButtonCell(tableView: UITableView, indexPath: IndexPath, btnText: String, target: Any, btnAction: Selector) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: commonButtonReuseId, for: indexPath) as! rjCommonButtonTableViewCell
+        cell.btnAction.setTitle(btnText, for: .normal)
+        cell.btnAction.addTarget(target, action: btnAction, for: .touchUpInside)
+        return cell;
+    }
+}
+
+extension String {
+    func escapeString() -> String {
+        var newString = self.replacingOccurrences(of: "\"", with: "\"\"")
+
+        if newString.contains(",") || newString.contains("\n") {
+            newString = String(format: "\"%@\"", newString)
+        }
+        
+        return newString
     }
 }

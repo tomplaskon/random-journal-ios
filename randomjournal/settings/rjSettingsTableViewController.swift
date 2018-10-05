@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import MessageUI
 
-class rjSettingsTableViewController: UITableViewController {
-    let NumberOfAlertsTitleIndex = 0;
-    let ScheduleAlertsButtonIndex = 1;
-    let ShowRemindersButtonIndex = 2;
-    let TutorialButtonIndex = 3;
+class rjSettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+    let numberOfAlertsTitleIndex = 0;
+    let scheduleAlertsButtonIndex = 1;
+    let showRemindersButtonIndex = 2;
+    let tutorialButtonIndex = 3;
+    let exportButtonIndex = 4;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         rjCommon.registerCommonTitleCell(tableView: tableView)
+        rjCommon.registerCommonButtonCell(tableView: tableView)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -25,20 +28,23 @@ class rjSettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.row {
-        case NumberOfAlertsTitleIndex:
+        case numberOfAlertsTitleIndex:
             return rjCommon.makeCommonTitleCell(tableView: tableView, cellForRowAt: indexPath, title: "Settings")
-        case ScheduleAlertsButtonIndex:
-            return makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: getReminderStatusBtnText(), btnAction: #selector(handleRemindersStatus))
-        case ShowRemindersButtonIndex:
-            return makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Reminder Schedule", btnAction: #selector(showReminderSchedule))
-        case TutorialButtonIndex:
-            return makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Tutorial", btnAction: #selector(showTutorial))
+        case scheduleAlertsButtonIndex:
+            return rjCommon.makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: getReminderStatusBtnText(), target: self, btnAction: #selector(handleRemindersStatus))
+        case showRemindersButtonIndex:
+            return rjCommon.makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Reminder schedule", target: self, btnAction: #selector(showReminderSchedule))
+        case tutorialButtonIndex:
+            return rjCommon.makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Tutorial", target: self, btnAction: #selector(showTutorial))
+        case exportButtonIndex:
+            return rjCommon.makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Export CSV", target: self, btnAction: #selector(exportCSV))
+            
             
         default:
             return tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
@@ -91,6 +97,79 @@ class rjSettingsTableViewController: UITableViewController {
     @objc func showTutorial() {
         let tutorialViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rjTutorialViewController")
         self.present(tutorialViewController, animated: true, completion: nil)
-        //self.performSegue(withIdentifier: "tutorial", sender: nil)
+    }
+    
+    @objc func exportCSV() {
+        let content = getCSVContent()
+        if let fileURL = getCSVFileURL(getCSVFileName()) {
+            writeCSVFile(fileURL, content: content)
+            sendEmailWithCSVFile(fileURL)
+        }
+    }
+    
+    func getCSVFileName() -> String {
+        let date = Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYYMMdd"
+        let dateString = dateFormatter.string(from: date)
+
+        return "random_journal_export_" + dateString + ".csv"
+    }
+    
+    func getCSVFileURL(_ fileName: String) -> URL? {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            return dir.appendingPathComponent(fileName)
+        }
+        
+        return nil;
+    }
+    
+    func getCSVContent() -> String {
+        var csvContent = ""
+        
+        let moments = rjMomentMgr().allMoments()
+        for moment in moments {
+            let lineElements = [
+                moment.momentId,
+                String(moment.when),
+                moment.whenReadableLong(),
+                moment.details.escapeString()
+            ]
+            csvContent += lineElements.joined(separator: ", ")
+        }
+        
+        return csvContent
+    }
+    
+    func writeCSVFile(_ fileURL: URL, content: String) {
+        do {
+            try content.write(to: fileURL, atomically: false, encoding: .utf8)
+        } catch {
+            // TODO: common error message
+        }
+    }
+    
+    func sendEmailWithCSVFile(_ fileURL: URL) {
+        let subject = "Random Journal Export"
+        let body = "Here is your Random Journal Export data. Enjoy!"
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mailComposer = MFMailComposeViewController()
+            mailComposer.mailComposeDelegate = self
+            
+            mailComposer.setSubject(subject)
+            mailComposer.setMessageBody(body, isHTML: false)
+            
+            if let fileData = try? Data(contentsOf: fileURL) {
+                mailComposer.addAttachmentData(fileData, mimeType: "text/csv", fileName: fileURL.lastPathComponent)
+            }
+            
+            self.present(mailComposer, animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(_ didFinishWithcontroller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

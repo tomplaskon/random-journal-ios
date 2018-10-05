@@ -41,6 +41,8 @@
 		007DDD482163C6FF00047CE4 /* rjViewMomentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD472163C6FF00047CE4 /* rjViewMomentTableViewController.swift */; };
 		007DDD4F2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD4D2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift */; };
 		007DDD502163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007DDD4E2163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib */; };
+		007DDD532166551A00047CE4 /* rjCommonButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD512166551A00047CE4 /* rjCommonButtonTableViewCell.swift */; };
+		007DDD542166551A00047CE4 /* rjCommonButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007DDD522166551A00047CE4 /* rjCommonButtonTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		007DDD472163C6FF00047CE4 /* rjViewMomentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjViewMomentTableViewController.swift; sourceTree = "<group>"; };
 		007DDD4D2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommonTitleTableViewCell.swift; sourceTree = "<group>"; };
 		007DDD4E2163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rjCommonTitleTableViewCell.xib; sourceTree = "<group>"; };
+		007DDD512166551A00047CE4 /* rjCommonButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommonButtonTableViewCell.swift; sourceTree = "<group>"; };
+		007DDD522166551A00047CE4 /* rjCommonButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rjCommonButtonTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +292,8 @@
 			children = (
 				007DDD4D2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift */,
 				007DDD4E2163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib */,
+				007DDD512166551A00047CE4 /* rjCommonButtonTableViewCell.swift */,
+				007DDD522166551A00047CE4 /* rjCommonButtonTableViewCell.xib */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 				007DDCE22142D03B00047CE4 /* rjMomentTableViewCell.xib in Resources */,
 				007DDC942140575E00047CE4 /* Assets.xcassets in Resources */,
 				007DDCF9215FBB2000047CE4 /* rjLaunchScreen.storyboard in Resources */,
+				007DDD542166551A00047CE4 /* rjCommonButtonTableViewCell.xib in Resources */,
 				007DDC922140575800047CE4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +469,7 @@
 				007DDCE521441FD000047CE4 /* rjReminderScheduler.swift in Sources */,
 				007DDCF721516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift in Sources */,
 				007DDCF12144379800047CE4 /* rjReminder.swift in Sources */,
+				007DDD532166551A00047CE4 /* rjCommonButtonTableViewCell.swift in Sources */,
 				007DDCE9214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift in Sources */,
 				007DDCD52141A0E700047CE4 /* rjCommon.swift in Sources */,
 				007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */,

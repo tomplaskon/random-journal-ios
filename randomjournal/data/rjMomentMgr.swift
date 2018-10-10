@@ -33,4 +33,10 @@ class rjMomentMgr {
         let sortFields = [SortDescriptor(keyPath: "when", ascending: false), SortDescriptor(keyPath: "momentId")]
         return Array(realm.objects(rjMoment.self).sorted(by:sortFields))
     }
+    
+    func deleteMoment(_ moment: rjMoment) {
+        try! realm.write {
+            realm.delete(moment)
+        }
+    }
 }

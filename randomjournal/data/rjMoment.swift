@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class rjMoment: Object {
-    @objc dynamic var momentId = ""; // the moment's id
+    @objc dynamic var momentId = "" // the moment's id
     @objc dynamic var when = 0 // when did the moment take place (unix timestamp)
     @objc dynamic var details = "" // the text details describing the moment
     

@@ -9,9 +9,7 @@
 import UIKit
 
 class rjMomentsTableViewController: UITableViewController {
-
     var moments = rjMomentMgr().allMoments()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

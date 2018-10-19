@@ -19,9 +19,14 @@ class rjCommon {
 
     static func unixTimestampAtBeginningOfToday() -> Int {
         let now = Date()
+        let beginningOfDay = self.getDateAtBeginningOfDay(now)
+        return Int(beginningOfDay.timeIntervalSince1970)
+    }
+    
+    static func getDateAtBeginningOfDay(_ date: Date) -> Date {
         let calendar = Calendar.current
-        let beginningOfDay = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: now)
-        return Int(beginningOfDay!.timeIntervalSince1970)
+        let beginningOfDay = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)
+        return beginningOfDay!
     }
     
     static let commonTitleReuseId = "commontitle"
@@ -50,17 +55,5 @@ class rjCommon {
         cell.btnAction.setTitle(btnText, for: .normal)
         cell.btnAction.addTarget(target, action: btnAction, for: .touchUpInside)
         return cell;
-    }
-}
-
-extension String {
-    func escapeString() -> String {
-        var newString = self.replacingOccurrences(of: "\"", with: "\"\"")
-
-        if newString.contains(",") || newString.contains("\n") {
-            newString = String(format: "\"%@\"", newString)
-        }
-        
-        return newString
     }
 }

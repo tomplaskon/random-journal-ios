@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GTe-l3-fdK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GTe-l3-fdK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Settings-->
+        <scene sceneID="mew-cK-r2d">
+            <objects>
+                <navigationController id="Lan-tA-dAW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="Tq6-50-Sby"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Sp-Go-Pxz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dbZ-cr-s4V" kind="relationship" relationship="rootViewController" id="0IW-Od-GhS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2TM-rr-5ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="450"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="rVi-Xt-6DO">
             <objects>
@@ -92,6 +108,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="btnAction" destination="H6L-7L-KVn" id="UfI-AW-8gG"/>
+                                    <segue destination="KBz-QU-iI5" kind="show" identifier="import" id="5H1-3c-CBx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -101,10 +118,52 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" id="w5b-5f-0iz"/>
+                    <navigationItem key="navigationItem" id="70r-oy-Qmw"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZE-nf-JeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136.8" y="460.11994002998506"/>
+            <point key="canvasLocation" x="2057" y="451"/>
+        </scene>
+        <!--Rj Import Moments View Controller-->
+        <scene sceneID="Vvp-YM-Gfd">
+            <objects>
+                <viewController id="KBz-QU-iI5" customClass="rjImportMomentsViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M3Q-ge-nkS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wae-FO-NDy">
+                                <rect key="frame" x="164.5" y="171" width="46" height="30"/>
+                                <state key="normal" title="Import"/>
+                                <connections>
+                                    <action selector="importPressed:" destination="KBz-QU-iI5" eventType="touchUpInside" id="7Wc-t5-5BO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold and copy the CSV file from your email and then hit the import button below." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znT-la-Zk9">
+                                <rect key="frame" x="16" y="80" width="343" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="mOu-b3-oHs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="znT-la-Zk9" firstAttribute="top" secondItem="GP5-Nx-8j6" secondAttribute="top" constant="16" id="7d8-b4-9E5"/>
+                            <constraint firstItem="GP5-Nx-8j6" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wae-FO-NDy" secondAttribute="bottom" constant="16" id="V5k-YQ-Kd7"/>
+                            <constraint firstItem="GP5-Nx-8j6" firstAttribute="trailing" secondItem="znT-la-Zk9" secondAttribute="trailing" constant="16" id="Y4W-S4-9sA"/>
+                            <constraint firstItem="znT-la-Zk9" firstAttribute="leading" secondItem="GP5-Nx-8j6" secondAttribute="leading" constant="16" id="Z8O-VA-Ykq"/>
+                            <constraint firstItem="wae-FO-NDy" firstAttribute="top" secondItem="znT-la-Zk9" secondAttribute="bottom" constant="16" id="diC-ko-BKx"/>
+                            <constraint firstItem="wae-FO-NDy" firstAttribute="centerX" secondItem="M3Q-ge-nkS" secondAttribute="centerX" id="e67-uq-saF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GP5-Nx-8j6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0rW-lL-Um1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2981.5999999999999" y="449.32533733133437"/>
         </scene>
         <!--Moments-->
         <scene sceneID="rFO-3R-LdG">
@@ -287,26 +346,60 @@
             </objects>
             <point key="canvasLocation" x="1137" y="1470"/>
         </scene>
-        <!--Rj Tutorial Finish View Controller-->
-        <scene sceneID="yuG-Ci-Po5">
+        <!--View Controller-->
+        <scene sceneID="OyI-hn-LZ2">
             <objects>
-                <viewController storyboardIdentifier="tutorial3" id="fhF-wq-i1X" customClass="rjTutorialFinishViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PjQ-5x-pQr">
+                <viewController storyboardIdentifier="tutorial3" id="0Vk-DC-i5h" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wpB-Jg-bxC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bif-f4-CKO">
-                                <rect key="frame" x="16" y="54" width="343" height="141"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">This app uses a random daily reminder
-to help you capture one real moment while you're still present in it.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app removes your natural human filters by sending a random daily reminder to capture what you're doing right now. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGq-CD-epw">
+                                <rect key="frame" x="16" y="103" width="343" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="Ere-ab-80t"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJ3-Qd-ffm">
-                                <rect key="frame" x="148" y="563" width="78" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EGq-CD-epw" firstAttribute="leading" secondItem="7Eu-F5-jCn" secondAttribute="leading" constant="16" id="I2i-vL-IyX"/>
+                            <constraint firstItem="7Eu-F5-jCn" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EGq-CD-epw" secondAttribute="bottom" constant="16" id="fWb-sh-GER"/>
+                            <constraint firstItem="EGq-CD-epw" firstAttribute="top" secondItem="7Eu-F5-jCn" secondAttribute="top" constant="83" id="lAt-dp-bQ3"/>
+                            <constraint firstItem="7Eu-F5-jCn" firstAttribute="trailing" secondItem="EGq-CD-epw" secondAttribute="trailing" constant="16" id="vDi-T9-QsK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Eu-F5-jCn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Uc-Vz-Nbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3797.5999999999999" y="1468.5157421289357"/>
+        </scene>
+        <!--Rj Tutorial Finish View Controller-->
+        <scene sceneID="yuG-Ci-Po5">
+            <objects>
+                <viewController storyboardIdentifier="tutorial4" id="fhF-wq-i1X" customClass="rjTutorialFinishViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PjQ-5x-pQr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One raw moment a day grows into a rich snapshot of your experience." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bif-f4-CKO">
+                                <rect key="frame" x="16" y="103" width="343" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="tEt-14-cxu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJ3-Qd-ffm">
+                                <rect key="frame" x="148.5" y="612" width="78" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AUm-6Z-BkJ"/>
+                                </constraints>
                                 <state key="normal" title="Get started"/>
                                 <connections>
                                     <action selector="btnDonePressed:" destination="fhF-wq-i1X" eventType="touchUpInside" id="zi9-EL-WUz"/>
@@ -314,12 +407,20 @@ to help you capture one real moment while you're still present in it.</string>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SJ3-Qd-ffm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Bif-f4-CKO" secondAttribute="bottom" constant="16" id="3QG-pu-YLY"/>
+                            <constraint firstItem="n4V-WG-XnP" firstAttribute="bottom" secondItem="SJ3-Qd-ffm" secondAttribute="bottom" constant="25" id="G3R-2N-Nl0"/>
+                            <constraint firstItem="Bif-f4-CKO" firstAttribute="leading" secondItem="n4V-WG-XnP" secondAttribute="leading" constant="16" id="QqI-Ig-vTK"/>
+                            <constraint firstItem="Bif-f4-CKO" firstAttribute="top" secondItem="n4V-WG-XnP" secondAttribute="top" constant="83" id="RIg-ih-BBe"/>
+                            <constraint firstItem="SJ3-Qd-ffm" firstAttribute="centerX" secondItem="PjQ-5x-pQr" secondAttribute="centerX" id="deg-dN-U8m"/>
+                            <constraint firstItem="n4V-WG-XnP" firstAttribute="trailing" secondItem="Bif-f4-CKO" secondAttribute="trailing" constant="16" id="iJs-lN-FiD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="n4V-WG-XnP"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PdG-Hc-rPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900" y="1469"/>
+            <point key="canvasLocation" x="4604" y="1468.5157421289357"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nWY-r3-26h">
@@ -329,26 +430,29 @@ to help you capture one real moment while you're still present in it.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwQ-Cl-DdT">
-                                <rect key="frame" x="28" y="88" width="320" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Most journals make us choose
-what to include and what to discard.
-
-But what we think is important today
-is often not that interesting next week.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most journaling favours the big moments, so your tiny ones get lost." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwQ-Cl-DdT">
+                                <rect key="frame" x="16" y="103" width="343" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="ujw-L0-OUr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SwQ-Cl-DdT" firstAttribute="leading" secondItem="7bP-d0-P50" secondAttribute="leading" constant="16" id="NWo-tl-hhO"/>
+                            <constraint firstItem="SwQ-Cl-DdT" firstAttribute="top" secondItem="7bP-d0-P50" secondAttribute="top" constant="83" id="ZKw-Qm-I9W"/>
+                            <constraint firstItem="7bP-d0-P50" firstAttribute="trailing" secondItem="SwQ-Cl-DdT" secondAttribute="trailing" constant="16" id="fvQ-MT-aIs"/>
+                            <constraint firstItem="7bP-d0-P50" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SwQ-Cl-DdT" secondAttribute="bottom" constant="16" id="uoK-Qd-srw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7bP-d0-P50"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Uc-U8-hh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2983" y="1469"/>
+            <point key="canvasLocation" x="2981.5999999999999" y="1468.5157421289357"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7UD-9M-EB7">
@@ -358,23 +462,29 @@ is often not that interesting next week.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smP-60-WyH">
-                                <rect key="frame" x="16" y="83" width="343" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Life is a series of moments
-that we remember or forget.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life is a series of moments— some big, some small." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smP-60-WyH">
+                                <rect key="frame" x="16" y="103" width="343" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="qhS-ll-EUh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="smP-60-WyH" firstAttribute="leading" secondItem="uUv-QJ-l75" secondAttribute="leading" constant="16" id="8i1-JI-mYp" userLabel="Life is a series of moments— some big, some small..leading = Safe Area.leading + 16"/>
+                            <constraint firstItem="uUv-QJ-l75" firstAttribute="trailing" secondItem="smP-60-WyH" secondAttribute="trailing" constant="16" id="Eje-l5-bZq"/>
+                            <constraint firstItem="smP-60-WyH" firstAttribute="top" secondItem="uUv-QJ-l75" secondAttribute="top" constant="83" id="hTG-Zr-nuA"/>
+                            <constraint firstItem="uUv-QJ-l75" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="smP-60-WyH" secondAttribute="bottom" constant="16" id="yCf-IN-QiE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uUv-QJ-l75"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJO-jv-Msh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057" y="1469"/>
+            <point key="canvasLocation" x="2056.8000000000002" y="1468.5157421289357"/>
         </scene>
         <!--Rj Tab Bar Controller-->
         <scene sceneID="YfT-8r-HyB">
@@ -388,7 +498,7 @@ that we remember or forget.</string>
                     <connections>
                         <segue destination="Ykr-sL-T5N" kind="relationship" relationship="viewControllers" id="CsC-lF-sXe"/>
                         <segue destination="AKF-8r-UhC" kind="relationship" relationship="viewControllers" id="1yW-Q3-fMO"/>
-                        <segue destination="dbZ-cr-s4V" kind="relationship" relationship="viewControllers" id="xhl-AF-6H2"/>
+                        <segue destination="Lan-tA-dAW" kind="relationship" relationship="viewControllers" id="6CY-Z5-o0m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHM-UJ-WTA" userLabel="First Responder" sceneMemberID="firstResponder"/>

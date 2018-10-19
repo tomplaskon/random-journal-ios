@@ -1,3 +1,67 @@
+3.11.0 Release notes (2018-10-04)
+=============================================================
+
+### Enhancements
+
+* Reduce memory usage when integrating synchronized changes sent by ROS.
+* Devices will now report download progress for read-only Realms, allowing the
+  server to compact Realms more aggressively and reducing the amount of
+  server-side storage space required.
+
+### Fixed
+
+* Fix a crash when adding an object with a non-`@objc` `String?` property which
+  has not been explicitly ignored to a Realm on watchOS 5 (and possibly other
+  platforms when building with Xcode 10).
+  (Issue: [5929](https://github.com/realm/realm-cocoa/issues/5929)).
+* Fix some merge algorithm bugs which could result in `BadChangesetError`
+  being thrown when integrating changes sent by the server.
+
+### Compatibility
+
+* **NOTE!!!
+  You will need to upgrade your Realm Object Server to at least version 3.11.0
+  or use [Realm Cloud](https://cloud.realm.io).
+  If you try to connect to a ROS v3.10.x or previous, you will see an error
+  like `Wrong protocol version in Sync HTTP request, client protocol version = 25,
+  server protocol version = 24`.**
+
+### Internal
+
+* Update to Sync 3.12.2.
+
+3.10.0 Release notes (2018-09-19)
+=============================================================
+
+Prebuilt binaries are now built for Xcode 9.2, 9.3, 9.4 and 10.0.
+
+Older versions of Xcode are still supported when building from source, but you
+should be migrating to at least Xcode 9.2 as soon as possible.
+
+### Enhancements
+
+* Add support for Watch Series 4 by adding an arm64_32 slice to the library.
+
+3.9.0 Release notes (2018-09-10)
+=============================================================
+
+### Enhancements
+
+* Expose RLMSyncUser.refreshToken publicly so that it can be used for custom
+  HTTP requests to Realm Object Server.
+* Add RLMSyncSession.connectionState, which reports whether the session is
+  currently connected to the Realm Object Server or if it is offline.
+* Add `-suspend` and `-resume` methods to `RLMSyncSession` to enable manually
+  pausing data synchronization.
+* Add support for limiting the number of objects matched by a query-based sync
+  subscription. This requires a server running ROS 3.10.1 or newer.
+
+### Bugfixes
+
+* Fix crash when getting the description of a `MigrationObject` which has
+  `List` properties.
+* Fix crash when calling `dynamicList()` on a `MigrationObject`.
+
 3.8.0 Release notes (2018-09-05)
 =============================================================
 

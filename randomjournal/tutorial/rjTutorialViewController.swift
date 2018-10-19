@@ -10,7 +10,7 @@ import UIKit
 
 class rjTutorialViewController: UIPageViewController {
 
-    var pages = [] as [UIViewController]
+    var pages = [UIViewController]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,8 @@ class rjTutorialViewController: UIPageViewController {
         pages = [
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorial1"),
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorial2"),
-            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorial3")
+            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorial3"),
+            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorial4")
         ]
         
         dataSource = self;

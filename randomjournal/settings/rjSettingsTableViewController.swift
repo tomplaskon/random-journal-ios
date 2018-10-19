@@ -10,11 +10,12 @@ import UIKit
 import MessageUI
 
 class rjSettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
-    let numberOfAlertsTitleIndex = 0;
-    let scheduleAlertsButtonIndex = 1;
-    let showRemindersButtonIndex = 2;
-    let tutorialButtonIndex = 3;
-    let exportButtonIndex = 4;
+    let numberOfAlertsTitleIndex = 0
+    let scheduleAlertsButtonIndex = 1
+    let showRemindersButtonIndex = 2
+    let tutorialButtonIndex = 3
+    let exportButtonIndex = 4
+    let importButtonIndex = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,6 +45,8 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
             return rjCommon.makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Tutorial", target: self, btnAction: #selector(showTutorial))
         case exportButtonIndex:
             return rjCommon.makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Export CSV", target: self, btnAction: #selector(exportCSV))
+        case importButtonIndex:
+            return rjCommon.makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Import CSV", target: self, btnAction: #selector(importCSV))
             
             
         default:
@@ -69,7 +72,7 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     }
     
     @objc func handleRemindersStatus(sender : UIButton) {
-        let scheduler = rjReminderScheduler()
+        let scheduler = rjReminderScheduler.shared
         let settings = rjAppSettings()
         if (rjAppSettings().areRemindersEnabled()) {
             // toggling reminders off
@@ -86,7 +89,7 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     }
     
     @objc func showReminderSchedule() {
-        rjReminderScheduler().getCurrentScheduleReadable() { (scheduleStr) in
+        rjReminderScheduler.shared.getCurrentScheduleReadable() { (scheduleStr) in
             let alert = UIAlertController(title: nil, message: scheduleStr, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -100,53 +103,8 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     }
     
     @objc func exportCSV() {
-        let content = getCSVContent()
-        if let fileURL = getCSVFileURL(getCSVFileName()) {
-            writeCSVFile(fileURL, content: content)
-            sendEmailWithCSVFile(fileURL)
-        }
-    }
-    
-    func getCSVFileName() -> String {
-        let date = Date()
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYYMMdd"
-        let dateString = dateFormatter.string(from: date)
-
-        return "random_journal_export_" + dateString + ".csv"
-    }
-    
-    func getCSVFileURL(_ fileName: String) -> URL? {
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            return dir.appendingPathComponent(fileName)
-        }
-        
-        return nil;
-    }
-    
-    func getCSVContent() -> String {
-        var csvContent = ""
-        
-        let moments = rjMomentMgr().allMoments()
-        for moment in moments {
-            let lineElements = [
-                moment.momentId,
-                String(moment.when),
-                moment.whenReadableLong(),
-                moment.details.escapeString()
-            ]
-            csvContent += lineElements.joined(separator: ", ")
-        }
-        
-        return csvContent
-    }
-    
-    func writeCSVFile(_ fileURL: URL, content: String) {
-        do {
-            try content.write(to: fileURL, atomically: false, encoding: .utf8)
-        } catch {
-            // TODO: common error message
+        if let fileURL = rjMomentExporter().exportMomentsToFile() {
+            self.sendEmailWithCSVFile(fileURL)
         }
     }
     
@@ -171,5 +129,9 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     
     func mailComposeController(_ didFinishWithcontroller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func importCSV() {
+        self.performSegue(withIdentifier: "import", sender: self)
     }
 }

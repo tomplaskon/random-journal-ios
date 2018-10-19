@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import RealmSwift
 
 extension UIViewController {
     var appDelegate:rjAppDelegate {
@@ -39,7 +40,7 @@ class rjAppDelegate: UIResponder, UIApplicationDelegate {
     
     func handleUpdatingReminders() {
         if rjAppSettings().areRemindersEnabled() {
-            rjReminderScheduler().updateReminders()
+            rjReminderScheduler.shared.updateReminders()
         }
     }
     

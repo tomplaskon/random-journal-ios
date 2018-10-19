@@ -35,10 +35,12 @@ class rjMomentMgrTest: rjTestCase {
         moment.update()
         
         // load the moment from the persistence layer
-        let moment2 = momentMgr.getMomentById(momentId)
-        
-        // verify the moments have the same data
-        assertMomentsEqual(moment, moment2)
+        if let moment2 = momentMgr.getMomentById(momentId) {
+            // verify the moments have the same data
+            assertMomentsEqual(moment, moment2)
+        } else {
+            XCTFail("No moment returned by getMomentById")
+        }
     }
     
     func testAllMoments() {

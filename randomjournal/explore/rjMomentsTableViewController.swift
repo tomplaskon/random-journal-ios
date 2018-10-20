@@ -79,11 +79,21 @@ class rjMomentsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let segueId = segue.identifier {
             if segueId == "viewmoment" {
+                /*
                 if let viewMomentVC = segue.destination as? rjViewMomentTableViewController {
                     let momentIndex = self.tableView.indexPathForSelectedRow!.row
                     let moment = moments[momentIndex]
                     viewMomentVC.moment = moment
                 }
+                */
+                
+                if let momentPageVC = segue.destination as? rjMomentPageViewController {
+                    let momentIndex = self.tableView.indexPathForSelectedRow!.row
+                    let moment = moments[momentIndex]
+                    
+                    momentPageVC.startingMoment = moment
+                }
+                    
             }
         }
     }

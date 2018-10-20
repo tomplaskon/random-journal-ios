@@ -222,17 +222,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="qKD-Ev-zZn"/>
                     <connections>
-                        <segue destination="A4p-BP-9ZB" kind="show" identifier="viewmoment" id="w8g-ag-9En"/>
+                        <segue destination="gR9-2s-v1B" kind="show" identifier="viewmoment" id="4Sc-cc-lIg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjx-kf-Wbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057" y="-931"/>
+            <point key="canvasLocation" x="2132" y="-931"/>
         </scene>
         <!--Rj View Moment Table View Controller-->
         <scene sceneID="raZ-7F-Eqa">
             <objects>
-                <tableViewController id="A4p-BP-9ZB" customClass="rjViewMomentTableViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="rjViewMomentTableViewController" id="A4p-BP-9ZB" customClass="rjViewMomentTableViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mfC-Uk-vNY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,7 +272,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ll1-TX-xeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2981.5999999999999" y="-931.48425787106453"/>
+            <point key="canvasLocation" x="3841" y="-931"/>
         </scene>
         <!--Add-->
         <scene sceneID="J1U-DQ-oyb">
@@ -504,6 +504,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHM-UJ-WTA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="188" y="98"/>
+        </scene>
+        <!--Rj Moment Page View Controller-->
+        <scene sceneID="MSu-5L-gbC">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gR9-2s-v1B" customClass="rjMomentPageViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qDU-X0-6YH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3054" y="-931"/>
         </scene>
     </scenes>
 </document>

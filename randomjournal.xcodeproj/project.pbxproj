@@ -53,6 +53,7 @@
 		00E5C320217A3C2E00A2FE33 /* rjExportFileFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C31F217A3C2E00A2FE33 /* rjExportFileFormat.swift */; };
 		00E5C322217A3D5F00A2FE33 /* rjMomentExporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C321217A3D5F00A2FE33 /* rjMomentExporterTest.swift */; };
 		00E5C324217A480B00A2FE33 /* rjMomentImporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C323217A480B00A2FE33 /* rjMomentImporterTest.swift */; };
+		00E5C327217B6FA100A2FE33 /* rjMomentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C326217B6FA100A2FE33 /* rjMomentPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		00E5C31F217A3C2E00A2FE33 /* rjExportFileFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjExportFileFormat.swift; sourceTree = "<group>"; };
 		00E5C321217A3D5F00A2FE33 /* rjMomentExporterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentExporterTest.swift; sourceTree = "<group>"; };
 		00E5C323217A480B00A2FE33 /* rjMomentImporterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentImporterTest.swift; sourceTree = "<group>"; };
+		00E5C326217B6FA100A2FE33 /* rjMomentPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 				007DDCE02142D03B00047CE4 /* rjMomentTableViewCell.xib */,
 				007DDD432163C20200047CE4 /* rjViewMomentDetailsTableViewCell.swift */,
 				007DDD472163C6FF00047CE4 /* rjViewMomentTableViewController.swift */,
+				00E5C326217B6FA100A2FE33 /* rjMomentPageViewController.swift */,
 			);
 			path = explore;
 			sourceTree = "<group>";
@@ -480,7 +483,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -515,6 +518,7 @@
 				007DDCE9214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift in Sources */,
 				007DDCD52141A0E700047CE4 /* rjCommon.swift in Sources */,
 				007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */,
+				00E5C327217B6FA100A2FE33 /* rjMomentPageViewController.swift in Sources */,
 				00E5C31B217A27CE00A2FE33 /* rjMomentImporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

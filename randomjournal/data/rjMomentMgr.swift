@@ -41,10 +41,35 @@ class rjMomentMgr {
         return realm.object(ofType: rjMoment.self, forPrimaryKey: momentId)
     }
     
+    func getPreviousMoment(_ moment : rjMoment) -> rjMoment? {
+        let moments = allMoments()
+        if let momentIndex = moments.index(of: moment) {
+            let previousMomentIndex = momentIndex + 1
+            if (previousMomentIndex < moments.count) {
+                return moments[previousMomentIndex]
+            }
+        }
+        
+        return nil
+    }
+
+    func getNextMoment(_ moment : rjMoment) -> rjMoment? {
+        let moments = allMoments()
+        if let momentIndex = moments.index(of: moment) {
+            let nextMomentIndex = momentIndex - 1
+            if (nextMomentIndex >= 0) {
+                return moments[nextMomentIndex]
+            }
+        }
+        
+        return nil
+    }
+    
     func allMoments() -> Array<rjMoment> {
         let realm = try! Realm()
-        let sortFields = [SortDescriptor(keyPath: "when", ascending: false), SortDescriptor(keyPath: "momentId")]
-        return Array(realm.objects(rjMoment.self).sorted(by:sortFields))
+        let sort = [SortDescriptor(keyPath: "when", ascending: false), SortDescriptor(keyPath: "momentId", ascending: true)]
+
+        return Array(realm.objects(rjMoment.self).sorted(by:sort))
     }
     
     func deleteMoment(_ moment: rjMoment) {

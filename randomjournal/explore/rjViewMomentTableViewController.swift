@@ -33,6 +33,7 @@ class rjViewMomentTableViewController: UITableViewController {
     func configureTable() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
+        tableView.allowsSelection = false
     }
     
     // MARK: - Table view data source

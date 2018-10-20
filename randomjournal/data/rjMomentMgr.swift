@@ -65,6 +65,12 @@ class rjMomentMgr {
         return nil
     }
     
+    func getRandomMoment() -> rjMoment {
+        let moments = allMoments()
+        let randomIndex = rjCommon.getRandomInt(from: 0, to: moments.count-1)
+        return moments[randomIndex]
+    }
+    
     func allMoments() -> Array<rjMoment> {
         let realm = try! Realm()
         let sort = [SortDescriptor(keyPath: "when", ascending: false), SortDescriptor(keyPath: "momentId", ascending: true)]

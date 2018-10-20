@@ -274,6 +274,47 @@
             </objects>
             <point key="canvasLocation" x="3841" y="-931"/>
         </scene>
+        <!--Rj View Moment Options View Controller-->
+        <scene sceneID="tWy-hE-SNp">
+            <objects>
+                <viewController id="0pj-gi-Aqw" customClass="rjViewMomentOptionsViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Tp-Fr-Tq6">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G17-aQ-4Sf">
+                                <rect key="frame" x="166" y="150" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shuffle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ha9-2C-XhU">
+                                <rect key="frame" x="16" y="15" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T8K-MT-2XZ">
+                                <rect key="frame" x="142" y="10" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="JUM-jw-b0g"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="50"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="200" height="50"/>
+                    <connections>
+                        <outlet property="switchShuffle" destination="T8K-MT-2XZ" id="tes-b7-iBE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcC-no-Ilx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4588.8000000000002" y="-931.93403298350836"/>
+        </scene>
         <!--Add-->
         <scene sceneID="J1U-DQ-oyb">
             <objects>
@@ -508,7 +549,17 @@
         <!--Rj Moment Page View Controller-->
         <scene sceneID="MSu-5L-gbC">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gR9-2s-v1B" customClass="rjMomentPageViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gR9-2s-v1B" customClass="rjMomentPageViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gej-AR-UOV">
+                        <barButtonItem key="rightBarButtonItem" title="Options" id="Ofi-iw-Rzq">
+                            <connections>
+                                <segue destination="0pj-gi-Aqw" kind="popoverPresentation" identifier="options" popoverAnchorBarButtonItem="Ofi-iw-Rzq" id="Nd4-Ln-8JM">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qDU-X0-6YH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3054" y="-931"/>

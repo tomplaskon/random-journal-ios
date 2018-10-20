@@ -54,6 +54,7 @@
 		00E5C322217A3D5F00A2FE33 /* rjMomentExporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C321217A3D5F00A2FE33 /* rjMomentExporterTest.swift */; };
 		00E5C324217A480B00A2FE33 /* rjMomentImporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C323217A480B00A2FE33 /* rjMomentImporterTest.swift */; };
 		00E5C327217B6FA100A2FE33 /* rjMomentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C326217B6FA100A2FE33 /* rjMomentPageViewController.swift */; };
+		00E5C329217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C328217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		00E5C321217A3D5F00A2FE33 /* rjMomentExporterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentExporterTest.swift; sourceTree = "<group>"; };
 		00E5C323217A480B00A2FE33 /* rjMomentImporterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentImporterTest.swift; sourceTree = "<group>"; };
 		00E5C326217B6FA100A2FE33 /* rjMomentPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentPageViewController.swift; sourceTree = "<group>"; };
+		00E5C328217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjViewMomentOptionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 				007DDD432163C20200047CE4 /* rjViewMomentDetailsTableViewCell.swift */,
 				007DDD472163C6FF00047CE4 /* rjViewMomentTableViewController.swift */,
 				00E5C326217B6FA100A2FE33 /* rjMomentPageViewController.swift */,
+				00E5C328217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift */,
 			);
 			path = explore;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				007DDCE521441FD000047CE4 /* rjReminderScheduler.swift in Sources */,
 				007DDCF721516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift in Sources */,
 				007DDCF12144379800047CE4 /* rjReminder.swift in Sources */,
+				00E5C329217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift in Sources */,
 				00E5C320217A3C2E00A2FE33 /* rjExportFileFormat.swift in Sources */,
 				007DDD532166551A00047CE4 /* rjCommonButtonTableViewCell.swift in Sources */,
 				003DC3E72178EF2E006B42EF /* rjImportMomentsViewController.swift in Sources */,

@@ -56,7 +56,7 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     }
     
     func getReminderStatusBtnText() -> String {
-        return rjAppSettings().areRemindersEnabled() ? "Disable Reminders" : "Enable Reminders"
+        return rjAppSettings.shared.areRemindersEnabled() ? "Disable Reminders" : "Enable Reminders"
     }
     
     func makeNumberOfAlertsCell(tableView : UITableView, indexPath : IndexPath) -> UITableViewCell {
@@ -74,8 +74,8 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     
     @objc func handleRemindersStatus(sender : UIButton) {
         let scheduler = rjReminderScheduler.shared
-        let settings = rjAppSettings()
-        if (rjAppSettings().areRemindersEnabled()) {
+        let settings = rjAppSettings.shared
+        if (rjAppSettings.shared.areRemindersEnabled()) {
             // toggling reminders off
             settings.setRemindersStatus(enabled: false)
             scheduler.clearReminders()

@@ -8,8 +8,16 @@
 
 import UIKit
 
-class rjAppSettings: NSObject {
+class rjAppSettings {
     let RemindersEnabledDefaultsKey = "rjRemindersEnabled"
+
+    var shuffleMoments = false
+    
+    static let shared = rjAppSettings()
+    
+    private init() {
+        
+    }
     
     func getNumDailyAlerts() -> Int {
         return 1;

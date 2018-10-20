@@ -26,7 +26,7 @@ class rjReminderScheduler: NSObject {
     func updateReminders() {
         notificationCenter.getPendingNotificationRequests { (notificationRequests) in
             objc_sync_enter(self)
-            let settings = rjAppSettings()
+            let settings = rjAppSettings.shared
             
             // do some house cleaning
             self.cleanUpReminders(notificationRequests)
@@ -55,7 +55,7 @@ class rjReminderScheduler: NSObject {
         var reminders: [rjReminder] = [];
         for dayNum in daysToSchedule.sorted() {
             for _ in 0..<numRemindersPerDay {
-                let randSecsInDay = Int(arc4random_uniform(UInt32(endTimeSecs-startTimeSecs)) + UInt32(startTimeSecs))
+                let randSecsInDay = rjCommon.getRandomInt(from: endTimeSecs, to: startTimeSecs)
                 let startOfThisDaySecs = dayNum*86400
                 
                 let reminder = rjReminder()

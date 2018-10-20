@@ -56,4 +56,8 @@ class rjCommon {
         cell.btnAction.addTarget(target, action: btnAction, for: .touchUpInside)
         return cell;
     }
+    
+    static func getRandomInt(from : Int, to : Int) -> Int {
+        return Int(arc4random_uniform(UInt32(to-from)) + UInt32(from))
+    }
 }

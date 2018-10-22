@@ -10,6 +10,7 @@ import UIKit
 
 class rjMomentPageViewController: UIPageViewController {
     var startingMoment : rjMoment?
+    var currentPageVC : UIViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class rjMomentPageViewController: UIPageViewController {
         }
         
         dataSource = self
+        delegate = self
     }
     
     func makeViewMomentTableViewController() -> rjViewMomentTableViewController {
@@ -44,6 +46,11 @@ extension rjMomentPageViewController : UIPopoverPresentationControllerDelegate {
     }
     
     func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        if let viewController = currentPageVC {
+            DispatchQueue.main.async { [unowned self] in
+                self.setViewControllers([viewController], direction: .forward, animated: false, completion: nil)
+            }
+        }
     }
 }
 
@@ -85,5 +92,17 @@ extension rjMomentPageViewController : UIPageViewControllerDataSource {
         }
         
         return nil
+    }
+}
+
+extension rjMomentPageViewController : UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if (!completed) {
+            return
+        }
+        
+        if let viewController = self.viewControllers?.first {
+            self.currentPageVC = viewController
+        }
     }
 }

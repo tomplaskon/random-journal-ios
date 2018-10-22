@@ -46,6 +46,7 @@ extension rjMomentPageViewController : UIPopoverPresentationControllerDelegate {
     }
     
     func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        // since we could be moving between normal and shuffle mode purge all VCs from the page view controller other than the current view controller
         if let viewController = currentPageVC {
             DispatchQueue.main.async { [unowned self] in
                 self.setViewControllers([viewController], direction: .forward, animated: false, completion: nil)
@@ -100,7 +101,8 @@ extension rjMomentPageViewController : UIPageViewControllerDelegate {
         if (!completed) {
             return
         }
-        
+
+        // keep track of the current view controller
         if let viewController = self.viewControllers?.first {
             self.currentPageVC = viewController
         }

@@ -11,7 +11,6 @@ import UserNotifications
 import os.log
 
 class rjReminderScheduler: NSObject {
-    let notificationCenter = UNUserNotificationCenter.current()
     let reminderMgr = rjReminderMgr()
     
     static let shared = rjReminderScheduler()
@@ -24,7 +23,7 @@ class rjReminderScheduler: NSObject {
     
     // ensure that each day returned by getDaysThatCanBeScheduled has a reminder scheduled on it
     func updateReminders() {
-        notificationCenter.getPendingNotificationRequests { (notificationRequests) in
+        UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
             objc_sync_enter(self)
             let settings = rjAppSettings.shared
             
@@ -49,13 +48,14 @@ class rjReminderScheduler: NSObject {
             objc_sync_exit(self)
         }
     }
+
     
     // create a schedule of reminders given all the parameters we want to satisfy
     func makeRandomSchedule(startOfPeriodSecs : Int, daysToSchedule : Set<Int>, numRemindersPerDay : Int, startTimeSecs : Int, endTimeSecs : Int) -> Array<rjReminder> {
         var reminders: [rjReminder] = [];
         for dayNum in daysToSchedule.sorted() {
             for _ in 0..<numRemindersPerDay {
-                let randSecsInDay = rjCommon.getRandomInt(from: endTimeSecs, to: startTimeSecs)
+                let randSecsInDay = rjCommon.getRandomInt(from: startTimeSecs, to: endTimeSecs)
                 let startOfThisDaySecs = dayNum*86400
                 
                 let reminder = rjReminder()
@@ -80,7 +80,7 @@ class rjReminderScheduler: NSObject {
             let request = UNNotificationRequest(identifier: reminder.reminderId, content: content, trigger: trigger)
             
             // Schedule the request with the system.
-            notificationCenter.add(request) { (error) in
+            UNUserNotificationCenter.current().add(request) { (error) in
                 if error != nil {
                     os_log("Error schedule test reminder: %@", error.debugDescription)
                 }
@@ -203,7 +203,7 @@ class rjReminderScheduler: NSObject {
      */
     
     func getCurrentScheduleReadable(completion: @escaping (String) -> Void) {
-        notificationCenter.getPendingNotificationRequests { (notifications) in
+        UNUserNotificationCenter.current().getPendingNotificationRequests { (notifications) in
             var scheduleStr = ""
             let dateFormatter = DateFormatter()
             dateFormatter.timeZone = TimeZone.current
@@ -221,8 +221,8 @@ class rjReminderScheduler: NSObject {
             
             for request in sortedNotifs {
                 if let reminder = reminders[request.identifier] {
-                    if let trigger = request.trigger as? UNTimeIntervalNotificationTrigger {
-                        scheduleStr += dateFormatter.string(from: reminder.getTriggerDate()) + " (" + dateFormatter.string(from: trigger.nextTriggerDate()!) + ")\n"
+                    if let _ = request.trigger as? UNTimeIntervalNotificationTrigger {
+                        scheduleStr += dateFormatter.string(from: reminder.getTriggerDate()) + "\n"
                     } else {
                         scheduleStr += "Request with identifier " + request.identifier + " with unexpected trigger\n"
                     }
@@ -243,6 +243,6 @@ class rjReminderScheduler: NSObject {
     }
     
     func clearReminders() {
-        notificationCenter.removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 }

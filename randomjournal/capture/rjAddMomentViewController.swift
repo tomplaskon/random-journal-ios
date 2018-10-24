@@ -16,8 +16,7 @@ class rjAddMomentViewController: UIViewController {
     @IBOutlet weak var lblWritingTips: UILabel!
     @IBOutlet weak var lblSwipeForMoreTips: UILabel!
     
-    var tips = rjFixedStack<String>(10)
-    var maxTipsIndex : Int?
+    var currentTip : String?
     
     var btnSaveBottomConstraintOriginalConstant: CGFloat!
     
@@ -140,7 +139,7 @@ extension rjAddMomentViewController : UICollectionViewDataSource, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView .dequeueReusableCell(withReuseIdentifier: "tip", for: indexPath) as! rjTipCollectionViewCell
-        cell.lblTip.text = rjTipsMgr.getRandomTip()
+        cell.lblTip.text = rjTipsMgr.getAnotherTip(currentTip)
         return cell
     }
     

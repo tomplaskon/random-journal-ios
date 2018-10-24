@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import UserNotifications
 
 class rjSettingsTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     let numberOfAlertsTitleIndex = 0
@@ -16,6 +17,9 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     let tutorialButtonIndex = 3
     let exportButtonIndex = 4
     let importButtonIndex = 5
+    weak var btnReminderStatus : UIButton?
+    let enableReminderText =  "Enable Reminders"
+    let disableReminderText = "Disable Reminders"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +27,38 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
         tableView.allowsSelection = false
         rjCommon.registerCommonTitleCell(tableView: tableView)
         rjCommon.registerCommonButtonCell(tableView: tableView)
+        
+        watchForAppEnteringForeground()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateReminderStatusButtonText()
     }
 
+    func watchForAppEnteringForeground() {
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(_:)), name: .UIApplicationWillEnterForeground, object: nil)
+    }
+    
+    @objc func willEnterForeground(_ notification : NSNotification) {
+        updateReminderStatusButtonText()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func updateReminderStatusButtonText() {
+        guard let button = btnReminderStatus else {return}
+        
+        UNUserNotificationCenter.current().getNotificationSettings { [unowned self] settings in
+            let buttonText = settings.authorizationStatus == .authorized && settings.alertSetting == .enabled && rjAppSettings.shared.areRemindersEnabled() ? self.disableReminderText : self.enableReminderText
+
+            DispatchQueue.main.async {
+                button.setTitle(buttonText, for: .normal)
+            }
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -39,7 +73,10 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
         case numberOfAlertsTitleIndex:
             return rjCommon.makeCommonTitleCell(tableView: tableView, cellForRowAt: indexPath, title: "Settings")
         case scheduleAlertsButtonIndex:
-            return rjCommon.makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: getReminderStatusBtnText(), target: self, btnAction: #selector(handleRemindersStatus))
+            let cell = rjCommon.makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: self.disableReminderText, target: self, btnAction: #selector(reminderStatusPressed)) as! rjCommonButtonTableViewCell
+            btnReminderStatus = cell.btnAction
+            updateReminderStatusButtonText()
+            return cell
         case showRemindersButtonIndex:
             return rjCommon.makeButtonCell(tableView: tableView, indexPath: indexPath, btnText: "Reminder schedule", target: self, btnAction: #selector(showReminderSchedule))
         case tutorialButtonIndex:
@@ -56,7 +93,7 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     }
     
     func getReminderStatusBtnText() -> String {
-        return rjAppSettings.shared.areRemindersEnabled() ? "Disable Reminders" : "Enable Reminders"
+        return rjAppSettings.shared.areRemindersEnabled() ? self.disableReminderText : self.enableReminderText
     }
     
     func makeNumberOfAlertsCell(tableView : UITableView, indexPath : IndexPath) -> UITableViewCell {
@@ -72,27 +109,45 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
         return cell;
     }
     
-    @objc func handleRemindersStatus(sender : UIButton) {
-        let scheduler = rjReminderScheduler.shared
-        let settings = rjAppSettings.shared
-        if (rjAppSettings.shared.areRemindersEnabled()) {
-            // toggling reminders off
-            settings.setRemindersStatus(enabled: false)
-            scheduler.clearReminders()
+    @objc func reminderStatusPressed(sender : UIButton) {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { [unowned self, unowned sender] (granted, error) in
+            if (!granted) {
+                DispatchQueue.main.async {
+                    sender.setTitle(self.enableReminderText, for: .normal)
+                    self.showEnableNotificationsMsg()
+                }
+                return
+            }
             
-        } else {
-            // toggling reminders on
-            settings.setRemindersStatus(enabled: true)
-            scheduler.updateReminders()
+            let scheduler = rjReminderScheduler.shared
+            let settings = rjAppSettings.shared
+            
+            if (rjAppSettings.shared.areRemindersEnabled()) {
+                // toggling reminders off
+                settings.setRemindersStatus(enabled: false)
+                scheduler.clearReminders()
+            } else {
+                // toggling reminders on
+                settings.setRemindersStatus(enabled: true)
+                scheduler.updateReminders()
+            }
+            
+            DispatchQueue.main.async {
+                sender.setTitle(self.getReminderStatusBtnText(), for: .normal)
+            }
         }
-        
-        sender.setTitle(getReminderStatusBtnText(), for: .normal)
+    }
+    
+    func showEnableNotificationsMsg() {
+        let alert = UIAlertController(title: nil, message: "To use reminders you need to enable notifications in Settings for Random Journal", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func showReminderSchedule() {
         rjReminderScheduler.shared.getCurrentScheduleReadable() { (scheduleStr) in
             let alert = UIAlertController(title: nil, message: scheduleStr, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         

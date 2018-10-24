@@ -634,6 +634,7 @@
                         <segue destination="Ykr-sL-T5N" kind="relationship" relationship="viewControllers" id="CsC-lF-sXe"/>
                         <segue destination="AKF-8r-UhC" kind="relationship" relationship="viewControllers" id="1yW-Q3-fMO"/>
                         <segue destination="Lan-tA-dAW" kind="relationship" relationship="viewControllers" id="6CY-Z5-o0m"/>
+                        <segue destination="qnq-uz-CKn" kind="presentation" identifier="tutorial" id="xyb-Ms-Q3J"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHM-UJ-WTA" userLabel="First Responder" sceneMemberID="firstResponder"/>

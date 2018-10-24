@@ -12,10 +12,13 @@ class rjTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if (rjAppSettings.shared.shouldShowTutorial()) {
+            performSegue(withIdentifier: "tutorial", sender: self)
+        }
     }
 }

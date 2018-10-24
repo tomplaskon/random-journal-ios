@@ -9,7 +9,8 @@
 import UIKit
 
 class rjAppSettings {
-    let RemindersEnabledDefaultsKey = "rjRemindersEnabled"
+    let remindersEnabledDefaultsKey = "rjRemindersEnabled"
+    let tutorialShownDefaultsKey = "rjTutorialShown"
 
     var shuffleMoments = false
     
@@ -20,26 +21,34 @@ class rjAppSettings {
     }
     
     func getNumDailyAlerts() -> Int {
-        return 1;
+        return 1
     }
     
     // seconds from beginning of day
     func getReminderStartTime() -> Int {
-        return 9*60*60;
+        return 9*60*60
     }
     
     // secons from beginning of day
     func getReminderEndTime() -> Int {
-        return 22*60*60;
+        return 22*60*60
     }
     
     func areRemindersEnabled() -> Bool {
         let defaults = UserDefaults.standard
-        return defaults.bool(forKey: RemindersEnabledDefaultsKey)
+        return defaults.bool(forKey: remindersEnabledDefaultsKey)
     }
     
     func setRemindersStatus(enabled : Bool) {
         let defaults = UserDefaults.standard
-        defaults.set(enabled, forKey: RemindersEnabledDefaultsKey)
+        defaults.set(enabled, forKey: remindersEnabledDefaultsKey)
+    }
+    
+    func shouldShowTutorial() -> Bool {
+        return !UserDefaults.standard.bool(forKey: tutorialShownDefaultsKey)
+    }
+    
+    func setTutorialComplete() {
+        UserDefaults.standard.set(true, forKey: tutorialShownDefaultsKey)
     }
 }

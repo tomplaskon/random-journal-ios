@@ -22,8 +22,16 @@ class rjTipsMgr {
         ]
     }
     
-    static func getRandomTip() -> String {
-        let tips = getTips()
+    static func getAnotherTip(_ currentTip : String?) -> String {
+        var tips = getTips()
+        
+        if let curTip = currentTip {
+            // remove the current tip from the array so we don't show it twice in a row
+            tips = tips.filter { a in
+                return a != curTip
+            }
+        }
+        
         let randomIndex = rjCommon.getRandomInt(from: 0, to: tips.count-1)
         return tips[randomIndex]
     }

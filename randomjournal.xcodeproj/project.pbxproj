@@ -332,11 +332,8 @@
 			isa = PBXGroup;
 			children = (
 				00DB085C21B5BB6B00A1CA1F /* remindersettings */,
-				00DB084321A7055B00A1CA1F /* viewmodels */,
-				00E5C33C2188E07A00A2FE33 /* tablecells */,
-				007DDCEC21442AD900047CE4 /* rjSettingsTableViewController.swift */,
-				003DC3E62178EF2E006B42EF /* rjImportMomentsViewController.swift */,
 				00E5C33A2188DA3C00A2FE33 /* rjReminderSettingsTableViewController.swift */,
+				003DC3E62178EF2E006B42EF /* rjImportMomentsViewController.swift */,
 			);
 			path = settings;
 			sourceTree = "<group>";
@@ -403,6 +400,9 @@
 		00DB085C21B5BB6B00A1CA1F /* remindersettings */ = {
 			isa = PBXGroup;
 			children = (
+				00E5C33C2188E07A00A2FE33 /* tablecells */,
+				00DB084321A7055B00A1CA1F /* viewmodels */,
+				007DDCEC21442AD900047CE4 /* rjSettingsTableViewController.swift */,
 			);
 			path = remindersettings;
 			sourceTree = "<group>";

@@ -44,12 +44,6 @@ class rjReminderSettingsTableViewController: UITableViewController {
                         self?.showErrorMsg(msg)
                     }
                 }
-                
-                /*
-                _ = NotificationCenter.default.reactive.notification(name: .UIApplicationWillEnterForeground).observeNext { [weak cellViewModel] notification in
-                    cellViewModel?.updateState()
-                }
-                */
             }
             
             // setup bindings for TimeSelect cells

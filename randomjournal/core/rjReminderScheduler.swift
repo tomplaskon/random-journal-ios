@@ -38,8 +38,8 @@ class rjReminderScheduler: NSObject {
                 startOfPeriodSecs: rjCommon.unixTimestampAtBeginningOfToday(),
                 daysToSchedule: daysToBeScheduled,
                 numRemindersPerDay: settings.getNumDailyAlerts(),
-                startTimeSecs: settings.getReminderStartTime(),
-                endTimeSecs: settings.getReminderEndTime()
+                startTimeSecs: settings.getReminderStartTimeOffset(),
+                endTimeSecs: settings.getReminderEndTimeOffset()
             )
             
             // schedule the reminders

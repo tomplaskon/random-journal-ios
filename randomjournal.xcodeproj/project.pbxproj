@@ -13,21 +13,15 @@
 		007DDC942140575E00047CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007DDC932140575E00047CE4 /* Assets.xcassets */; };
 		007DDCAD2140575E00047CE4 /* randomjournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCAC2140575E00047CE4 /* randomjournalUITests.swift */; };
 		007DDCBB2140881500047CE4 /* rjAddMomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCBA2140881500047CE4 /* rjAddMomentViewController.swift */; };
-		007DDCBE21417F3E00047CE4 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 007DDCBC21417F3E00047CE4 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		007DDCC221417F8500047CE4 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 007DDCC021417F8500047CE4 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		007DDCC62141822800047CE4 /* rjMoment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC52141822800047CE4 /* rjMoment.swift */; };
 		007DDCC92141853700047CE4 /* rjMomentMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC82141853700047CE4 /* rjMomentMgr.swift */; };
 		007DDCCC2141934700047CE4 /* rjMomentMgrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCCB2141934700047CE4 /* rjMomentMgrTest.swift */; };
-		007DDCCE21419E5400047CE4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007DDCC021417F8500047CE4 /* Realm.framework */; };
-		007DDCCF21419E5400047CE4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007DDCBC21417F3E00047CE4 /* RealmSwift.framework */; };
 		007DDCD221419F3F00047CE4 /* rjTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD021419F3F00047CE4 /* rjTestCase.swift */; };
 		007DDCD52141A0E700047CE4 /* rjCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD42141A0E700047CE4 /* rjCommon.swift */; };
 		007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCDC2142CDCD00047CE4 /* rjMomentsTableViewController.swift */; };
 		007DDCE12142D03B00047CE4 /* rjMomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCDF2142D03B00047CE4 /* rjMomentTableViewCell.swift */; };
 		007DDCE22142D03B00047CE4 /* rjMomentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007DDCE02142D03B00047CE4 /* rjMomentTableViewCell.xib */; };
 		007DDCE521441FD000047CE4 /* rjReminderScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCE421441FD000047CE4 /* rjReminderScheduler.swift */; };
-		007DDCE9214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCE8214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift */; };
-		007DDCEB214424DA00047CE4 /* rjSettingsTimeInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCEA214424DA00047CE4 /* rjSettingsTimeInputTableViewCell.swift */; };
 		007DDCED21442AD900047CE4 /* rjSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCEC21442AD900047CE4 /* rjSettingsTableViewController.swift */; };
 		007DDCEF2144339F00047CE4 /* rjAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCEE2144339F00047CE4 /* rjAppSettings.swift */; };
 		007DDCF12144379800047CE4 /* rjReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCF02144379800047CE4 /* rjReminder.swift */; };
@@ -47,6 +41,17 @@
 		007DDD56216E7BCA00047CE4 /* rjReminderSchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD55216E7BC900047CE4 /* rjReminderSchedulerTest.swift */; };
 		007DDD58216E7C1B00047CE4 /* rjCommonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD57216E7C1B00047CE4 /* rjCommonTest.swift */; };
 		007DDD5A2174E3E000047CE4 /* rjReminderMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD592174E3E000047CE4 /* rjReminderMgr.swift */; };
+		00DB083921A608D600A1CA1F /* rjTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB083821A608D600A1CA1F /* rjTimeTableViewCell.swift */; };
+		00DB083B21A608ED00A1CA1F /* rjTimeSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB083A21A608ED00A1CA1F /* rjTimeSelectTableViewCell.swift */; };
+		00DB084221A7038900A1CA1F /* rjCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB084121A7038900A1CA1F /* rjCellViewModel.swift */; };
+		00DB084721A7068300A1CA1F /* rjCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB084621A7068300A1CA1F /* rjCellConfigurable.swift */; };
+		00DB084921A707AE00A1CA1F /* rjCellViewModelPressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB084821A707AE00A1CA1F /* rjCellViewModelPressable.swift */; };
+		00DB084B21A70B5D00A1CA1F /* rjTimeSelectCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB084A21A70B5D00A1CA1F /* rjTimeSelectCellViewModel.swift */; };
+		00DB084D21A71B5400A1CA1F /* rjTimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB084C21A71B5400A1CA1F /* rjTimeCellViewModel.swift */; };
+		00DB084F21A71E8500A1CA1F /* rjReminderStatusCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB084E21A71E8500A1CA1F /* rjReminderStatusCellViewModel.swift */; };
+		00DB085121ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB085021ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift */; };
+		00DB085F21B5BC6F00A1CA1F /* rjIdentifiableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB085D21B5BC6F00A1CA1F /* rjIdentifiableComponent.swift */; };
+		00DB086021B5BC6F00A1CA1F /* rjIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB085E21B5BC6F00A1CA1F /* rjIdentifiable.swift */; };
 		00E5C319217A27A700A2FE33 /* rjMomentExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C318217A27A700A2FE33 /* rjMomentExporter.swift */; };
 		00E5C31B217A27CE00A2FE33 /* rjMomentImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C31A217A27CE00A2FE33 /* rjMomentImporter.swift */; };
 		00E5C31D217A3B4900A2FE33 /* rjMomentExportImportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C31C217A3B4900A2FE33 /* rjMomentExportImportTest.swift */; };
@@ -57,6 +62,11 @@
 		00E5C329217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C328217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift */; };
 		00E5C32B217E414800A2FE33 /* rjTipsMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C32A217E414800A2FE33 /* rjTipsMgr.swift */; };
 		00E5C32F217E4C4800A2FE33 /* rjTipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C32E217E4C4800A2FE33 /* rjTipCollectionViewCell.swift */; };
+		00E5C33B2188DA3C00A2FE33 /* rjReminderSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C33A2188DA3C00A2FE33 /* rjReminderSettingsTableViewController.swift */; };
+		00E5C33E2188E0AC00A2FE33 /* rjReminderStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C33D2188E0AC00A2FE33 /* rjReminderStatusTableViewCell.swift */; };
+		77D3FD35EBDF767F9EF39AEE /* Pods_randomjournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C34237475C0AA9736C4053D /* Pods_randomjournal.framework */; };
+		EFF606198ED2744C58386FB3 /* Pods_randomjournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB45ACC0E1C8EF6DA8154FD /* Pods_randomjournalTests.framework */; };
+		FCA817EDCCE9B436C3188D26 /* Pods_randomjournalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F16AF06EA917F17B7D97316 /* Pods_randomjournalUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +93,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				007DDCC221417F8500047CE4 /* Realm.framework in Embed Frameworks */,
-				007DDCBE21417F3E00047CE4 /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,8 +112,6 @@
 		007DDCAC2140575E00047CE4 /* randomjournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomjournalUITests.swift; sourceTree = "<group>"; };
 		007DDCAE2140575E00047CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007DDCBA2140881500047CE4 /* rjAddMomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjAddMomentViewController.swift; sourceTree = "<group>"; };
-		007DDCBC21417F3E00047CE4 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		007DDCC021417F8500047CE4 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		007DDCC52141822800047CE4 /* rjMoment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMoment.swift; sourceTree = "<group>"; };
 		007DDCC82141853700047CE4 /* rjMomentMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentMgr.swift; sourceTree = "<group>"; };
 		007DDCCB2141934700047CE4 /* rjMomentMgrTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentMgrTest.swift; sourceTree = "<group>"; };
@@ -115,8 +121,6 @@
 		007DDCDF2142D03B00047CE4 /* rjMomentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentTableViewCell.swift; sourceTree = "<group>"; };
 		007DDCE02142D03B00047CE4 /* rjMomentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rjMomentTableViewCell.xib; sourceTree = "<group>"; };
 		007DDCE421441FD000047CE4 /* rjReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderScheduler.swift; sourceTree = "<group>"; };
-		007DDCE8214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjSettingsNumberInputTableViewCell.swift; sourceTree = "<group>"; };
-		007DDCEA214424DA00047CE4 /* rjSettingsTimeInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjSettingsTimeInputTableViewCell.swift; sourceTree = "<group>"; };
 		007DDCEC21442AD900047CE4 /* rjSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjSettingsTableViewController.swift; sourceTree = "<group>"; };
 		007DDCEE2144339F00047CE4 /* rjAppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjAppSettings.swift; sourceTree = "<group>"; };
 		007DDCF02144379800047CE4 /* rjReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminder.swift; sourceTree = "<group>"; };
@@ -136,6 +140,17 @@
 		007DDD55216E7BC900047CE4 /* rjReminderSchedulerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderSchedulerTest.swift; sourceTree = "<group>"; };
 		007DDD57216E7C1B00047CE4 /* rjCommonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommonTest.swift; sourceTree = "<group>"; };
 		007DDD592174E3E000047CE4 /* rjReminderMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderMgr.swift; sourceTree = "<group>"; };
+		00DB083821A608D600A1CA1F /* rjTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTimeTableViewCell.swift; sourceTree = "<group>"; };
+		00DB083A21A608ED00A1CA1F /* rjTimeSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTimeSelectTableViewCell.swift; sourceTree = "<group>"; };
+		00DB084121A7038900A1CA1F /* rjCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCellViewModel.swift; sourceTree = "<group>"; };
+		00DB084621A7068300A1CA1F /* rjCellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCellConfigurable.swift; sourceTree = "<group>"; };
+		00DB084821A707AE00A1CA1F /* rjCellViewModelPressable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCellViewModelPressable.swift; sourceTree = "<group>"; };
+		00DB084A21A70B5D00A1CA1F /* rjTimeSelectCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTimeSelectCellViewModel.swift; sourceTree = "<group>"; };
+		00DB084C21A71B5400A1CA1F /* rjTimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTimeCellViewModel.swift; sourceTree = "<group>"; };
+		00DB084E21A71E8500A1CA1F /* rjReminderStatusCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderStatusCellViewModel.swift; sourceTree = "<group>"; };
+		00DB085021ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderSettingsViewModel.swift; sourceTree = "<group>"; };
+		00DB085D21B5BC6F00A1CA1F /* rjIdentifiableComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rjIdentifiableComponent.swift; sourceTree = "<group>"; };
+		00DB085E21B5BC6F00A1CA1F /* rjIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rjIdentifiable.swift; sourceTree = "<group>"; };
 		00E5C318217A27A700A2FE33 /* rjMomentExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentExporter.swift; sourceTree = "<group>"; };
 		00E5C31A217A27CE00A2FE33 /* rjMomentImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentImporter.swift; sourceTree = "<group>"; };
 		00E5C31C217A3B4900A2FE33 /* rjMomentExportImportTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentExportImportTest.swift; sourceTree = "<group>"; };
@@ -146,6 +161,17 @@
 		00E5C328217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjViewMomentOptionsViewController.swift; sourceTree = "<group>"; };
 		00E5C32A217E414800A2FE33 /* rjTipsMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTipsMgr.swift; sourceTree = "<group>"; };
 		00E5C32E217E4C4800A2FE33 /* rjTipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTipCollectionViewCell.swift; sourceTree = "<group>"; };
+		00E5C33A2188DA3C00A2FE33 /* rjReminderSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderSettingsTableViewController.swift; sourceTree = "<group>"; };
+		00E5C33D2188E0AC00A2FE33 /* rjReminderStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderStatusTableViewCell.swift; sourceTree = "<group>"; };
+		0E5289EA7B6730CADC459C6E /* Pods-randomjournal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-randomjournal.release.xcconfig"; path = "Pods/Target Support Files/Pods-randomjournal/Pods-randomjournal.release.xcconfig"; sourceTree = "<group>"; };
+		1BB45ACC0E1C8EF6DA8154FD /* Pods_randomjournalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_randomjournalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C34237475C0AA9736C4053D /* Pods_randomjournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_randomjournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F16AF06EA917F17B7D97316 /* Pods_randomjournalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_randomjournalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7050C6F3FBDD903D70508D19 /* Pods-randomjournal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-randomjournal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-randomjournal/Pods-randomjournal.debug.xcconfig"; sourceTree = "<group>"; };
+		7F9D588D4AEE28B7D7174C8F /* Pods-randomjournalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-randomjournalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-randomjournalUITests/Pods-randomjournalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8EE6DFE21BC09CFF720C8324 /* Pods-randomjournalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-randomjournalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-randomjournalTests/Pods-randomjournalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9ECD9BCDF90388068EACB3E0 /* Pods-randomjournalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-randomjournalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-randomjournalUITests/Pods-randomjournalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A57AF8EA0B1A6F1986D79D6A /* Pods-randomjournalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-randomjournalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-randomjournalTests/Pods-randomjournalTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				007DDCF32144961300047CE4 /* UserNotifications.framework in Frameworks */,
+				77D3FD35EBDF767F9EF39AEE /* Pods_randomjournal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				007DDCCE21419E5400047CE4 /* Realm.framework in Frameworks */,
-				007DDCCF21419E5400047CE4 /* RealmSwift.framework in Frameworks */,
+				EFF606198ED2744C58386FB3 /* Pods_randomjournalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA817EDCCE9B436C3188D26 /* Pods_randomjournalUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +211,7 @@
 				007DDCAB2140575E00047CE4 /* randomjournalUITests */,
 				007DDC8A2140575800047CE4 /* Products */,
 				007DDCCD21419E5400047CE4 /* Frameworks */,
+				F021F5BAB467037D1AD80A0C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,9 +285,10 @@
 		007DDCCD21419E5400047CE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				007DDCC021417F8500047CE4 /* Realm.framework */,
-				007DDCBC21417F3E00047CE4 /* RealmSwift.framework */,
 				007DDCF22144961300047CE4 /* UserNotifications.framework */,
+				1C34237475C0AA9736C4053D /* Pods_randomjournal.framework */,
+				1BB45ACC0E1C8EF6DA8154FD /* Pods_randomjournalTests.framework */,
+				5F16AF06EA917F17B7D97316 /* Pods_randomjournalUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -270,6 +299,8 @@
 				007DDCE421441FD000047CE4 /* rjReminderScheduler.swift */,
 				007DDCEE2144339F00047CE4 /* rjAppSettings.swift */,
 				007DDCF621516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift */,
+				00DB085E21B5BC6F00A1CA1F /* rjIdentifiable.swift */,
+				00DB085D21B5BC6F00A1CA1F /* rjIdentifiableComponent.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -300,11 +331,12 @@
 		007DDCE321441F2200047CE4 /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				007DDCE8214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift */,
-				007DDCEA214424DA00047CE4 /* rjSettingsTimeInputTableViewCell.swift */,
+				00DB085C21B5BB6B00A1CA1F /* remindersettings */,
+				00DB084321A7055B00A1CA1F /* viewmodels */,
+				00E5C33C2188E07A00A2FE33 /* tablecells */,
 				007DDCEC21442AD900047CE4 /* rjSettingsTableViewController.swift */,
-				007DDCF421514F5100047CE4 /* rjSettingsButtonTableViewCell.swift */,
 				003DC3E62178EF2E006B42EF /* rjImportMomentsViewController.swift */,
+				00E5C33A2188DA3C00A2FE33 /* rjReminderSettingsTableViewController.swift */,
 			);
 			path = settings;
 			sourceTree = "<group>";
@@ -321,6 +353,8 @@
 		007DDD492163DE1B00047CE4 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				00DB085521AEF6A700A1CA1F /* cells */,
+				00DB085421AEF66500A1CA1F /* viewmodels */,
 				007DDD4A2163DE4400047CE4 /* ui */,
 				007DDCD42141A0E700047CE4 /* rjCommon.swift */,
 			);
@@ -338,6 +372,41 @@
 			path = ui;
 			sourceTree = "<group>";
 		};
+		00DB084321A7055B00A1CA1F /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				00DB084A21A70B5D00A1CA1F /* rjTimeSelectCellViewModel.swift */,
+				00DB084C21A71B5400A1CA1F /* rjTimeCellViewModel.swift */,
+				00DB084E21A71E8500A1CA1F /* rjReminderStatusCellViewModel.swift */,
+				00DB085021ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift */,
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		00DB085421AEF66500A1CA1F /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				00DB084121A7038900A1CA1F /* rjCellViewModel.swift */,
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		00DB085521AEF6A700A1CA1F /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				00DB084821A707AE00A1CA1F /* rjCellViewModelPressable.swift */,
+				00DB084621A7068300A1CA1F /* rjCellConfigurable.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		00DB085C21B5BB6B00A1CA1F /* remindersettings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = remindersettings;
+			sourceTree = "<group>";
+		};
 		00E5C31E217A3BE900A2FE33 /* export */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +417,30 @@
 			path = export;
 			sourceTree = "<group>";
 		};
+		00E5C33C2188E07A00A2FE33 /* tablecells */ = {
+			isa = PBXGroup;
+			children = (
+				007DDCF421514F5100047CE4 /* rjSettingsButtonTableViewCell.swift */,
+				00E5C33D2188E0AC00A2FE33 /* rjReminderStatusTableViewCell.swift */,
+				00DB083821A608D600A1CA1F /* rjTimeTableViewCell.swift */,
+				00DB083A21A608ED00A1CA1F /* rjTimeSelectTableViewCell.swift */,
+			);
+			path = tablecells;
+			sourceTree = "<group>";
+		};
+		F021F5BAB467037D1AD80A0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7050C6F3FBDD903D70508D19 /* Pods-randomjournal.debug.xcconfig */,
+				0E5289EA7B6730CADC459C6E /* Pods-randomjournal.release.xcconfig */,
+				8EE6DFE21BC09CFF720C8324 /* Pods-randomjournalTests.debug.xcconfig */,
+				A57AF8EA0B1A6F1986D79D6A /* Pods-randomjournalTests.release.xcconfig */,
+				7F9D588D4AEE28B7D7174C8F /* Pods-randomjournalUITests.debug.xcconfig */,
+				9ECD9BCDF90388068EACB3E0 /* Pods-randomjournalUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,11 +448,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 007DDCB12140575E00047CE4 /* Build configuration list for PBXNativeTarget "randomjournal" */;
 			buildPhases = (
+				D162982DE78DE936DA072C4E /* [CP] Check Pods Manifest.lock */,
 				007DDC852140575800047CE4 /* Sources */,
 				007DDC862140575800047CE4 /* Frameworks */,
 				007DDC872140575800047CE4 /* Resources */,
 				007DDCBF21417F3F00047CE4 /* Embed Frameworks */,
-				007DDCC321417FEF00047CE4 /* ShellScript */,
+				D99D6A9EABB0822297723AAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,9 +468,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 007DDCB42140575E00047CE4 /* Build configuration list for PBXNativeTarget "randomjournalTests" */;
 			buildPhases = (
+				722A008AB222135293636A83 /* [CP] Check Pods Manifest.lock */,
 				007DDC992140575E00047CE4 /* Sources */,
 				007DDC9A2140575E00047CE4 /* Frameworks */,
 				007DDC9B2140575E00047CE4 /* Resources */,
+				F5EE62638BF54868B132E5E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -392,6 +488,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 007DDCB72140575E00047CE4 /* Build configuration list for PBXNativeTarget "randomjournalUITests" */;
 			buildPhases = (
+				DEC9C4CE7DCA047FACE69295 /* [CP] Check Pods Manifest.lock */,
 				007DDCA42140575E00047CE4 /* Sources */,
 				007DDCA52140575E00047CE4 /* Frameworks */,
 				007DDCA62140575E00047CE4 /* Resources */,
@@ -481,18 +578,111 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		007DDCC321417FEF00047CE4 /* ShellScript */ = {
+		722A008AB222135293636A83 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-randomjournalTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D162982DE78DE936DA072C4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-randomjournal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D99D6A9EABB0822297723AAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-randomjournal/Pods-randomjournal-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
+				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-randomjournal/Pods-randomjournal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEC9C4CE7DCA047FACE69295 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-randomjournalUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5EE62638BF54868B132E5E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-randomjournalTests/Pods-randomjournalTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
+				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-randomjournalTests/Pods-randomjournalTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -501,8 +691,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E5C33E2188E0AC00A2FE33 /* rjReminderStatusTableViewCell.swift in Sources */,
 				007DDD022162B1BA00047CE4 /* rjTutorialViewController.swift in Sources */,
+				00DB084921A707AE00A1CA1F /* rjCellViewModelPressable.swift in Sources */,
+				00DB083921A608D600A1CA1F /* rjTimeTableViewCell.swift in Sources */,
 				007DDCEF2144339F00047CE4 /* rjAppSettings.swift in Sources */,
+				00DB084D21A71B5400A1CA1F /* rjTimeCellViewModel.swift in Sources */,
 				007DDD4F2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift in Sources */,
 				007DDD002162AE9300047CE4 /* rjTabBarController.swift in Sources */,
 				007DDCC92141853700047CE4 /* rjMomentMgr.swift in Sources */,
@@ -513,23 +707,30 @@
 				007DDCED21442AD900047CE4 /* rjSettingsTableViewController.swift in Sources */,
 				007DDD482163C6FF00047CE4 /* rjViewMomentTableViewController.swift in Sources */,
 				007DDC8D2140575800047CE4 /* rjAppDelegate.swift in Sources */,
+				00DB084721A7068300A1CA1F /* rjCellConfigurable.swift in Sources */,
 				007DDCBB2140881500047CE4 /* rjAddMomentViewController.swift in Sources */,
 				007DDCE12142D03B00047CE4 /* rjMomentTableViewCell.swift in Sources */,
-				007DDCEB214424DA00047CE4 /* rjSettingsTimeInputTableViewCell.swift in Sources */,
 				007DDD5A2174E3E000047CE4 /* rjReminderMgr.swift in Sources */,
+				00E5C33B2188DA3C00A2FE33 /* rjReminderSettingsTableViewController.swift in Sources */,
 				007DDCF521514F5100047CE4 /* rjSettingsButtonTableViewCell.swift in Sources */,
 				007DDD042162C05F00047CE4 /* rjTutorialFinishViewController.swift in Sources */,
 				007DDCE521441FD000047CE4 /* rjReminderScheduler.swift in Sources */,
+				00DB084B21A70B5D00A1CA1F /* rjTimeSelectCellViewModel.swift in Sources */,
+				00DB086021B5BC6F00A1CA1F /* rjIdentifiable.swift in Sources */,
 				007DDCF721516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift in Sources */,
+				00DB085121ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift in Sources */,
 				007DDCF12144379800047CE4 /* rjReminder.swift in Sources */,
+				00DB083B21A608ED00A1CA1F /* rjTimeSelectTableViewCell.swift in Sources */,
 				00E5C329217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift in Sources */,
 				00E5C320217A3C2E00A2FE33 /* rjExportFileFormat.swift in Sources */,
+				00DB084F21A71E8500A1CA1F /* rjReminderStatusCellViewModel.swift in Sources */,
 				00E5C32F217E4C4800A2FE33 /* rjTipCollectionViewCell.swift in Sources */,
 				007DDD532166551A00047CE4 /* rjCommonButtonTableViewCell.swift in Sources */,
 				003DC3E72178EF2E006B42EF /* rjImportMomentsViewController.swift in Sources */,
-				007DDCE9214424A400047CE4 /* rjSettingsNumberInputTableViewCell.swift in Sources */,
 				007DDCD52141A0E700047CE4 /* rjCommon.swift in Sources */,
+				00DB084221A7038900A1CA1F /* rjCellViewModel.swift in Sources */,
 				007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */,
+				00DB085F21B5BC6F00A1CA1F /* rjIdentifiableComponent.swift in Sources */,
 				00E5C327217B6FA100A2FE33 /* rjMomentPageViewController.swift in Sources */,
 				00E5C31B217A27CE00A2FE33 /* rjMomentImporter.swift in Sources */,
 			);
@@ -700,6 +901,7 @@
 		};
 		007DDCB22140575E00047CE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7050C6F3FBDD903D70508D19 /* Pods-randomjournal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -722,6 +924,7 @@
 		};
 		007DDCB32140575E00047CE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E5289EA7B6730CADC459C6E /* Pods-randomjournal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -744,6 +947,7 @@
 		};
 		007DDCB52140575E00047CE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EE6DFE21BC09CFF720C8324 /* Pods-randomjournalTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -769,6 +973,7 @@
 		};
 		007DDCB62140575E00047CE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A57AF8EA0B1A6F1986D79D6A /* Pods-randomjournalTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -794,6 +999,7 @@
 		};
 		007DDCB82140575E00047CE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F9D588D4AEE28B7D7174C8F /* Pods-randomjournalUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -814,6 +1020,7 @@
 		};
 		007DDCB92140575E00047CE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ECD9BCDF90388068EACB3E0 /* Pods-randomjournalUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

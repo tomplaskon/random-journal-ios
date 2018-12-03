@@ -1,0 +1,6 @@
+framework module Pods_randomjournalUITests {
+  umbrella header "Pods-randomjournalUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

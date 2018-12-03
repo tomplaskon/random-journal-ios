@@ -1,0 +1,34 @@
+PODS:
+  - Bond (6.10.2):
+    - Differ (~> 1.3)
+    - ReactiveKit (~> 3.9)
+  - Differ (1.3.0)
+  - ReactiveKit (3.9.7)
+  - Realm (3.11.2):
+    - Realm/Headers (= 3.11.2)
+  - Realm/Headers (3.11.2)
+  - RealmSwift (3.11.2):
+    - Realm (= 3.11.2)
+
+DEPENDENCIES:
+  - Bond
+  - RealmSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Bond
+    - Differ
+    - ReactiveKit
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  Bond: 5c9d854fb14d3268496ccaf9b7ccd8428ec1609c
+  Differ: 9fcee7602542d7c6484ce05a0faec1c11258ed63
+  ReactiveKit: 5f4c440715d671901c382ae6b42ed3337ce4699b
+  Realm: 864477d028db77f7c5a0cba64a4892ad53db128a
+  RealmSwift: 12b8262fc08020b47de4fd88eb3d5c9425b34ec7
+
+PODFILE CHECKSUM: 7c765257fb724ee2c9f49874fe9af84353d502d1
+
+COCOAPODS: 1.5.3

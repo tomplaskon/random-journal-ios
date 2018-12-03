@@ -11,6 +11,8 @@ import UIKit
 class rjAppSettings {
     let remindersEnabledDefaultsKey = "rjRemindersEnabled"
     let tutorialShownDefaultsKey = "rjTutorialShown"
+    let reminderStartTimeOffsetDefaultsKey = "rjReminderStartTimeOffset"
+    let reminderEndTimeOffsetDefaultsKey = "rjReminderEndTimeOffset"
 
     var shuffleMoments = false
     
@@ -25,13 +27,36 @@ class rjAppSettings {
     }
     
     // seconds from beginning of day
-    func getReminderStartTime() -> Int {
-        return 9*60*60
+    func getReminderStartTimeOffset() -> Int {
+        let defaults = UserDefaults.standard
+        
+        if defaults.object(forKey: reminderStartTimeOffsetDefaultsKey) == nil {
+            return 9*60*60
+        }
+        
+        return defaults.integer(forKey: reminderStartTimeOffsetDefaultsKey)
     }
     
-    // secons from beginning of day
-    func getReminderEndTime() -> Int {
-        return 22*60*60
+    func setReminderStartTimeOffset(_ offset: Int) {
+        let defaults = UserDefaults.standard
+        
+        defaults.set(offset, forKey: reminderStartTimeOffsetDefaultsKey)
+    }
+    
+    // seconds from beginning of day
+    func getReminderEndTimeOffset() -> Int {
+        let defaults = UserDefaults.standard
+        
+        if defaults.object(forKey: reminderEndTimeOffsetDefaultsKey) == nil {
+            return 22*60*60
+        }
+        
+        return defaults.integer(forKey: reminderEndTimeOffsetDefaultsKey)
+    }
+    
+    func setReminderEndTimeOffset(_ offset: Int) {
+        let defaults = UserDefaults.standard
+        defaults.set(offset, forKey: reminderEndTimeOffsetDefaultsKey)
     }
     
     func areRemindersEnabled() -> Bool {

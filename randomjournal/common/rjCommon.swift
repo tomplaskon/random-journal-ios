@@ -60,4 +60,33 @@ class rjCommon {
     static func getRandomInt(from : Int, to : Int) -> Int {
         return Int(arc4random_uniform(UInt32(to-from)) + UInt32(from))
     }
+    
+    static func getDate(offset: Int) -> Date {
+        let beginningOfDay = getDateAtBeginningOfDay(Date())
+
+        let calendar = Calendar.current
+        var dateComp = DateComponents()
+        dateComp.second = offset
+        let date = calendar.date(byAdding:dateComp, to: beginningOfDay)
+        
+        return date!
+    }
+    
+    static func getOffset(date: Date) -> Int {
+        let beginningOfDay = getDateAtBeginningOfDay(date)
+        return Int(date.timeIntervalSince1970 - beginningOfDay.timeIntervalSince1970)
+    }
+    
+    static func getReadableTimeOffset(_ time : Int) -> String {
+        let calendar = Calendar.current
+        
+        var date = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
+        date = calendar.date(byAdding: .second, value: time, to: date)!
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        let dateString = dateFormatter.string(from: date)
+        
+        return dateString
+    }
 }

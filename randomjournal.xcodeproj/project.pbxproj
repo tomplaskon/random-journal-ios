@@ -341,7 +341,6 @@
 			children = (
 				00DB086121B5C68000A1CA1F /* main */,
 				00DB085C21B5BB6B00A1CA1F /* reminder */,
-				00E5C33A2188DA3C00A2FE33 /* rjReminderSettingsTableViewController.swift */,
 				003DC3E62178EF2E006B42EF /* rjImportMomentsViewController.swift */,
 			);
 			path = settings;
@@ -405,6 +404,7 @@
 			children = (
 				00E5C33C2188E07A00A2FE33 /* tablecells */,
 				00DB084321A7055B00A1CA1F /* viewmodels */,
+				00E5C33A2188DA3C00A2FE33 /* rjReminderSettingsTableViewController.swift */,
 			);
 			path = reminder;
 			sourceTree = "<group>";

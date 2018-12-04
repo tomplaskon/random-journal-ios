@@ -8,7 +8,7 @@
 
 import UIKit
 
-class rjCommonTitleTableViewCell: UITableViewCell {
+class rjCommonTitleTableViewCell: UITableViewCell, rjCellConfigurable {
 
     @IBOutlet weak var lblTitle: UILabel!
     
@@ -22,5 +22,12 @@ class rjCommonTitleTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+ 
+    func setup(viewModel: rjCellViewModel) {
+        guard let viewModel = viewModel as? rjCommonTitleCellViewModel else {
+            fatalError("Expected rjCommonTitleCellViewModel")
+        }
+        
+        lblTitle.text = viewModel.title
+    }
 }

@@ -52,6 +52,10 @@
 		00DB085121ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB085021ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift */; };
 		00DB085F21B5BC6F00A1CA1F /* rjIdentifiableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB085D21B5BC6F00A1CA1F /* rjIdentifiableComponent.swift */; };
 		00DB086021B5BC6F00A1CA1F /* rjIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB085E21B5BC6F00A1CA1F /* rjIdentifiable.swift */; };
+		00DB086421B5C7DE00A1CA1F /* rjSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB086321B5C7DE00A1CA1F /* rjSettingsViewModel.swift */; };
+		00DB086621B5C82600A1CA1F /* rjCommonButtonCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB086521B5C82600A1CA1F /* rjCommonButtonCellViewModel.swift */; };
+		00DB086821B5C95000A1CA1F /* rjCommonTitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB086721B5C95000A1CA1F /* rjCommonTitleCellViewModel.swift */; };
+		00DB086A21B5F27200A1CA1F /* rjCSVExportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB086921B5F27200A1CA1F /* rjCSVExportViewModel.swift */; };
 		00E5C319217A27A700A2FE33 /* rjMomentExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C318217A27A700A2FE33 /* rjMomentExporter.swift */; };
 		00E5C31B217A27CE00A2FE33 /* rjMomentImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C31A217A27CE00A2FE33 /* rjMomentImporter.swift */; };
 		00E5C31D217A3B4900A2FE33 /* rjMomentExportImportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C31C217A3B4900A2FE33 /* rjMomentExportImportTest.swift */; };
@@ -151,6 +155,10 @@
 		00DB085021ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderSettingsViewModel.swift; sourceTree = "<group>"; };
 		00DB085D21B5BC6F00A1CA1F /* rjIdentifiableComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rjIdentifiableComponent.swift; sourceTree = "<group>"; };
 		00DB085E21B5BC6F00A1CA1F /* rjIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rjIdentifiable.swift; sourceTree = "<group>"; };
+		00DB086321B5C7DE00A1CA1F /* rjSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjSettingsViewModel.swift; sourceTree = "<group>"; };
+		00DB086521B5C82600A1CA1F /* rjCommonButtonCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommonButtonCellViewModel.swift; sourceTree = "<group>"; };
+		00DB086721B5C95000A1CA1F /* rjCommonTitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommonTitleCellViewModel.swift; sourceTree = "<group>"; };
+		00DB086921B5F27200A1CA1F /* rjCSVExportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCSVExportViewModel.swift; sourceTree = "<group>"; };
 		00E5C318217A27A700A2FE33 /* rjMomentExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentExporter.swift; sourceTree = "<group>"; };
 		00E5C31A217A27CE00A2FE33 /* rjMomentImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentImporter.swift; sourceTree = "<group>"; };
 		00E5C31C217A3B4900A2FE33 /* rjMomentExportImportTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentExportImportTest.swift; sourceTree = "<group>"; };
@@ -331,7 +339,8 @@
 		007DDCE321441F2200047CE4 /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				00DB085C21B5BB6B00A1CA1F /* remindersettings */,
+				00DB086121B5C68000A1CA1F /* main */,
+				00DB085C21B5BB6B00A1CA1F /* reminder */,
 				00E5C33A2188DA3C00A2FE33 /* rjReminderSettingsTableViewController.swift */,
 				003DC3E62178EF2E006B42EF /* rjImportMomentsViewController.swift */,
 			);
@@ -352,21 +361,9 @@
 			children = (
 				00DB085521AEF6A700A1CA1F /* cells */,
 				00DB085421AEF66500A1CA1F /* viewmodels */,
-				007DDD4A2163DE4400047CE4 /* ui */,
 				007DDCD42141A0E700047CE4 /* rjCommon.swift */,
 			);
 			path = common;
-			sourceTree = "<group>";
-		};
-		007DDD4A2163DE4400047CE4 /* ui */ = {
-			isa = PBXGroup;
-			children = (
-				007DDD4D2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift */,
-				007DDD4E2163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib */,
-				007DDD512166551A00047CE4 /* rjCommonButtonTableViewCell.swift */,
-				007DDD522166551A00047CE4 /* rjCommonButtonTableViewCell.xib */,
-			);
-			path = ui;
 			sourceTree = "<group>";
 		};
 		00DB084321A7055B00A1CA1F /* viewmodels */ = {
@@ -384,6 +381,8 @@
 			isa = PBXGroup;
 			children = (
 				00DB084121A7038900A1CA1F /* rjCellViewModel.swift */,
+				00DB086521B5C82600A1CA1F /* rjCommonButtonCellViewModel.swift */,
+				00DB086721B5C95000A1CA1F /* rjCommonTitleCellViewModel.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -393,18 +392,39 @@
 			children = (
 				00DB084821A707AE00A1CA1F /* rjCellViewModelPressable.swift */,
 				00DB084621A7068300A1CA1F /* rjCellConfigurable.swift */,
+				007DDD4D2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift */,
+				007DDD4E2163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib */,
+				007DDD512166551A00047CE4 /* rjCommonButtonTableViewCell.swift */,
+				007DDD522166551A00047CE4 /* rjCommonButtonTableViewCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
 		};
-		00DB085C21B5BB6B00A1CA1F /* remindersettings */ = {
+		00DB085C21B5BB6B00A1CA1F /* reminder */ = {
 			isa = PBXGroup;
 			children = (
 				00E5C33C2188E07A00A2FE33 /* tablecells */,
 				00DB084321A7055B00A1CA1F /* viewmodels */,
+			);
+			path = reminder;
+			sourceTree = "<group>";
+		};
+		00DB086121B5C68000A1CA1F /* main */ = {
+			isa = PBXGroup;
+			children = (
+				00DB086221B5C70A00A1CA1F /* viewmodels */,
 				007DDCEC21442AD900047CE4 /* rjSettingsTableViewController.swift */,
 			);
-			path = remindersettings;
+			path = main;
+			sourceTree = "<group>";
+		};
+		00DB086221B5C70A00A1CA1F /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				00DB086321B5C7DE00A1CA1F /* rjSettingsViewModel.swift */,
+				00DB086921B5F27200A1CA1F /* rjCSVExportViewModel.swift */,
+			);
+			path = viewmodels;
 			sourceTree = "<group>";
 		};
 		00E5C31E217A3BE900A2FE33 /* export */ = {
@@ -700,6 +720,8 @@
 				007DDD4F2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift in Sources */,
 				007DDD002162AE9300047CE4 /* rjTabBarController.swift in Sources */,
 				007DDCC92141853700047CE4 /* rjMomentMgr.swift in Sources */,
+				00DB086A21B5F27200A1CA1F /* rjCSVExportViewModel.swift in Sources */,
+				00DB086621B5C82600A1CA1F /* rjCommonButtonCellViewModel.swift in Sources */,
 				007DDCC62141822800047CE4 /* rjMoment.swift in Sources */,
 				007DDD442163C20200047CE4 /* rjViewMomentDetailsTableViewCell.swift in Sources */,
 				00E5C319217A27A700A2FE33 /* rjMomentExporter.swift in Sources */,
@@ -721,8 +743,10 @@
 				00DB085121ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift in Sources */,
 				007DDCF12144379800047CE4 /* rjReminder.swift in Sources */,
 				00DB083B21A608ED00A1CA1F /* rjTimeSelectTableViewCell.swift in Sources */,
+				00DB086421B5C7DE00A1CA1F /* rjSettingsViewModel.swift in Sources */,
 				00E5C329217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift in Sources */,
 				00E5C320217A3C2E00A2FE33 /* rjExportFileFormat.swift in Sources */,
+				00DB086821B5C95000A1CA1F /* rjCommonTitleCellViewModel.swift in Sources */,
 				00DB084F21A71E8500A1CA1F /* rjReminderStatusCellViewModel.swift in Sources */,
 				00E5C32F217E4C4800A2FE33 /* rjTipCollectionViewCell.swift in Sources */,
 				007DDD532166551A00047CE4 /* rjCommonButtonTableViewCell.swift in Sources */,

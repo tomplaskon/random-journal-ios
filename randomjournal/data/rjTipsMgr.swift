@@ -19,6 +19,8 @@ class rjTipsMgr {
             "Slow down. Take a few breaths. Run your eyes over the seen. What do you see now?",
             "What are your surroundings?",
             "Are you experiencing any strong emotions or thoughts?",
+            "What emotions are you experiencing?",
+            "What were you thinking about?",
         ]
     }
     

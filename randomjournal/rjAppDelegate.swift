@@ -23,7 +23,8 @@ class rjAppDelegate: UIResponder, UIApplicationDelegate {
     var momentsUpdated = false
     let notificationDelegate = rjReminderNotificationCenterDelegate()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // register our notification configuration
         registerNotificationCenterDelegate()
         

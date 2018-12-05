@@ -31,7 +31,7 @@ class rjViewMomentTableViewController: UITableViewController {
     }
 
     func configureTable() {
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
         tableView.allowsSelection = false
     }
@@ -90,11 +90,11 @@ class rjViewMomentTableViewController: UITableViewController {
     }
     
     @objc func confirmDeleteMoment() {
-        let alert = UIAlertController(title: nil, message: "Are you sure you want to delete this moment?", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.default) { (action:UIAlertAction) in
+        let alert = UIAlertController(title: nil, message: "Are you sure you want to delete this moment?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.default) { (action:UIAlertAction) in
                 self.deleteMoment()
         })
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

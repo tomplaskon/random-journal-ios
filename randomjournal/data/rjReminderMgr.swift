@@ -12,7 +12,7 @@ import RealmSwift
 class rjReminderMgr {
     @discardableResult
     func addReminder(_ reminder: rjReminder) -> String {
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         try! realm.write {
             realm.add(reminder);
         }
@@ -21,26 +21,26 @@ class rjReminderMgr {
     }
     
     func getReminderById(_ reminderId : String) -> rjReminder {
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         return realm.object(ofType: rjReminder.self, forPrimaryKey: reminderId)!
     }
     
     // returns a dictionary that maps reminderId => rjReminder
     func allRemindersMap() -> [String: rjReminder] {
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         let reminders = realm.objects(rjReminder.self)
         return Dictionary(uniqueKeysWithValues: reminders.map{ ($0.reminderId, $0) })
     }
     
     func deleteReminder(_ reminder: rjReminder) {
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         try! realm.write {
             realm.delete(reminder)
         }
     }
     
     func deleteAllReminders() {
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         try! realm.write {
             realm.delete(realm.objects(rjReminder.self))
         }

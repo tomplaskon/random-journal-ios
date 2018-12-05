@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '11.4'
 
 target 'randomjournal' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -10,10 +10,10 @@ target 'randomjournal' do
   pod 'RealmSwift'
 
   target 'randomjournalTests' do
-    pod 'Bond'
-    pod 'RealmSwift'
     inherit! :search_paths
     # Pods for testing
+    pod 'Bond'
+    pod 'RealmSwift'
   end
 
   target 'randomjournalUITests' do
@@ -21,4 +21,9 @@ target 'randomjournal' do
     # Pods for testing
   end
 
+  target 'todaywidget' do
+    inherit! :search_paths
+    pod 'Bond'
+    pod 'RealmSwift'
+  end
 end

@@ -65,7 +65,7 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     }
     
     func showMessage(_ msg: String) {
-        let alert = UIAlertController(title: nil, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: nil, message: msg, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

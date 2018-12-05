@@ -36,20 +36,20 @@ class rjImportMomentsViewController: UIViewController {
     
     func showEmptyPasteboardMsg() {
         let alert = UIAlertController(title: "Pasteboard Empty", message: "Your pasteboard is empty. You need to hold and copy the CSV file from your email first.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     func showInvalidImportFormat() {
         let alert = UIAlertController(title: "Invalid Import Format", message: "The content in your pasteboard has an invalid format. Try copying the file from your email again.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     func showResults(_ importResults : rjMomentImporterResults) {
         // show the results of the import
         let alert = UIAlertController(title: "Import Results", message: "Number moments imported: \(importResults.numMomentsImported)\nNumber moments skipped: \(importResults.numMomentsSkipped)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }

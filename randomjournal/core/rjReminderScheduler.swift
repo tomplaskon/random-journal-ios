@@ -75,7 +75,7 @@ class rjReminderScheduler: NSObject {
             
             let content = UNMutableNotificationContent()
             content.title = "What are you doing right now?"
-            content.sound = .default()
+            content.sound = .default
             
             let request = UNNotificationRequest(identifier: reminder.reminderId, content: content, trigger: trigger)
             

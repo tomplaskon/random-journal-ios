@@ -12,7 +12,7 @@ import RealmSwift
 class rjMomentMgr {
     @discardableResult
     func addMoment(_ moment: rjMoment) -> String {
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         
         moment.momentId = NSUUID().uuidString;
         
@@ -28,7 +28,7 @@ class rjMomentMgr {
             return false
         }
         
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         try! realm.write {
             realm.add(moment);
         }
@@ -37,7 +37,7 @@ class rjMomentMgr {
     }
     
     func getMomentById(_ momentId : String) -> rjMoment? {
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         return realm.object(ofType: rjMoment.self, forPrimaryKey: momentId)
     }
     
@@ -65,21 +65,26 @@ class rjMomentMgr {
         return nil
     }
     
-    func getRandomMoment() -> rjMoment {
+    func getRandomMoment() -> rjMoment? {
         let moments = allMoments()
+        
+        if moments.isEmpty {
+            return nil
+        }
+        
         let randomIndex = rjCommon.getRandomInt(from: 0, to: moments.count-1)
         return moments[randomIndex]
     }
     
     func allMoments() -> Array<rjMoment> {
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         let sort = [SortDescriptor(keyPath: "when", ascending: false), SortDescriptor(keyPath: "momentId", ascending: true)]
 
         return Array(realm.objects(rjMoment.self).sorted(by:sort))
     }
     
     func deleteMoment(_ moment: rjMoment) {
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         try! realm.write {
             realm.delete(moment)
         }

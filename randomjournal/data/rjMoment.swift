@@ -20,7 +20,7 @@ class rjMoment: Object {
     }
     
     func update() {
-        let realm = try! Realm()
+        let realm = rjRealmMgr.shared.defaultRealm
         
         try! realm.write {
             realm.add(self, update: true)

@@ -36,12 +36,12 @@ class rjMomentMgr {
         return true
     }
     
-    func getMomentById(_ momentId : String) -> rjMoment? {
+    func getMomentById(_ momentId: String) -> rjMoment? {
         let realm = rjRealmMgr.shared.defaultRealm
         return realm.object(ofType: rjMoment.self, forPrimaryKey: momentId)
     }
     
-    func getPreviousMoment(_ moment : rjMoment) -> rjMoment? {
+    func getPreviousMoment(_ moment: rjMoment) -> rjMoment? {
         let moments = allMoments()
         if let momentIndex = moments.index(of: moment) {
             let previousMomentIndex = momentIndex + 1
@@ -53,7 +53,7 @@ class rjMomentMgr {
         return nil
     }
 
-    func getNextMoment(_ moment : rjMoment) -> rjMoment? {
+    func getNextMoment(_ moment: rjMoment) -> rjMoment? {
         let moments = allMoments()
         if let momentIndex = moments.index(of: moment) {
             let nextMomentIndex = momentIndex - 1
@@ -88,5 +88,20 @@ class rjMomentMgr {
         try! realm.write {
             realm.delete(moment)
         }
+    }
+    
+    @discardableResult
+    func updateMoment(_ momentId: String, when: Int, details: String) -> Bool {
+        let realm = rjRealmMgr.shared.defaultRealm
+        
+        if let moment = self.getMomentById(momentId) {
+            try! realm.write {
+                moment.when = when
+                moment.details = details
+            }
+            return true
+        }
+        
+        return false
     }
 }

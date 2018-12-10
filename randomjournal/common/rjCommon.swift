@@ -11,6 +11,7 @@ import Foundation
 class rjCommon {
     static let commonButtonReuseId = "commonbutton"
     static let commonTitleReuseId = "commontitle"
+    static let commonSpacerReuseId = "commonspacer"
 
     static func unixTimestamp() -> Int {
         return Int(Date().timeIntervalSince1970)
@@ -60,6 +61,14 @@ class rjCommon {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
+        let dateString = dateFormatter.string(from: date)
+        
+        return dateString
+    }
+    
+    static func getReadableDateLong(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd YYYY hh:mm a"
         let dateString = dateFormatter.string(from: date)
         
         return dateString

@@ -19,21 +19,11 @@ class rjMoment: Object {
         return "momentId"
     }
     
-    func update() {
-        let realm = rjRealmMgr.shared.defaultRealm
-        
-        try! realm.write {
-            realm.add(self, update: true)
-        }
+    func whenReadableLong() -> String {
+        return rjCommon.getReadableDateLong(whenDate)
     }
     
-    func whenReadableLong() -> String {
-        let date = Date(timeIntervalSince1970: TimeInterval(when))
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd YYYY hh:mm a"
-        let dateString = dateFormatter.string(from: date)
-        
-        return dateString
+    var whenDate: Date {
+        return Date(timeIntervalSince1970: TimeInterval(when))
     }
 }

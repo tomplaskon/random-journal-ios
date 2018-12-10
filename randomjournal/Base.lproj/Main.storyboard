@@ -16,6 +16,7 @@
                 <navigationController id="Lan-tA-dAW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="Tq6-50-Sby"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Sp-Go-Pxz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -231,6 +232,7 @@
                 <navigationController id="Ykr-sL-T5N" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Moments" id="i2y-e7-2ib"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KPm-XQ-Icj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -328,6 +330,9 @@
                             <outlet property="delegate" destination="A4p-BP-9ZB" id="4tQ-a9-9MF"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="GVb-dl-rI5" kind="show" identifier="editmoment" id="ZT6-sg-Gsj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ll1-TX-xeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -370,7 +375,126 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcC-no-Ilx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4588.8000000000002" y="-931.93403298350836"/>
+            <point key="canvasLocation" x="3701" y="-1433"/>
+        </scene>
+        <!--Rj Edit Moment Table View Controller-->
+        <scene sceneID="M4H-6K-cUc">
+            <objects>
+                <tableViewController id="GVb-dl-rI5" customClass="rjEditMomentTableViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="b6V-JQ-uRT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dateselect" rowHeight="230" id="eBq-5N-m9j" customClass="rjDateSelectTableViewCell" customModule="randomjournal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="230"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBq-5N-m9j" id="vWa-kB-Ukc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="143" translatesAutoresizingMaskIntoConstraints="NO" id="vDk-Hr-xSo">
+                                            <rect key="frame" x="16" y="16" width="343" height="20"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-3b-rUo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="34" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec 06 2018 10:17AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ht-tX-lhw">
+                                                    <rect key="frame" x="177" y="0.0" width="166" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="GGG-4b-whk"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ml3-y1-529">
+                                            <rect key="frame" x="0.0" y="52" width="375" height="178"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dlh-8J-vrG">
+                                                    <rect key="frame" x="16" y="15" width="343" height="148"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="148" id="JUZ-aS-hB2"/>
+                                                    </constraints>
+                                                    <date key="date" timeIntervalSinceReferenceDate="565802817.71510196">
+                                                        <!--2018-12-06 15:26:57 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="dlh-8J-vrG" firstAttribute="centerY" secondItem="ml3-y1-529" secondAttribute="centerY" id="3S2-gT-OCG"/>
+                                                <constraint firstAttribute="height" constant="178" id="JE1-Gn-O0J"/>
+                                                <constraint firstItem="dlh-8J-vrG" firstAttribute="leading" secondItem="ml3-y1-529" secondAttribute="leading" constant="16" id="OSr-w6-e0V"/>
+                                                <constraint firstAttribute="trailing" secondItem="dlh-8J-vrG" secondAttribute="trailing" constant="16" id="tMj-HI-JgB"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ml3-y1-529" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vDk-Hr-xSo" secondAttribute="bottom" constant="16" id="31q-xw-6Mw"/>
+                                        <constraint firstItem="vDk-Hr-xSo" firstAttribute="leading" secondItem="vWa-kB-Ukc" secondAttribute="leading" constant="16" id="6db-0e-HKT"/>
+                                        <constraint firstAttribute="trailing" secondItem="vDk-Hr-xSo" secondAttribute="trailing" constant="16" id="UE0-MU-0pW"/>
+                                        <constraint firstItem="vDk-Hr-xSo" firstAttribute="top" secondItem="vWa-kB-Ukc" secondAttribute="top" constant="16" id="bTX-uX-pgM"/>
+                                        <constraint firstAttribute="bottom" secondItem="ml3-y1-529" secondAttribute="bottom" id="lff-ep-mdi"/>
+                                        <constraint firstItem="ml3-y1-529" firstAttribute="leading" secondItem="vWa-kB-Ukc" secondAttribute="leading" id="zAO-pS-gyQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="ml3-y1-529" secondAttribute="trailing" id="zIp-6j-5FE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dpDate" destination="dlh-8J-vrG" id="Byv-sG-kw4"/>
+                                    <outlet property="dpHeightConstraint" destination="JE1-Gn-O0J" id="BuP-wQ-b7Z"/>
+                                    <outlet property="lblDate" destination="8Ht-tX-lhw" id="Hal-pl-5vZ"/>
+                                    <outlet property="lblTitle" destination="Dba-3b-rUo" id="J2B-Q8-L4G"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="details" rowHeight="167" id="FST-n6-aFg" customClass="rjEditDetailsTableViewCell" customModule="randomjournal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="258" width="375" height="167"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FST-n6-aFg" id="GQ0-XX-Wcn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J9n-Mc-ykJ">
+                                            <rect key="frame" x="16" y="16" width="343" height="130"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="130" id="B7D-9r-pyz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                    <integer key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="J9n-Mc-ykJ" firstAttribute="top" secondItem="GQ0-XX-Wcn" secondAttribute="top" constant="16" id="017-fW-hWh"/>
+                                        <constraint firstAttribute="trailing" secondItem="J9n-Mc-ykJ" secondAttribute="trailing" constant="16" id="Ogc-iT-LIP"/>
+                                        <constraint firstAttribute="bottom" secondItem="J9n-Mc-ykJ" secondAttribute="bottom" constant="16" id="g6K-Mm-QJ6"/>
+                                        <constraint firstItem="J9n-Mc-ykJ" firstAttribute="leading" secondItem="GQ0-XX-Wcn" secondAttribute="leading" constant="16" id="oCT-Yy-dCr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="txtDetails" destination="J9n-Mc-ykJ" id="aG0-wY-rvy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GVb-dl-rI5" id="XHf-Ph-nMT"/>
+                            <outlet property="delegate" destination="GVb-dl-rI5" id="6b4-jS-JwJ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFh-NZ-XSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4669.6000000000004" y="-931.48425787106453"/>
         </scene>
         <!--Add-->
         <scene sceneID="J1U-DQ-oyb">

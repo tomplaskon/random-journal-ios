@@ -32,7 +32,7 @@ class rjMomentMgrTest: rjTestCase {
         XCTAssertEqual(moment.momentId, momentId)
         
         // save moment
-        moment.update()
+        momentMgr.addMoment(moment)
         
         // load the moment from the persistence layer
         if let moment2 = momentMgr.getMomentById(momentId) {

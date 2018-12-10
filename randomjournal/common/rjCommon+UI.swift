@@ -33,4 +33,14 @@ extension rjCommon {
         cell.btnAction.addTarget(target, action: btnAction, for: .touchUpInside)
         return cell;
     }
+    
+    static func registerCommonSpacerCell(tableView: UITableView) {
+        let commonTitleNib = UINib.init(nibName: "rjCommonSpacerTableViewCell", bundle: nil)
+        tableView.register(commonTitleNib, forCellReuseIdentifier: commonSpacerReuseId)
+    }
+    
+    static func makeSpacerCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: commonSpacerReuseId, for: indexPath) as! rjCommonSpacerTableViewCell
+        return cell;
+    }
 }

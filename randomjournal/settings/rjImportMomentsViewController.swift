@@ -23,7 +23,7 @@ class rjImportMomentsViewController: UIViewController {
             do {
                 let importResults = try momentImporter.importMoments(pasteboardContent)
                 if (importResults.numMomentsImported > 0) {
-                    self.appDelegate.momentsUpdated = true
+                    rjMomentMgr().notifyMomentsUpdated()
                 }
                 self.showResults(importResults)
             } catch {

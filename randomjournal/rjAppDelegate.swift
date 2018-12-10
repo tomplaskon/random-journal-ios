@@ -20,7 +20,6 @@ extension UIViewController {
 class rjAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var momentsUpdated = false
     let notificationDelegate = rjReminderNotificationCenterDelegate()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

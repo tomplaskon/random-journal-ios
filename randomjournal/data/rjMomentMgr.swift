@@ -104,4 +104,8 @@ class rjMomentMgr {
         
         return false
     }
+    
+    func notifyMomentsUpdated() {
+        NotificationCenter.default.post(name: .momentsUpdated, object: nil)
+    }
 }

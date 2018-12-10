@@ -65,10 +65,9 @@ class rjEditMomentViewModel {
     func saveMoment() {
         if let moment = moment, let details = momentDetails.value, let when = momentWhen.value {
 
-            rjMomentMgr().updateMoment(moment.momentId, when: when, details: details)
-            
-            let del = UIApplication.shared.delegate as! rjAppDelegate
-            del.momentsUpdated = true
+            let momentMgr = rjMomentMgr()
+            momentMgr.updateMoment(moment.momentId, when: when, details: details)
+            momentMgr.notifyMomentsUpdated()
             
             returnToRoot.value = true
         }

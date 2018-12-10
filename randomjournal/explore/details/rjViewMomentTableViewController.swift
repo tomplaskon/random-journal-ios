@@ -106,7 +106,7 @@ class rjViewMomentTableViewController: UITableViewController {
         if let mom = self.moment {
             momentMgr.deleteMoment(mom)
             self.navigationController?.popToRootViewController(animated: true);
-            self.appDelegate.momentsUpdated = true
+            momentMgr.notifyMomentsUpdated()
         } else {
             // TODO: common oops message
         }

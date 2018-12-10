@@ -15,15 +15,23 @@ class rjMomentsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         registerMomentCellType()
+        listenForMomentUpdates()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if (appDelegate.momentsUpdated) {
-            self.reloadMomentsTable()
-            appDelegate.momentsUpdated = false
-        }
+    }
+    
+    func listenForMomentUpdates() {
+        NotificationCenter.default.addObserver(self, selector: #selector(momentsUpdated), name: .momentsUpdated, object: nil)
+    }
+    
+    @objc func momentsUpdated() {
+        self.reloadMomentsTable()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .momentsUpdated, object: nil)
     }
     
     func reloadMomentsTable() {

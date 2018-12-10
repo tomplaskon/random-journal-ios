@@ -17,6 +17,8 @@
 		0075278F21B9A8A300EB0002 /* rjCommonSpacerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075278D21B9A8A300EB0002 /* rjCommonSpacerTableViewCell.swift */; };
 		0075279021B9A8A300EB0002 /* rjCommonSpacerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0075278E21B9A8A300EB0002 /* rjCommonSpacerTableViewCell.xib */; };
 		0075279221B9A90900EB0002 /* rjCommonSpacerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075279121B9A90900EB0002 /* rjCommonSpacerCellViewModel.swift */; };
+		0075279921BEBD4D00EB0002 /* rjNotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075279821BEBD4D00EB0002 /* rjNotificationNameExtension.swift */; };
+		0075279A21BEC55F00EB0002 /* rjNotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075279821BEBD4D00EB0002 /* rjNotificationNameExtension.swift */; };
 		007DDC8D2140575800047CE4 /* rjAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDC8C2140575800047CE4 /* rjAppDelegate.swift */; };
 		007DDC922140575800047CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007DDC902140575800047CE4 /* Main.storyboard */; };
 		007DDC942140575E00047CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007DDC932140575E00047CE4 /* Assets.xcassets */; };
@@ -153,6 +155,7 @@
 		0075278D21B9A8A300EB0002 /* rjCommonSpacerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommonSpacerTableViewCell.swift; sourceTree = "<group>"; };
 		0075278E21B9A8A300EB0002 /* rjCommonSpacerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rjCommonSpacerTableViewCell.xib; sourceTree = "<group>"; };
 		0075279121B9A90900EB0002 /* rjCommonSpacerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommonSpacerCellViewModel.swift; sourceTree = "<group>"; };
+		0075279821BEBD4D00EB0002 /* rjNotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjNotificationNameExtension.swift; sourceTree = "<group>"; };
 		007DDC892140575800047CE4 /* randomjournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = randomjournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007DDC8C2140575800047CE4 /* rjAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjAppDelegate.swift; sourceTree = "<group>"; };
 		007DDC912140575800047CE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -460,6 +463,7 @@
 				007DDCF621516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift */,
 				00DB085E21B5BC6F00A1CA1F /* rjIdentifiable.swift */,
 				00DB085D21B5BC6F00A1CA1F /* rjIdentifiableComponent.swift */,
+				0075279821BEBD4D00EB0002 /* rjNotificationNameExtension.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -958,6 +962,7 @@
 				00E5C32B217E414800A2FE33 /* rjTipsMgr.swift in Sources */,
 				0075278221B9797800EB0002 /* rjDateSelectTableViewCell.swift in Sources */,
 				007DDCED21442AD900047CE4 /* rjSettingsTableViewController.swift in Sources */,
+				0075279921BEBD4D00EB0002 /* rjNotificationNameExtension.swift in Sources */,
 				007DDD482163C6FF00047CE4 /* rjViewMomentTableViewController.swift in Sources */,
 				007DDC8D2140575800047CE4 /* rjAppDelegate.swift in Sources */,
 				00DB084721A7068300A1CA1F /* rjCellConfigurable.swift in Sources */,
@@ -1021,6 +1026,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0075279A21BEC55F00EB0002 /* rjNotificationNameExtension.swift in Sources */,
 				00DB088921B8549D00A1CA1F /* rjRealmMgr.swift in Sources */,
 				00DB088321B6DDDB00A1CA1F /* rjCommon.swift in Sources */,
 				00DB088121B6DCD600A1CA1F /* rjMoment.swift in Sources */,

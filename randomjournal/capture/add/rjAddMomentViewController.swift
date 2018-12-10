@@ -95,9 +95,8 @@ class rjAddMomentViewController: UIViewController {
         momentMgr.addMoment(moment)
         
         // let everyone else know the moments have been updated
-        // TODO: change this to a notification
-        appDelegate.momentsUpdated = true;
-
+        momentMgr.notifyMomentsUpdated()
+        
         // send us back to the moments list
         if let tabBarController = appDelegate.window!.rootViewController as? UITabBarController {
             tabBarController.selectedIndex = 0

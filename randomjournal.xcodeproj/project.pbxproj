@@ -19,6 +19,8 @@
 		0075279221B9A90900EB0002 /* rjCommonSpacerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075279121B9A90900EB0002 /* rjCommonSpacerCellViewModel.swift */; };
 		0075279921BEBD4D00EB0002 /* rjNotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075279821BEBD4D00EB0002 /* rjNotificationNameExtension.swift */; };
 		0075279A21BEC55F00EB0002 /* rjNotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075279821BEBD4D00EB0002 /* rjNotificationNameExtension.swift */; };
+		0075279D21BEC7E900EB0002 /* rjMomentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075279C21BEC7E900EB0002 /* rjMomentModel.swift */; };
+		0075279E21BECB1E00EB0002 /* rjMomentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075279C21BEC7E900EB0002 /* rjMomentModel.swift */; };
 		007DDC8D2140575800047CE4 /* rjAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDC8C2140575800047CE4 /* rjAppDelegate.swift */; };
 		007DDC922140575800047CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 007DDC902140575800047CE4 /* Main.storyboard */; };
 		007DDC942140575E00047CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007DDC932140575E00047CE4 /* Assets.xcassets */; };
@@ -156,6 +158,7 @@
 		0075278E21B9A8A300EB0002 /* rjCommonSpacerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rjCommonSpacerTableViewCell.xib; sourceTree = "<group>"; };
 		0075279121B9A90900EB0002 /* rjCommonSpacerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommonSpacerCellViewModel.swift; sourceTree = "<group>"; };
 		0075279821BEBD4D00EB0002 /* rjNotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjNotificationNameExtension.swift; sourceTree = "<group>"; };
+		0075279C21BEC7E900EB0002 /* rjMomentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentModel.swift; sourceTree = "<group>"; };
 		007DDC892140575800047CE4 /* randomjournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = randomjournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007DDC8C2140575800047CE4 /* rjAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjAppDelegate.swift; sourceTree = "<group>"; };
 		007DDC912140575800047CE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -359,6 +362,14 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		0075279B21BEC78F00EB0002 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0075279C21BEC7E900EB0002 /* rjMomentModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		007DDC802140575800047CE4 = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +405,7 @@
 				007DDD492163DE1B00047CE4 /* common */,
 				007DDCD32141A0C300047CE4 /* core */,
 				007DDCC4214180A300047CE4 /* data */,
+				0075279B21BEC78F00EB0002 /* model */,
 				00E5C31E217A3BE900A2FE33 /* export */,
 				007DDC8C2140575800047CE4 /* rjAppDelegate.swift */,
 				007DDC902140575800047CE4 /* Main.storyboard */,
@@ -962,6 +974,7 @@
 				00E5C32B217E414800A2FE33 /* rjTipsMgr.swift in Sources */,
 				0075278221B9797800EB0002 /* rjDateSelectTableViewCell.swift in Sources */,
 				007DDCED21442AD900047CE4 /* rjSettingsTableViewController.swift in Sources */,
+				0075279D21BEC7E900EB0002 /* rjMomentModel.swift in Sources */,
 				0075279921BEBD4D00EB0002 /* rjNotificationNameExtension.swift in Sources */,
 				007DDD482163C6FF00047CE4 /* rjViewMomentTableViewController.swift in Sources */,
 				007DDC8D2140575800047CE4 /* rjAppDelegate.swift in Sources */,
@@ -1026,6 +1039,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0075279E21BECB1E00EB0002 /* rjMomentModel.swift in Sources */,
 				0075279A21BEC55F00EB0002 /* rjNotificationNameExtension.swift in Sources */,
 				00DB088921B8549D00A1CA1F /* rjRealmMgr.swift in Sources */,
 				00DB088321B6DDDB00A1CA1F /* rjCommon.swift in Sources */,

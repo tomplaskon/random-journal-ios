@@ -18,6 +18,14 @@ class rjMoment: Object {
     override static func primaryKey() -> String? {
         return "momentId"
     }
+
+    func populate(_ momentModel: rjMomentModel, updateId: Bool = true) {
+        if updateId {
+            self.momentId = momentModel.id
+        }
+        self.when = momentModel.whenInt
+        self.details = momentModel.details
+    }
     
     func whenReadableLong() -> String {
         return rjCommon.getReadableDateLong(whenDate)

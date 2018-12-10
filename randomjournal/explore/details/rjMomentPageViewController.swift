@@ -9,7 +9,7 @@
 import UIKit
 
 class rjMomentPageViewController: UIPageViewController {
-    var startingMoment : rjMoment?
+    var startingMoment : rjMomentModel?
     var currentPageVC : UIViewController?
 
     override func viewDidLoad() {

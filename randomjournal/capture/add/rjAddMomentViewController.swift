@@ -87,12 +87,11 @@ class rjAddMomentViewController: UIViewController {
     
     @IBAction func btnSavePressed(_ sender: Any) {
         // save the moment
-        let moment = rjMoment()
-        moment.when = rjCommon.unixTimestamp()
-        moment.details = txtDetails.text
+        let when = Date()
+        let details = txtDetails.text ?? ""
         
         let momentMgr = rjMomentMgr()
-        momentMgr.addMoment(moment)
+        momentMgr.addMoment(when: when, details: details)
         
         // let everyone else know the moments have been updated
         momentMgr.notifyMomentsUpdated()

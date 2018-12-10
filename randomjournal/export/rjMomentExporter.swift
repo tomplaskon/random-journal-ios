@@ -9,13 +9,13 @@
 import UIKit
 
 class rjMomentExporter {
-    func getCSVContent(_ moments : [rjMoment]) -> String {
+    func getCSVContent(_ moments : [rjMomentModel]) -> String {
         var csvContent = rjExportFileFormat.getHeaderLine()
 
         for moment in moments {
             let lineElements = [
-                moment.momentId,
-                String(moment.when),
+                moment.id,
+                String(moment.whenInt),
                 moment.whenReadableLong(),
                 cleanDetails(moment.details)
             ]

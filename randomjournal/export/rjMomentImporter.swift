@@ -19,7 +19,7 @@ class rjMomentImporterResults {
 
 class rjMomentImporter {
     
-    func processMoments(_ content : String, onSuccess closure: (rjMoment) -> (Bool)) throws -> rjMomentImporterResults {
+    func processMoments(_ content : String, onSuccess closure: (rjMomentModel) -> (Bool)) throws -> rjMomentImporterResults {
         let cleanContent = cleanLineEndings(content)
         let lines = cleanContent.components(separatedBy: rjExportFileFormat.lineDelimiter)
         
@@ -81,7 +81,7 @@ class rjMomentImporter {
         return cleanContent
     }
     
-    func getMomentFromLine(_ line : String) -> rjMoment? {
+    func getMomentFromLine(_ line : String) -> rjMomentModel? {
         // validate fields
         let fields = line.components(separatedBy: rjExportFileFormat.fieldDelimiter)
         if fields.count != 4 {
@@ -93,17 +93,14 @@ class rjMomentImporter {
             return nil
         }
         
-        guard let when = Int(fields[1].trimmingCharacters(in: .whitespaces)) else {
+        guard let whenInt = Int(fields[1].trimmingCharacters(in: .whitespaces)), let whenTime = TimeInterval(exactly: whenInt)  else {
             return nil
         }
+        let when = Date(timeIntervalSince1970: whenTime)
         
         let details = self.cleanDescription(fields[3]).trimmingCharacters(in: .whitespaces)
         
-        // save the moment
-        let moment = rjMoment()
-        moment.momentId = id
-        moment.when = when
-        moment.details = details
+        let moment = rjMomentModel(id: id, when: when, details: details)
         
         return moment
     }

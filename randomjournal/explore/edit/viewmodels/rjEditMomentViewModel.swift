@@ -13,24 +13,24 @@ class rjEditMomentViewModel {
     let cellViewModels = MutableObservableArray<rjCellViewModel>()
     var returnToRoot = Observable<Bool>(false)
     
-    private var moment: rjMoment?
+    private var moment: rjMomentModel?
     private var momentDetails = Observable<String?>(nil)
-    private var momentWhen = Observable<Int?>(nil)
+    private var momentWhen = Observable<Date?>(nil)
 
     init() {
         
     }
     
-    func start(moment: rjMoment) {
+    func start(moment: rjMomentModel) {
         self.moment = moment
         buildCellViewModels(moment: moment)
     }
     
-    private func buildCellViewModels(moment: rjMoment) {
+    private func buildCellViewModels(moment: rjMomentModel) {
         let title = rjCommonTitleCellViewModel(title: "Edit Moment")
         cellViewModels.append(title)
         
-        let dateSelect = makeDateSelectCellViewModel(date: moment.whenDate)
+        let dateSelect = makeDateSelectCellViewModel(date: moment.when)
         cellViewModels.append(dateSelect)
         
         let details = makeDetailsCellViewModel(details: moment.details)
@@ -50,7 +50,7 @@ class rjEditMomentViewModel {
         _ = viewModel.cellPressed = { [weak viewModel] in
             viewModel?.toggleState()
         }
-        viewModel.selectedDate.map{ Int($0.timeIntervalSince1970) }.bind(to: momentWhen)
+        viewModel.selectedDate.bind(to: momentWhen)
         
         return viewModel
     }
@@ -63,10 +63,13 @@ class rjEditMomentViewModel {
     }
     
     func saveMoment() {
-        if let moment = moment, let details = momentDetails.value, let when = momentWhen.value {
+        if var moment = moment, let details = momentDetails.value, let when = momentWhen.value {
 
+            moment.when = when
+            moment.details = details
+            
             let momentMgr = rjMomentMgr()
-            momentMgr.updateMoment(moment.momentId, when: when, details: details)
+            momentMgr.updateMoment(moment)
             momentMgr.notifyMomentsUpdated()
             
             returnToRoot.value = true

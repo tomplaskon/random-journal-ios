@@ -62,7 +62,7 @@ class rjMomentsTableViewController: UITableViewController {
         return makeMomentCell(tableView : tableView, indexPath: indexPath, moment: moment)
     }
     
-    func makeMomentCell(tableView : UITableView, indexPath : IndexPath, moment : rjMoment) -> UITableViewCell {
+    func makeMomentCell(tableView : UITableView, indexPath : IndexPath, moment : rjMomentModel) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "momentcell", for: indexPath) as! rjMomentTableViewCell
         
         cell.lblDate.text = moment.whenReadableLong()

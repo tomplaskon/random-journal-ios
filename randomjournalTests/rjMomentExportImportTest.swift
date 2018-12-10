@@ -14,7 +14,7 @@ class rjMomentExportImportTest: rjTestCase {
         let exporter = rjMomentExporter()
         let importer = rjMomentImporter()
         
-        let noMoments = [rjMoment]()
+        let noMoments = [rjMomentModel]()
         let export = exporter.getCSVContent(noMoments)
         
         do {
@@ -34,23 +34,25 @@ class rjMomentExportImportTest: rjTestCase {
         let exporter = rjMomentExporter()
         let importer = rjMomentImporter()
         
-        var moments = [rjMoment]()
+        var moments = [rjMomentModel]()
         
-        var moment = rjMoment()
-        moment.when = 1539887921
-        moment.momentId = "113716F8-7252-4D17-BA47-703456BDA686"
-        moment.details = "Hello World!\nHello World Again!"
+        var moment = rjMomentModel(
+            id: "113716F8-7252-4D17-BA47-703456BDA686",
+            when: Date(timeIntervalSince1970: 1539887921),
+            details: "Hello World!\nHello World Again!"
+        )
         moments.append(moment)
         
-        moment = rjMoment()
-        moment.when = 1539887981
-        moment.momentId = "113716F8-7252-4D17-BA47-703456BDA687"
-        moment.details = "Hello World 2!"
+        moment = rjMomentModel(
+            id: "113716F8-7252-4D17-BA47-703456BDA687",
+            when: Date(timeIntervalSince1970: 1539887981),
+            details: "Hello World 2!"
+        )
         moments.append(moment)
         
         let export = exporter.getCSVContent(moments)
         
-        var exportedMoments = [rjMoment]()
+        var exportedMoments = [rjMomentModel]()
         
         do {
             let result = try importer.processMoments(export) { moment in
@@ -59,8 +61,8 @@ class rjMomentExportImportTest: rjTestCase {
             }
             
             XCTAssertEqual(exportedMoments.count, 2)
-            assertMomentsEqual(exportedMoments[0], moments[0])
-            assertMomentsEqual(exportedMoments[1], moments[1])
+            XCTAssertEqual(exportedMoments[0], moments[0])
+            XCTAssertEqual(exportedMoments[1], moments[1])
             
             XCTAssertEqual(result.numMomentsImported, 2)
             XCTAssertEqual(result.numMomentsSkipped, 0)

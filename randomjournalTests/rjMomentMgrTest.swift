@@ -21,23 +21,17 @@ class rjMomentMgrTest: rjTestCase {
     
     func testAddMoment() {
         let momentMgr = rjMomentMgr();
-        let moment = generateTestMoment();
         
         // create moment
-        let momentId = momentMgr.addMoment(moment)
-        
+        let moment = generateTestMoment();
+
         // verify it has a valid momentId
-        XCTAssertNotEqual(momentId, "")
-        XCTAssertNotEqual(moment.momentId, "")
-        XCTAssertEqual(moment.momentId, momentId)
-        
-        // save moment
-        momentMgr.addMoment(moment)
+        XCTAssertNotEqual(moment.id, "")
         
         // load the moment from the persistence layer
-        if let moment2 = momentMgr.getMomentById(momentId) {
+        if let moment2 = momentMgr.getMomentById(moment.id) {
             // verify the moments have the same data
-            assertMomentsEqual(moment, moment2)
+            XCTAssertEqual(moment, moment2)
         } else {
             XCTFail("No moment returned by getMomentById")
         }
@@ -45,14 +39,13 @@ class rjMomentMgrTest: rjTestCase {
     
     func testAllMoments() {
         let momentMgr = rjMomentMgr();
-        let moment = generateTestMoment();
 
         // get the current number of moments we have stored
         let currentNumMoments = momentMgr.allMoments().count
         
         // create a new moment
-        momentMgr.addMoment(moment)
-        
+        let _ = generateTestMoment();
+
         XCTAssertEqual(currentNumMoments+1, momentMgr.allMoments().count)
         
     }

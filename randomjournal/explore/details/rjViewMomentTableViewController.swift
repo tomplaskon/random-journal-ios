@@ -17,7 +17,7 @@ class rjViewMomentTableViewController: UITableViewController {
     let editButtonCellIndex = 5
     let deleteButtonCellIndex = 6
     
-    var moment : rjMoment?
+    var moment : rjMomentModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,7 @@ class rjViewMomentTableViewController: UITableViewController {
         }
     }
 
-    func makeDetailsCell(tableView: UITableView, cellForRowAt indexPath: IndexPath, moment: rjMoment?) -> UITableViewCell {
+    func makeDetailsCell(tableView: UITableView, cellForRowAt indexPath: IndexPath, moment: rjMomentModel?) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "details", for: indexPath) as! rjViewMomentDetailsTableViewCell
         
         cell.lblDetails.text = moment?.details
@@ -76,7 +76,7 @@ class rjViewMomentTableViewController: UITableViewController {
         return cell
     }
     
-    func makeDateCell(tableView: UITableView, cellForRowAt indexPath: IndexPath, moment: rjMoment?) -> UITableViewCell {
+    func makeDateCell(tableView: UITableView, cellForRowAt indexPath: IndexPath, moment: rjMomentModel?) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "details", for: indexPath) as! rjViewMomentDetailsTableViewCell
         
         cell.lblDetails.text = moment?.whenReadableLong()
@@ -104,7 +104,7 @@ class rjViewMomentTableViewController: UITableViewController {
     func deleteMoment() {
         let momentMgr = rjMomentMgr()
         if let mom = self.moment {
-            momentMgr.deleteMoment(mom)
+            momentMgr.deleteMoment(mom.id)
             self.navigationController?.popToRootViewController(animated: true);
             momentMgr.notifyMomentsUpdated()
         } else {

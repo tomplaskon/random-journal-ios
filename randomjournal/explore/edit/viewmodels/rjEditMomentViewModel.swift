@@ -13,7 +13,7 @@ class rjEditMomentViewModel {
     let cellViewModels = MutableObservableArray<rjCellViewModel>()
     var returnToRoot = Observable<Bool>(false)
     
-    private var moment: rjMomentModel?
+    private var moment: rjMomentViewModel?
     private var momentDetails = Observable<String?>(nil)
     private var momentWhen = Observable<Date?>(nil)
 
@@ -21,12 +21,12 @@ class rjEditMomentViewModel {
         
     }
     
-    func start(moment: rjMomentModel) {
+    func start(moment: rjMomentViewModel) {
         self.moment = moment
         buildCellViewModels(moment: moment)
     }
     
-    private func buildCellViewModels(moment: rjMomentModel) {
+    private func buildCellViewModels(moment: rjMomentViewModel) {
         let title = rjCommonTitleCellViewModel(title: "Edit Moment")
         cellViewModels.append(title)
         
@@ -63,13 +63,15 @@ class rjEditMomentViewModel {
     }
     
     func saveMoment() {
-        if var moment = moment, let details = momentDetails.value, let when = momentWhen.value {
-
-            moment.when = when
-            moment.details = details
+        if let moment = moment, let details = momentDetails.value, let when = momentWhen.value {
             
             let momentMgr = rjMomentMgr()
-            momentMgr.updateMoment(moment)
+            let momentModel = rjMomentViewModel(
+                id: moment.id,
+                when: when,
+                details: details
+            )
+            momentMgr.updateMoment(momentModel)
             momentMgr.notifyMomentsUpdated()
             
             returnToRoot.value = true

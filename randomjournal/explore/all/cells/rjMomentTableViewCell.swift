@@ -23,4 +23,8 @@ class rjMomentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setup(viewModel: rjMomentViewModel) {
+        lblDate.text = viewModel.whenReadableLong
+        lblDetails.text = viewModel.details
+    }
 }

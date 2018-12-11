@@ -14,7 +14,7 @@ class rjMomentExportImportTest: rjTestCase {
         let exporter = rjMomentExporter()
         let importer = rjMomentImporter()
         
-        let noMoments = [rjMomentModel]()
+        let noMoments = [rjMomentViewModel]()
         let export = exporter.getCSVContent(noMoments)
         
         do {
@@ -34,16 +34,16 @@ class rjMomentExportImportTest: rjTestCase {
         let exporter = rjMomentExporter()
         let importer = rjMomentImporter()
         
-        var moments = [rjMomentModel]()
+        var moments = [rjMomentViewModel]()
         
-        var moment = rjMomentModel(
+        var moment = rjMomentViewModel(
             id: "113716F8-7252-4D17-BA47-703456BDA686",
             when: Date(timeIntervalSince1970: 1539887921),
             details: "Hello World!\nHello World Again!"
         )
         moments.append(moment)
         
-        moment = rjMomentModel(
+        moment = rjMomentViewModel(
             id: "113716F8-7252-4D17-BA47-703456BDA687",
             when: Date(timeIntervalSince1970: 1539887981),
             details: "Hello World 2!"
@@ -52,7 +52,7 @@ class rjMomentExportImportTest: rjTestCase {
         
         let export = exporter.getCSVContent(moments)
         
-        var exportedMoments = [rjMomentModel]()
+        var exportedMoments = [rjMomentViewModel]()
         
         do {
             let result = try importer.processMoments(export) { moment in

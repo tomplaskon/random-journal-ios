@@ -15,7 +15,7 @@ class rjMomentExporterTest: rjTestCase {
     func testGetCSVContent_empty() {
         let exporter = rjMomentExporter()
         
-        let noMoments = [rjMomentModel]()
+        let noMoments = [rjMomentViewModel]()
         let export = exporter.getCSVContent(noMoments)
         
         XCTAssertEqual(export, headerLine)
@@ -27,7 +27,7 @@ class rjMomentExporterTest: rjTestCase {
         113716F8-7252-4D17-BA47-703456BDA686|1539887921|Oct 18 2018 02:38 PM|Hello World!
         """
         
-        let moment = rjMomentModel(
+        let moment = rjMomentViewModel(
             id: "113716F8-7252-4D17-BA47-703456BDA686",
             when: Date(timeIntervalSince1970: 1539887921),
             details: "Hello World!"
@@ -45,7 +45,7 @@ class rjMomentExporterTest: rjTestCase {
         113716F8-7252-4D17-BA47-703456BDA686|1539887921|Oct 18 2018 02:38 PM|Hello World!
         """
         
-        let moment = rjMomentModel(
+        let moment = rjMomentViewModel(
             id: "113716F8-7252-4D17-BA47-703456BDA686",
             when: Date(timeIntervalSince1970: 1539887921),
             details: "Hello|World!"
@@ -64,16 +64,16 @@ class rjMomentExporterTest: rjTestCase {
         113716F8-7252-4D17-BA47-703456BDA687|1539887981|Oct 18 2018 02:39 PM|Hello World 2!
         """
         
-        var moments = [rjMomentModel]()
+        var moments = [rjMomentViewModel]()
         
-        var moment = rjMomentModel(
+        var moment = rjMomentViewModel(
             id: "113716F8-7252-4D17-BA47-703456BDA686",
             when: Date(timeIntervalSince1970: 1539887921),
             details: "Hello World!"
         )
         moments.append(moment)
 
-        moment = rjMomentModel(
+        moment = rjMomentViewModel(
             id: "113716F8-7252-4D17-BA47-703456BDA687",
             when: Date(timeIntervalSince1970: 1539887981),
             details: "Hello World 2!"
@@ -93,16 +93,16 @@ class rjMomentExporterTest: rjTestCase {
         113716F8-7252-4D17-BA47-703456BDA687|1539887981|Oct 18 2018 02:39 PM|Hello World 2!
         """
         
-        var moments = [rjMomentModel]()
+        var moments = [rjMomentViewModel]()
         
-        var moment = rjMomentModel(
+        var moment = rjMomentViewModel(
             id: "113716F8-7252-4D17-BA47-703456BDA686",
             when: Date(timeIntervalSince1970: 1539887921),
             details: "Hello World!\nHello World Again!"
         )
         moments.append(moment)
         
-        moment = rjMomentModel(
+        moment = rjMomentViewModel(
             id: "113716F8-7252-4D17-BA47-703456BDA687",
             when: Date(timeIntervalSince1970: 1539887981),
             details: "Hello World 2!"

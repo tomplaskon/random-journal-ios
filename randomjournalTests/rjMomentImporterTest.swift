@@ -53,7 +53,7 @@ class rjMomentImporterTest: rjTestCase {
         """
 
         let importer = rjMomentImporter()
-        var moments = [rjMomentModel]()
+        var moments = [rjMomentViewModel]()
         
         do {
             let result = try importer.processMoments(export) { moment in
@@ -90,7 +90,7 @@ class rjMomentImporterTest: rjTestCase {
         """
         
         let importer = rjMomentImporter()
-        var moments = [rjMomentModel]()
+        var moments = [rjMomentViewModel]()
         
         do {
             let result = try importer.processMoments(export) { moment in
@@ -126,7 +126,7 @@ class rjMomentImporterTest: rjTestCase {
         """
         
         let importer = rjMomentImporter()
-        var moments = [rjMomentModel]()
+        var moments = [rjMomentViewModel]()
         
         do {
             let result = try importer.processMoments(export) { moment in

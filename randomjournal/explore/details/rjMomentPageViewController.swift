@@ -9,7 +9,7 @@
 import UIKit
 
 class rjMomentPageViewController: UIPageViewController {
-    var startingMoment : rjMomentModel?
+    var startingMoment : rjMomentViewModel?
     var currentPageVC : UIViewController?
 
     override func viewDidLoad() {
@@ -81,7 +81,10 @@ extension rjMomentPageViewController : UIPageViewControllerDataSource {
         if (rjAppSettings.shared.shuffleMoments) {
             let randomMoment = momentMgr.getRandomMoment()
             let nextMomentVC = makeViewMomentTableViewController()
-            nextMomentVC.moment = randomMoment
+            
+            if let randomMoment = randomMoment {
+                nextMomentVC.moment = randomMoment
+            }
             return nextMomentVC
         } else {
             if let currentVC = viewController as? rjViewMomentTableViewController, let currentMoment = currentVC.moment, let nextMoment = momentMgr.getPreviousMoment(currentMoment) {

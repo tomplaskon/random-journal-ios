@@ -10,11 +10,6 @@ import Foundation
 import Bond
 
 class rjTodayViewModel {
-    struct rjMomentViewModel {
-        let date: String
-        let details: String
-    }
-    
     let moment = Observable<rjMomentViewModel?>(nil)
     
     func start() {
@@ -23,12 +18,10 @@ class rjTodayViewModel {
     
     func update() {
         let momentMgr = rjMomentMgr()
-        let momentData = momentMgr.getRandomMoment()
-        
-        if let momentData = momentData {
-            moment.value = rjMomentViewModel(date: momentData.whenReadableLong(), details: momentData.details)
+        if let momentModel = momentMgr.getRandomMoment() {
+            moment.value = momentModel
         } else {
-            moment.value = rjMomentViewModel(date: "", details: "No moments to display")
+            moment.value = nil
         }
     }
 }

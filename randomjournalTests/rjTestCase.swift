@@ -10,7 +10,7 @@ import XCTest
 @testable import randomjournal
 
 class rjTestCase: XCTestCase {
-    func generateTestMoment() -> rjMomentModel {
+    func generateTestMoment() -> rjMomentViewModel {
         let momentMgr = rjMomentMgr()
         let details = "Test details " + String(rjCommon.unixTimestampMilliseconds())
         let when = Date()

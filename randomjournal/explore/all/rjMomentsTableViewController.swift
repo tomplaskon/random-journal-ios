@@ -9,17 +9,48 @@
 import UIKit
 
 class rjMomentsTableViewController: UITableViewController {
-    var moments = rjMomentMgr().allMoments()
+    let momentsViewModel = rjMomentsViewModel()
+    let momentCellIdentifier = "momentcell"
+    let emptyCellIdentifier = "emptystate"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        registerMomentCellType()
         listenForMomentUpdates()
+        configureTable()
+        
+        momentsViewModel.start()
+        bindModels()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func configureTable() {
+        registerMomentCellType()
+        tableView.rowHeight = 88
+    }
+    
+    func bindModels() {
+        // bind cell view models to table
+        momentsViewModel.momentCellViewModels.bind(to: tableView) { [momentCellIdentifier, emptyCellIdentifier] dataSource, indexPath, tableView in
+            
+            switch dataSource[indexPath.row] {
+            case .moment(let moment):
+                let cell = tableView.dequeueReusableCell(withIdentifier: momentCellIdentifier, for: indexPath)
+                if let cell = cell as? rjMomentTableViewCell {
+                    cell.setup(viewModel: moment)
+                }
+                return cell
+            case .empty():
+                return tableView.dequeueReusableCell(withIdentifier: emptyCellIdentifier, for: indexPath)
+            }
+
+        }
+        
+        // watch for details
+        _ = momentsViewModel.momentToViewDetails.observeNext { [weak self] moment in
+            if moment != nil {
+                self?.performSegue(withIdentifier: "viewmoment", sender: nil)
+            }
+        }
     }
     
     func listenForMomentUpdates() {
@@ -27,81 +58,28 @@ class rjMomentsTableViewController: UITableViewController {
     }
     
     @objc func momentsUpdated() {
-        self.reloadMomentsTable()
+        momentsViewModel.update()
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .momentsUpdated, object: nil)
     }
     
-    func reloadMomentsTable() {
-        moments = rjMomentMgr().allMoments()
-        tableView.reloadData()
-    }
-    
     func registerMomentCellType() {
         let momentCellNib = UINib.init(nibName: "rjMomentTableViewCell", bundle: nil)
-        self.tableView.register(momentCellNib, forCellReuseIdentifier: "momentcell")
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return max(moments.count, 1)
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (moments.count == 0) {
-            // there are no moments, show the empty state
-            return makeEmptyStateCell(tableView : tableView , indexPath : indexPath)
-        }
-        
-        let moment = moments[indexPath.row]
-        return makeMomentCell(tableView : tableView, indexPath: indexPath, moment: moment)
-    }
-    
-    func makeMomentCell(tableView : UITableView, indexPath : IndexPath, moment : rjMomentModel) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "momentcell", for: indexPath) as! rjMomentTableViewCell
-        
-        cell.lblDate.text = moment.whenReadableLong()
-        
-        cell.lblDetails.text = moment.details
-        
-        return cell;
-    }
-    
-    func makeEmptyStateCell(tableView : UITableView, indexPath : IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "emptystate", for: indexPath)
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 88.0
+        self.tableView.register(momentCellNib, forCellReuseIdentifier: momentCellIdentifier)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "viewmoment", sender: nil)
+        momentsViewModel.tappedMoment(index: indexPath.row)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let segueId = segue.identifier {
             if segueId == "viewmoment" {
-                /*
-                if let viewMomentVC = segue.destination as? rjViewMomentTableViewController {
-                    let momentIndex = self.tableView.indexPathForSelectedRow!.row
-                    let moment = moments[momentIndex]
-                    viewMomentVC.moment = moment
-                }
-                */
-                
-                if let momentPageVC = segue.destination as? rjMomentPageViewController {
-                    let momentIndex = self.tableView.indexPathForSelectedRow!.row
-                    let moment = moments[momentIndex]
-                    
+                if let momentPageVC = segue.destination as? rjMomentPageViewController, let moment = momentsViewModel.momentToViewDetails.value {
                     momentPageVC.startingMoment = moment
                 }
-                    
             }
         }
     }

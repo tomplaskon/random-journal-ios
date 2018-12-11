@@ -9,7 +9,7 @@
 import UIKit
 
 class rjEditMomentTableViewController: UITableViewController {
-    var moment: rjMomentModel?
+    var moment: rjMomentViewModel?
     var editMomentViewModel = rjEditMomentViewModel()
     
     override func viewDidLoad() {

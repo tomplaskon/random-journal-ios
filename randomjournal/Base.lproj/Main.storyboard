@@ -236,7 +236,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="8Ho-5v-yt2" kind="relationship" relationship="rootViewController" id="qqa-6C-D47"/>
+                        <segue destination="8Ho-5v-yt2" kind="relationship" relationship="rootViewController" id="WSQ-wa-dqR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82h-c4-wzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,7 +247,7 @@
         <scene sceneID="WpT-tb-IFW">
             <objects>
                 <tableViewController id="8Ho-5v-yt2" customClass="rjMomentsTableViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0bt-lQ-DUp">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0bt-lQ-DUp" customClass="uiviewcontroller">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

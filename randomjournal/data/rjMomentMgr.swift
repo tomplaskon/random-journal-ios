@@ -14,7 +14,7 @@ class rjMomentMgr {
     func addMoment(when: Date, details: String) -> String {
         let moment = rjMoment()
         
-        let momentModel = rjMomentModel(id: NSUUID().uuidString, when: when, details: details)
+        let momentModel = rjMomentViewModel(id: NSUUID().uuidString, when: when, details: details)
         moment.populate(momentModel)
         
         return addMoment(moment)
@@ -31,7 +31,7 @@ class rjMomentMgr {
         return moment.momentId
     }
     
-    func importMoment(_ momentModel: rjMomentModel) -> Bool {
+    func importMoment(_ momentModel: rjMomentViewModel) -> Bool {
         if let _ = self.getMomentById(momentModel.id) {
             return false
         }
@@ -44,9 +44,9 @@ class rjMomentMgr {
         return true
     }
     
-    func getMomentById(_ momentId: String) -> rjMomentModel? {
+    func getMomentById(_ momentId: String) -> rjMomentViewModel? {
         if let moment = getMomentDataModelById(momentId) {
-            return rjMomentModel(moment)
+            return rjMomentViewModel(moment)
         }
         return nil
     }
@@ -59,7 +59,7 @@ class rjMomentMgr {
         return nil
     }
     
-    func getPreviousMoment(_ momentModel: rjMomentModel) -> rjMomentModel? {
+    func getPreviousMoment(_ momentModel: rjMomentViewModel) -> rjMomentViewModel? {
         let moments = allMoments()
         if let momentIndex = moments.firstIndex(of: momentModel) {
             let previousMomentIndex = momentIndex + 1
@@ -71,7 +71,7 @@ class rjMomentMgr {
         return nil
     }
 
-    func getNextMoment(_ momentModel: rjMomentModel) -> rjMomentModel? {
+    func getNextMoment(_ momentModel: rjMomentViewModel) -> rjMomentViewModel? {
         let moments = allMoments()
         if let momentIndex = moments.firstIndex(of: momentModel) {
             let nextMomentIndex = momentIndex - 1
@@ -83,7 +83,7 @@ class rjMomentMgr {
         return nil
     }
     
-    func getRandomMoment() -> rjMomentModel? {
+    func getRandomMoment() -> rjMomentViewModel? {
         let moments = allMoments()
         
         if moments.isEmpty {
@@ -94,11 +94,11 @@ class rjMomentMgr {
         return moments[randomIndex]
     }
     
-    func allMoments() -> Array<rjMomentModel> {
+    func allMoments() -> Array<rjMomentViewModel> {
         let realm = rjRealmMgr.shared.defaultRealm
         let sort = [SortDescriptor(keyPath: "when", ascending: false), SortDescriptor(keyPath: "momentId", ascending: true)]
 
-        return Array(realm.objects(rjMoment.self).sorted(by:sort).map { rjMomentModel($0) })
+        return Array(realm.objects(rjMoment.self).sorted(by:sort).map { rjMomentViewModel($0) })
     }
     
     @discardableResult
@@ -117,7 +117,7 @@ class rjMomentMgr {
     }
     
     @discardableResult
-    func updateMoment(_ momentModel: rjMomentModel) -> Bool {
+    func updateMoment(_ momentModel: rjMomentViewModel) -> Bool {
         guard let moment = self.getMomentDataModelById(momentModel.id) else {
             return false
         }

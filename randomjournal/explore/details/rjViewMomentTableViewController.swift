@@ -17,7 +17,7 @@ class rjViewMomentTableViewController: UITableViewController {
     let editButtonCellIndex = 5
     let deleteButtonCellIndex = 6
     
-    var moment : rjMomentModel?
+    var moment : rjMomentViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,7 @@ class rjViewMomentTableViewController: UITableViewController {
         }
     }
 
-    func makeDetailsCell(tableView: UITableView, cellForRowAt indexPath: IndexPath, moment: rjMomentModel?) -> UITableViewCell {
+    func makeDetailsCell(tableView: UITableView, cellForRowAt indexPath: IndexPath, moment: rjMomentViewModel?) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "details", for: indexPath) as! rjViewMomentDetailsTableViewCell
         
         cell.lblDetails.text = moment?.details
@@ -76,10 +76,10 @@ class rjViewMomentTableViewController: UITableViewController {
         return cell
     }
     
-    func makeDateCell(tableView: UITableView, cellForRowAt indexPath: IndexPath, moment: rjMomentModel?) -> UITableViewCell {
+    func makeDateCell(tableView: UITableView, cellForRowAt indexPath: IndexPath, moment: rjMomentViewModel?) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "details", for: indexPath) as! rjViewMomentDetailsTableViewCell
         
-        cell.lblDetails.text = moment?.whenReadableLong()
+        cell.lblDetails.text = moment?.whenReadableLong
         
         return cell
     }

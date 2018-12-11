@@ -19,19 +19,11 @@ class rjMoment: Object {
         return "momentId"
     }
 
-    func populate(_ momentModel: rjMomentModel, updateId: Bool = true) {
+    func populate(_ momentModel: rjMomentViewModel, updateId: Bool = true) {
         if updateId {
             self.momentId = momentModel.id
         }
-        self.when = momentModel.whenInt
+        self.when = Int(momentModel.when.timeIntervalSince1970)
         self.details = momentModel.details
-    }
-    
-    func whenReadableLong() -> String {
-        return rjCommon.getReadableDateLong(whenDate)
-    }
-    
-    var whenDate: Date {
-        return Date(timeIntervalSince1970: TimeInterval(when))
     }
 }

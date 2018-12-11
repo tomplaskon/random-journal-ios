@@ -21,6 +21,7 @@ class rjTipsMgr {
             "Are you experiencing any strong emotions or thoughts?",
             "What emotions are you experiencing?",
             "What were you thinking about?",
+            "Are you with anyone else?",
         ]
     }
     

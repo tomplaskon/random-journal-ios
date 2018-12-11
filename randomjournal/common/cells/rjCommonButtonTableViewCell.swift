@@ -9,8 +9,10 @@
 import UIKit
 import Bond
 
-class rjCommonButtonTableViewCell: UITableViewCell, rjCellConfigurable {
+class rjCommonButtonTableViewCell: UITableViewCell {
     @IBOutlet weak var btnAction: UIButton!
+    
+    static let cellIdentifier = rjCommon.commonButtonReuseId
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,11 +20,7 @@ class rjCommonButtonTableViewCell: UITableViewCell, rjCellConfigurable {
         selectionStyle = .none
     }
 
-    func setup(viewModel: rjCellViewModel) {
-        guard let viewModel = viewModel as? rjCommonButtonCellViewModel else {
-            fatalError("Expected rjCommonButtonCellViewModel")
-        }
-        
+    func setup(viewModel: rjCommonButtonCellViewModel) {
         btnAction.setTitle(viewModel.buttonText, for: .normal)
         
         _ = btnAction.reactive.tap.observeNext { [weak viewModel] in

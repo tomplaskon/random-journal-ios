@@ -10,6 +10,11 @@ import Foundation
 import Bond
 
 class rjSettingsViewModel {
+    enum rjCellViewModel {
+        case title(rjCommonTitleCellViewModel)
+        case button(rjCommonButtonCellViewModel)
+    }
+    
     let cellViewModels = MutableObservableArray<rjCellViewModel>()
     let destination = Observable<String?>(nil)
     let selector = Observable<String?>(nil)
@@ -22,24 +27,36 @@ class rjSettingsViewModel {
     }
     
     func buildViewModels() {
-        cellViewModels.append(rjCommonTitleCellViewModel(title: "Settings"))
-        cellViewModels.append(rjCommonButtonCellViewModel(buttonText: "Reminders") { [weak self] in
-            self?.destination.value = "reminders"
-        })
-        cellViewModels.append(rjCommonButtonCellViewModel(buttonText: "Tutorial") { [weak self] in
-            self?.showTutorial.value = true
-        })
-        cellViewModels.append(rjCommonButtonCellViewModel(buttonText: "Export CSV") { [weak self] in
-            self?.exportCSV()
-        })
-        cellViewModels.append(rjCommonButtonCellViewModel(buttonText: "Import CSV") { [weak self] in
-            self?.destination.value = "import"
-        })
-        cellViewModels.append(rjCommonButtonCellViewModel(buttonText: "Show Reminder Schedule") { [weak self] in
-            rjReminderScheduler.shared.getCurrentScheduleReadable() { schedule in
-            self?.reminderSchedule.value = schedule
+        cellViewModels.append(.title(
+            rjCommonTitleCellViewModel(title: "Settings")
+        ))
+        cellViewModels.append(.button(
+            rjCommonButtonCellViewModel(buttonText: "Reminders") { [weak self] in
+                self?.destination.value = "reminders"
             }
-        })
+        ))
+        cellViewModels.append(.button(
+            rjCommonButtonCellViewModel(buttonText: "Tutorial") { [weak self] in
+                self?.showTutorial.value = true
+            }
+        ))
+        cellViewModels.append(.button(
+            rjCommonButtonCellViewModel(buttonText: "Export CSV") { [weak self] in
+                self?.exportCSV()
+            }
+        ))
+        cellViewModels.append(.button(
+            rjCommonButtonCellViewModel(buttonText: "Import CSV") { [weak self] in
+                self?.destination.value = "import"
+            }
+        ))
+        cellViewModels.append(.button(
+            rjCommonButtonCellViewModel(buttonText: "Show Reminder Schedule") { [weak self] in
+                rjReminderScheduler.shared.getCurrentScheduleReadable() { schedule in
+                    self?.reminderSchedule.value = schedule
+                }
+            }
+        ))
     }
     
     func exportCSV() {

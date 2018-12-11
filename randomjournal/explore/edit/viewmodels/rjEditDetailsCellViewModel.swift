@@ -9,9 +9,8 @@
 import Foundation
 import Bond
 
-class rjEditDetailsViewModel: rjCellViewModel {
+class rjEditDetailsCellViewModel {
     let details: Observable<String?>
-    let cellIdentifier = "details"
     
     init(details: String) {
         self.details = Observable(details)

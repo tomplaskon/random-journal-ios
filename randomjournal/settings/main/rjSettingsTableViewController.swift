@@ -33,15 +33,17 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
         settingsViewModel.start()
         
         settingsViewModel.cellViewModels.bind(to: tableView) { dataSource, indexPath, tableView in
-            
-            let cellViewModel = dataSource[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellViewModel.cellIdentifier, for: indexPath)
-            
-            if let cell = cell as? rjCellConfigurable {
-                cell.setup(viewModel: cellViewModel)
+            switch dataSource[indexPath.row] {
+            case .title(let viewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: rjCommonTitleTableViewCell.cellIdentifier, for: indexPath) as! rjCommonTitleTableViewCell
+                cell.setup(viewModel: viewModel)
+                return cell
+                
+            case .button(let viewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: rjCommonButtonTableViewCell.cellIdentifier, for: indexPath) as! rjCommonButtonTableViewCell
+                cell.setup(viewModel: viewModel)
+                return cell
             }
-            
-            return cell
         }
         
         _ = settingsViewModel.destination.observeNext() { [weak self] destination in

@@ -8,9 +8,11 @@
 
 import UIKit
 
-class rjCommonTitleTableViewCell: UITableViewCell, rjCellConfigurable {
+class rjCommonTitleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
+    
+    static let cellIdentifier = rjCommon.commonTitleReuseId
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,11 +20,7 @@ class rjCommonTitleTableViewCell: UITableViewCell, rjCellConfigurable {
         selectionStyle = .none
     }
 
-    func setup(viewModel: rjCellViewModel) {
-        guard let viewModel = viewModel as? rjCommonTitleCellViewModel else {
-            fatalError("Expected rjCommonTitleCellViewModel")
-        }
-        
+    func setup(viewModel: rjCommonTitleCellViewModel) {
         lblTitle.text = viewModel.title
     }
 }

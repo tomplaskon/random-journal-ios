@@ -9,12 +9,11 @@
 import Foundation
 import Bond
 
-class rjTimeSelectCellViewModel: rjCellViewModel, rjCellViewModelPressable {
+class rjTimeSelectCellViewModel: rjCellViewModelPressable {
     let title: String
     let selectedTime: Observable<Date>
     let timeOffsetReadable: Observable<String>
     let isExpanded = Observable(false)
-    let cellIdentifier = "timeselect"
     var cellPressed: (() -> Void)?
 
     init(title:String, time:Int) {

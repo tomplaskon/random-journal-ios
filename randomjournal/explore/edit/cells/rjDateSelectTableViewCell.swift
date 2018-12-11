@@ -8,19 +8,16 @@
 
 import UIKit
 
-class rjDateSelectTableViewCell: UITableViewCell, rjCellConfigurable {
+class rjDateSelectTableViewCell: UITableViewCell {
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var lblDate: UILabel!    
     @IBOutlet var dpHeightConstraint: NSLayoutConstraint!
     @IBOutlet var dpDate: UIDatePicker!
     
     static let dpHeight: CGFloat = 178
-    
-    func setup(viewModel: rjCellViewModel) {
-        guard let viewModel = viewModel as? rjDateSelectCellViewModel else {
-            fatalError("Expected rjDateSelectCellViewModel")
-        }
-        
+    static let cellIdentifier = "dateselect"
+
+    func setup(viewModel: rjDateSelectCellViewModel) {
         lblTitle.text = viewModel.title
     }
 }

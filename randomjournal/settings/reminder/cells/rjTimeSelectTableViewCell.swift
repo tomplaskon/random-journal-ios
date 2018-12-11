@@ -8,19 +8,16 @@
 
 import UIKit
 
-class rjTimeSelectTableViewCell: UITableViewCell, rjCellConfigurable {
+class rjTimeSelectTableViewCell: UITableViewCell {
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var lblTime: UILabel!
     @IBOutlet var dpTime: UIDatePicker!
     @IBOutlet var dpHeightConstraint: NSLayoutConstraint!
     
     static let dpHeight: CGFloat = 177.5
+    static let cellIdentifier = "timeselect"
     
-    func setup(viewModel: rjCellViewModel) {
-        guard let viewModel = viewModel as? rjTimeSelectCellViewModel else {
-            fatalError("Expected rjTimeSelectCellViewModel")
-        }
-        
+    func setup(viewModel: rjTimeSelectCellViewModel) {
         lblTitle.text = viewModel.title
     }
 }

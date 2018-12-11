@@ -8,15 +8,13 @@
 
 import UIKit
 
-class rjEditDetailsTableViewCell: UITableViewCell, rjCellConfigurable {
+class rjEditDetailsTableViewCell: UITableViewCell {
 
     @IBOutlet var txtDetails: UITextView!
     
-    func setup(viewModel: rjCellViewModel) {
-        guard let viewModel = viewModel as? rjEditDetailsViewModel else {
-            fatalError("Expecting rjEditDetailsViewModel")
-        }
-        
+    static let cellIdentifier = "details"
+    
+    func setup(viewModel: rjEditDetailsCellViewModel) {
         txtDetails.text = viewModel.details.value
     }
 }

@@ -10,10 +10,9 @@ import Foundation
 import Bond
 import UserNotifications
 
-class rjReminderStatusCellViewModel: rjCellViewModel {
+class rjReminderStatusCellViewModel {
     let title: String
     let remindersEnabled: Observable<Bool>
-    let cellIdentifier = "reminderstatus"
     let errorMsg = Observable<String>("")
     
     init(title: String, remindersEnabled: Bool) {

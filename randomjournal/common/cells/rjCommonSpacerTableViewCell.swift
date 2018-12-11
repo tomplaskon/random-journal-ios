@@ -10,6 +10,8 @@ import UIKit
 
 class rjCommonSpacerTableViewCell: UITableViewCell {
 
+    static let cellIdentifier = rjCommon.commonSpacerReuseId
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

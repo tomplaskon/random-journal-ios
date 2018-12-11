@@ -10,6 +10,14 @@ import Foundation
 import Bond
 
 class rjEditMomentViewModel {
+    enum rjCellViewModel {
+        case title(rjCommonTitleCellViewModel)
+        case dateSelect(rjDateSelectCellViewModel)
+        case details(rjEditDetailsCellViewModel)
+        case spacer(rjCommonSpacerCellViewModel)
+        case save(rjCommonButtonCellViewModel)
+    }
+    
     let cellViewModels = MutableObservableArray<rjCellViewModel>()
     var returnToRoot = Observable<Bool>(false)
     
@@ -17,10 +25,6 @@ class rjEditMomentViewModel {
     private var momentDetails = Observable<String?>(nil)
     private var momentWhen = Observable<Date?>(nil)
 
-    init() {
-        
-    }
-    
     func start(moment: rjMomentViewModel) {
         self.moment = moment
         buildCellViewModels(moment: moment)
@@ -28,21 +32,21 @@ class rjEditMomentViewModel {
     
     private func buildCellViewModels(moment: rjMomentViewModel) {
         let title = rjCommonTitleCellViewModel(title: "Edit Moment")
-        cellViewModels.append(title)
+        cellViewModels.append(.title(title))
         
         let dateSelect = makeDateSelectCellViewModel(date: moment.when)
-        cellViewModels.append(dateSelect)
+        cellViewModels.append(.dateSelect(dateSelect))
         
         let details = makeDetailsCellViewModel(details: moment.details)
-        cellViewModels.append(details)
+        cellViewModels.append(.details(details))
 
         let spacer = rjCommonSpacerCellViewModel()
-        cellViewModels.append(spacer)
+        cellViewModels.append(.spacer(spacer))
  
         let save = rjCommonButtonCellViewModel(buttonText: "Save") { [weak self] in
             self?.saveMoment()
         }
-        cellViewModels.append(save)
+        cellViewModels.append(.save(save))
     }
     
     private func makeDateSelectCellViewModel(date: Date) -> rjDateSelectCellViewModel {
@@ -55,8 +59,8 @@ class rjEditMomentViewModel {
         return viewModel
     }
     
-    private func makeDetailsCellViewModel(details: String) -> rjEditDetailsViewModel {
-        let viewModel = rjEditDetailsViewModel(details: details)
+    private func makeDetailsCellViewModel(details: String) -> rjEditDetailsCellViewModel {
+        let viewModel = rjEditDetailsCellViewModel(details: details)
         viewModel.details.bind(to: momentDetails)
         
         return viewModel

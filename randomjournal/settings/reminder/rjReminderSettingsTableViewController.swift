@@ -17,55 +17,36 @@ class rjReminderSettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         configureTable()
-        
         reminderSettingsViewModel.start()
-        
-        reminderSettingsViewModel.cellViewModels.bind(to: tableView) { dataSource, indexPath, tableView in
+        bindModels()
+    }
+    
+    private func bindModels() {
+        func getReusableCell(tableView: UITableView, identifier: String, indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
             
-            let cellViewModel = dataSource[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellViewModel.cellIdentifier, for: indexPath)
-            
-            // dispose of any previous bindings
+            // common cell setup goes here
             cell.reactive.bag.dispose()
             
-            // tell cell to configure itself
-            if let cell = cell as? rjCellConfigurable {
-                cell.setup(viewModel: cellViewModel)
-            }
-            
-            // setup bindings for ReminderStatus cell
-            if let cell = cell as? rjReminderStatusTableViewCell, let cellViewModel = cellViewModel as? rjReminderStatusCellViewModel {
-                cellViewModel.remindersEnabled.bind(to: cell.swRemindersEnabled.reactive.isOn)
-
-                cell.swRemindersEnabled.reactive.controlEvents(.touchUpInside).observeNext() { gesture in
-                    cellViewModel.switchPressed()
-                }
-                .dispose(in: cell.reactive.bag)
-                
-                cellViewModel.errorMsg.observeNext() { [weak self] msg in
-                    if !msg.isEmpty {
-                        self?.showErrorMsg(msg)
-                    }
-                }
-                .dispose(in: cell.reactive.bag)
-            }
-            
-            // setup bindings for TimeSelect cells
-            if let cell = cell as? rjTimeSelectTableViewCell, let cellViewModel = cellViewModel as? rjTimeSelectCellViewModel {
-                cellViewModel.timeOffsetReadable.bind(to: cell.lblTime)
-                    .dispose(in: cell.reactive.bag)
-                cellViewModel.selectedTime.bidirectionalBind(to: cell.dpTime.reactive.date)
-                    .dispose(in: cell.reactive.bag)
-                
-                cellViewModel.isExpanded.observeNext { [weak tableView, weak cell] isExpanded in
-                    cell?.dpHeightConstraint.constant = isExpanded ? rjDateSelectTableViewCell.dpHeight : 0
-                    tableView?.beginUpdates()
-                    tableView?.endUpdates()
-                }
-                .dispose(in: cell.reactive.bag)
-            }
-            
             return cell
+        }
+        
+        reminderSettingsViewModel.cellViewModels.bind(to: tableView) { [weak self] dataSource, indexPath, tableView in
+            
+            switch dataSource[indexPath.row] {
+            case .reminderStatus(let viewModel):
+                let cell = getReusableCell(tableView: tableView, identifier: rjReminderStatusTableViewCell.cellIdentifier, indexPath: indexPath) as! rjReminderStatusTableViewCell
+                cell.setup(viewModel: viewModel)
+                self?.bindReminderStatus(cell: cell, viewModel: viewModel)
+                
+                return cell
+            case .timeSelect(let viewModel):
+                let cell = getReusableCell(tableView: tableView, identifier: rjTimeSelectTableViewCell.cellIdentifier, indexPath: indexPath) as! rjTimeSelectTableViewCell
+                cell.setup(viewModel: viewModel)
+                self?.bindTimeSelect(cell: cell, viewModel: viewModel)
+                
+                return cell
+            }
         }
     }
     
@@ -76,9 +57,38 @@ class rjReminderSettingsTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
     
+    private func bindReminderStatus(cell: rjReminderStatusTableViewCell, viewModel: rjReminderStatusCellViewModel) {
+        viewModel.remindersEnabled.bind(to: cell.swRemindersEnabled.reactive.isOn)
+        
+        cell.swRemindersEnabled.reactive.controlEvents(.touchUpInside).observeNext() { gesture in
+            viewModel.switchPressed()
+        }
+        .dispose(in: cell.reactive.bag)
+        
+        viewModel.errorMsg.observeNext() { [weak self] msg in
+            if !msg.isEmpty {
+                self?.showErrorMsg(msg)
+            }
+        }
+        .dispose(in: cell.reactive.bag)
+    }
+    
+    private func bindTimeSelect(cell: rjTimeSelectTableViewCell, viewModel: rjTimeSelectCellViewModel) {
+        viewModel.timeOffsetReadable.bind(to: cell.lblTime)
+            .dispose(in: cell.reactive.bag)
+        viewModel.selectedTime.bidirectionalBind(to: cell.dpTime.reactive.date)
+            .dispose(in: cell.reactive.bag)
+        
+        viewModel.isExpanded.observeNext { [weak tableView, weak cell] isExpanded in
+            cell?.dpHeightConstraint.constant = isExpanded ? rjDateSelectTableViewCell.dpHeight : 0
+            tableView?.beginUpdates()
+            tableView?.endUpdates()
+        }
+        .dispose(in: cell.reactive.bag)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellViewModel = reminderSettingsViewModel.cellViewModels[indexPath.row]
-        if let cellViewModel = cellViewModel as? rjCellViewModelPressable {
+        if let cellViewModel = reminderSettingsViewModel.cellViewModels[indexPath.row].viewModel as? rjCellViewModelPressable {
             cellViewModel.cellPressed?()
         }
         

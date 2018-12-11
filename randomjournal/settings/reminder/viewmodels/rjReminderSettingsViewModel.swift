@@ -10,6 +10,20 @@ import Foundation
 import Bond
 
 class rjReminderSettingsViewModel {
+    enum rjCellViewModel {
+        case timeSelect(rjTimeSelectCellViewModel)
+        case reminderStatus(rjReminderStatusCellViewModel)
+        
+        var viewModel: Any {
+            switch self {
+            case .timeSelect(let viewModel):
+                return viewModel
+            case .reminderStatus(let viewModel):
+                return viewModel
+            }
+        }
+    }
+    
     let cellViewModels = MutableObservableArray<rjCellViewModel>()
     
     private var reminderStatusCellViewModel: rjReminderStatusCellViewModel?
@@ -21,14 +35,14 @@ class rjReminderSettingsViewModel {
     
     func buildViewModels() {
         let reminderStatus = makeReminderStatusCellViewModel()
-        cellViewModels.append(reminderStatus)
+        cellViewModels.append(.reminderStatus(reminderStatus))
         reminderStatusCellViewModel = reminderStatus
         
         let startTime = makeStartTimeCellViewModel()
-        cellViewModels.append(startTime)
+        cellViewModels.append(.timeSelect(startTime))
         
         let endTime = makeEndTimeCellViewModel()
-        cellViewModels.append(endTime)
+        cellViewModels.append(.timeSelect(endTime))
     }
     
     func makeReminderStatusCellViewModel() -> rjReminderStatusCellViewModel {

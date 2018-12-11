@@ -8,14 +8,12 @@
 
 import Foundation
 
-class rjCommonButtonCellViewModel: rjCellViewModel {
+class rjCommonButtonCellViewModel {
     let buttonText: String
     let buttonAction: (() -> ())?
     
     init(buttonText: String, buttonAction: (() -> ())? = nil) {
         self.buttonText = buttonText
         self.buttonAction = buttonAction
-    }
-    
-    let cellIdentifier = rjCommon.commonButtonReuseId    
+    }    
 }

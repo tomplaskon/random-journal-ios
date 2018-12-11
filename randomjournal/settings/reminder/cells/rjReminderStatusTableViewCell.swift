@@ -8,9 +8,11 @@
 
 import UIKit
 
-class rjReminderStatusTableViewCell: UITableViewCell, rjCellConfigurable {
+class rjReminderStatusTableViewCell: UITableViewCell {
     @IBOutlet var swRemindersEnabled: UISwitch!
     @IBOutlet var lblTitle: UILabel!
+    
+    static let cellIdentifier = "reminderstatus"
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,11 +20,7 @@ class rjReminderStatusTableViewCell: UITableViewCell, rjCellConfigurable {
         selectionStyle = .none
     }
 
-    func setup(viewModel: rjCellViewModel) {
-        guard let viewModel = viewModel as? rjReminderStatusCellViewModel else {
-            fatalError("Expecting rjRemindersEnabledCellViewModel")
-        }
-        
+    func setup(viewModel: rjReminderStatusCellViewModel) {
         lblTitle.text = viewModel.title
         swRemindersEnabled.isOn = viewModel.remindersEnabled.value
     }

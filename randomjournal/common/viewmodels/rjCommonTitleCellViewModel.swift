@@ -8,7 +8,6 @@
 
 import Foundation
 
-struct rjCommonTitleCellViewModel: rjCellViewModel {
+struct rjCommonTitleCellViewModel {
     let title: String
-    let cellIdentifier = rjCommon.commonTitleReuseId
 }

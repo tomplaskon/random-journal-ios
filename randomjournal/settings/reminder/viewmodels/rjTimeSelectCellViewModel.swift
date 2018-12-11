@@ -1,5 +1,5 @@
 //
-//  rjTimeSelectCellViewModel.swift
+//  rjTimeCellViewModel.swift
 //  randomjournal
 //
 //  Created by Tom Plaskon on 2018-11-22.
@@ -9,14 +9,28 @@
 import Foundation
 import Bond
 
-class rjTimeSelectCellViewModel: rjCellViewModel {
-    weak var timeCell: rjTimeCellViewModel?
-    
-    let cellIdentifier = "timeselect"
-    let identifiableComponent = rjIdentifiableComponent()
+class rjTimeSelectCellViewModel: rjCellViewModel, rjCellViewModelPressable {
+    let title: String
     let selectedTime: Observable<Date>
+    let timeOffsetReadable: Observable<String>
+    let isExpanded = Observable(false)
+    let cellIdentifier = "timeselect"
+    var cellPressed: (() -> Void)?
+    let identifiableComponent = rjIdentifiableComponent()
+
+    init(title:String, time:Int) {
+        self.title = title
+        selectedTime = Observable(rjCommon.getDate(offset: time))
+        self.timeOffsetReadable = Observable(rjCommon.getReadableTimeOffset(time))
+        
+        setupBind()
+    }
     
-    init(selectedTime: Date) {
-        self.selectedTime = Observable<Date>(selectedTime)
+    func setupBind() {
+        selectedTime.map { "\(rjCommon.getReadableTimeOffset(rjCommon.getOffset(date: $0)))" }.bind(to: timeOffsetReadable)
+    }
+    
+    func toggleState() {
+        isExpanded.value = !isExpanded.value
     }
 }

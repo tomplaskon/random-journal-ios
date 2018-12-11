@@ -48,12 +48,14 @@ class rjReminderSettingsTableViewController: UITableViewController {
             
             // setup bindings for TimeSelect cells
             if let cell = cell as? rjTimeSelectTableViewCell, let cellViewModel = cellViewModel as? rjTimeSelectCellViewModel {
-                cellViewModel.selectedTime.bidirectionalBind(to: cell.dpTime.reactive.date)
-            }
-            
-            // setup bindings for Time cells
-            if let cell = cell as? rjTimeTableViewCell, let cellViewModel = cellViewModel as? rjTimeCellViewModel {
                 cellViewModel.timeOffsetReadable.bind(to: cell.lblTime)
+                cellViewModel.selectedTime.bidirectionalBind(to: cell.dpTime.reactive.date)
+                
+                _ = cellViewModel.isExpanded.observeNext { [weak tableView, weak cell] isExpanded in
+                    cell?.dpHeightConstraint.constant = isExpanded ? rjDateSelectTableViewCell.dpHeight : 0
+                    tableView?.beginUpdates()
+                    tableView?.endUpdates()
+                }
             }
             
             return cell
@@ -65,6 +67,8 @@ class rjReminderSettingsTableViewController: UITableViewController {
         if let cellViewModel = cellViewModel as? rjCellViewModelPressable {
             cellViewModel.cellPressed?()
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func showErrorMsg(_ msg: String) {

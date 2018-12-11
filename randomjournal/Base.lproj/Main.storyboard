@@ -157,62 +157,70 @@
                                     <outlet property="swRemindersEnabled" destination="0oZ-dy-gEq" id="BvE-Ha-UNZ"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="time" id="m8o-kU-7dj" customClass="rjTimeTableViewCell" customModule="randomjournal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeselect" rowHeight="230" id="m8o-kU-7dj" customClass="rjTimeSelectTableViewCell" customModule="randomjournal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="230"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="m8o-kU-7dj" id="L4r-4y-z6S">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="229.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:59 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao0-P1-lqT">
-                                            <rect key="frame" x="273" y="11.5" width="70" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOC-lh-N5p">
-                                            <rect key="frame" x="16" y="11.5" width="33.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="223" translatesAutoresizingMaskIntoConstraints="NO" id="nXu-GK-plT">
+                                            <rect key="frame" x="16" y="16" width="343" height="20"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOC-lh-N5p">
+                                                    <rect key="frame" x="0.0" y="0.0" width="33.5" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:59 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao0-P1-lqT">
+                                                    <rect key="frame" x="256.5" y="0.0" width="86.5" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="C8h-mY-R7V"/>
+                                            </constraints>
+                                        </stackView>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BuB-5c-LTs">
+                                            <rect key="frame" x="0.0" y="52" width="375" height="177.5"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sSB-14-rGI">
+                                                    <rect key="frame" x="16" y="15" width="343" height="148"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="148" id="6BJ-go-O7T"/>
+                                                    </constraints>
+                                                    <date key="date" timeIntervalSinceReferenceDate="564529105.33557296">
+                                                        <!--2018-11-21 21:38:25 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="sSB-14-rGI" secondAttribute="trailing" constant="16" id="0kK-Xc-buz"/>
+                                                <constraint firstAttribute="height" constant="177.5" id="JXi-0d-nFU"/>
+                                                <constraint firstItem="sSB-14-rGI" firstAttribute="leading" secondItem="BuB-5c-LTs" secondAttribute="leading" constant="16" id="Jj5-0P-48n"/>
+                                                <constraint firstItem="sSB-14-rGI" firstAttribute="centerY" secondItem="BuB-5c-LTs" secondAttribute="centerY" id="yHl-Mx-9P4"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="DOC-lh-N5p" firstAttribute="centerY" secondItem="L4r-4y-z6S" secondAttribute="centerY" id="3Cz-Bl-lhB"/>
-                                        <constraint firstItem="Ao0-P1-lqT" firstAttribute="centerY" secondItem="L4r-4y-z6S" secondAttribute="centerY" id="8XX-A6-mOn"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Ao0-P1-lqT" secondAttribute="trailing" constant="16" id="Wri-4t-F98"/>
-                                        <constraint firstItem="DOC-lh-N5p" firstAttribute="leading" secondItem="L4r-4y-z6S" secondAttribute="leading" constant="16" id="ltL-VW-brR"/>
-                                        <constraint firstItem="Ao0-P1-lqT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DOC-lh-N5p" secondAttribute="trailing" constant="16" id="v0y-wn-QAX"/>
+                                        <constraint firstAttribute="trailing" secondItem="nXu-GK-plT" secondAttribute="trailing" constant="16" id="8nT-li-4dl"/>
+                                        <constraint firstAttribute="bottom" secondItem="BuB-5c-LTs" secondAttribute="bottom" id="PvQ-ak-E8T"/>
+                                        <constraint firstItem="BuB-5c-LTs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nXu-GK-plT" secondAttribute="bottom" constant="16" id="Yns-X7-qKR"/>
+                                        <constraint firstItem="nXu-GK-plT" firstAttribute="leading" secondItem="L4r-4y-z6S" secondAttribute="leading" constant="16" id="aqT-iD-WPL"/>
+                                        <constraint firstItem="nXu-GK-plT" firstAttribute="top" secondItem="L4r-4y-z6S" secondAttribute="top" constant="16" id="qK4-jw-wUI"/>
+                                        <constraint firstItem="BuB-5c-LTs" firstAttribute="leading" secondItem="L4r-4y-z6S" secondAttribute="leading" id="rk8-Rr-mbO"/>
+                                        <constraint firstAttribute="trailing" secondItem="BuB-5c-LTs" secondAttribute="trailing" id="th8-uJ-fcC"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dpHeightConstraint" destination="JXi-0d-nFU" id="6Vc-Cr-iRu"/>
+                                    <outlet property="dpTime" destination="sSB-14-rGI" id="QUP-xv-Qfc"/>
                                     <outlet property="lblTime" destination="Ao0-P1-lqT" id="pMv-ih-xPH"/>
                                     <outlet property="lblTitle" destination="DOC-lh-N5p" id="2PJ-AU-97G"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeselect" rowHeight="150" id="sCX-cZ-B4e" customClass="rjTimeSelectTableViewCell" customModule="randomjournal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="116" width="375" height="150"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sCX-cZ-B4e" id="kwa-SE-cq7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sSB-14-rGI">
-                                            <rect key="frame" x="16" y="16" width="343" height="117.5"/>
-                                            <date key="date" timeIntervalSinceReferenceDate="564529105.33557296">
-                                                <!--2018-11-21 21:38:25 +0000-->
-                                            </date>
-                                        </datePicker>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="sSB-14-rGI" secondAttribute="trailing" constant="16" id="6dO-PI-FZj"/>
-                                        <constraint firstItem="sSB-14-rGI" firstAttribute="top" secondItem="kwa-SE-cq7" secondAttribute="top" constant="16" id="ZSq-cv-6rg"/>
-                                        <constraint firstItem="sSB-14-rGI" firstAttribute="leading" secondItem="kwa-SE-cq7" secondAttribute="leading" constant="16" id="avx-MX-nVp"/>
-                                        <constraint firstAttribute="bottom" secondItem="sSB-14-rGI" secondAttribute="bottom" constant="16" id="l1d-lZ-xjW"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="dpTime" destination="sSB-14-rGI" id="NKF-7h-7jC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

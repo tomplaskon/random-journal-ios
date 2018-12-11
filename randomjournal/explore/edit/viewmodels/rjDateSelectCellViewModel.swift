@@ -15,7 +15,6 @@ class rjDateSelectCellViewModel: rjCellViewModel, rjCellViewModelPressable {
     let selectedDate: Observable<Date>
     let isExpanded = Observable<Bool>(false)
     let cellIdentifier = "dateselect"
-    let identifiableComponent = rjIdentifiableComponent()
     var cellPressed: (()->Void)?
     
     init(title: String, date: Date) {

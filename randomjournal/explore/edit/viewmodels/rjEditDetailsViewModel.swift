@@ -12,7 +12,6 @@ import Bond
 class rjEditDetailsViewModel: rjCellViewModel {
     let details: Observable<String?>
     let cellIdentifier = "details"
-    let identifiableComponent = rjIdentifiableComponent()
     
     init(details: String) {
         self.details = Observable(details)

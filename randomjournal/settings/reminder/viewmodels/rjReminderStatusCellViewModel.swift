@@ -14,7 +14,6 @@ class rjReminderStatusCellViewModel: rjCellViewModel {
     let title: String
     let remindersEnabled: Observable<Bool>
     let cellIdentifier = "reminderstatus"
-    let identifiableComponent = rjIdentifiableComponent()
     let errorMsg = Observable<String>("")
     
     init(title: String, remindersEnabled: Bool) {

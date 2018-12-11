@@ -17,6 +17,5 @@ class rjCommonButtonCellViewModel: rjCellViewModel {
         self.buttonAction = buttonAction
     }
     
-    let identifiableComponent = rjIdentifiableComponent()
     let cellIdentifier = rjCommon.commonButtonReuseId    
 }

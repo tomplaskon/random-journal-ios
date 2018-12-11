@@ -10,5 +10,4 @@ import Foundation
 
 class rjCommonSpacerCellViewModel: rjCellViewModel {
     let cellIdentifier = rjCommon.commonSpacerReuseId
-    let identifiableComponent = rjIdentifiableComponent()
 }

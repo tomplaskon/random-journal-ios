@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol rjCellViewModel: rjIdentifiable {
+protocol rjCellViewModel {
     var cellIdentifier: String { get }
 }

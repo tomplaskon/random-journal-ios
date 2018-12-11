@@ -16,7 +16,6 @@ class rjTimeSelectCellViewModel: rjCellViewModel, rjCellViewModelPressable {
     let isExpanded = Observable(false)
     let cellIdentifier = "timeselect"
     var cellPressed: (() -> Void)?
-    let identifiableComponent = rjIdentifiableComponent()
 
     init(title:String, time:Int) {
         self.title = title

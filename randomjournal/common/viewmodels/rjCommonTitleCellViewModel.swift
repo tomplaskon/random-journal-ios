@@ -10,7 +10,5 @@ import Foundation
 
 struct rjCommonTitleCellViewModel: rjCellViewModel {
     let title: String
-    
-    let identifiableComponent = rjIdentifiableComponent()
     let cellIdentifier = rjCommon.commonTitleReuseId
 }

@@ -34,10 +34,8 @@ class rjMomentsTableViewController: UITableViewController {
             
             switch dataSource[indexPath.row] {
             case .moment(let moment):
-                let cell = tableView.dequeueReusableCell(withIdentifier: momentCellIdentifier, for: indexPath)
-                if let cell = cell as? rjMomentTableViewCell {
-                    cell.setup(viewModel: moment)
-                }
+                let cell = tableView.dequeueReusableCell(withIdentifier: momentCellIdentifier, for: indexPath) as! rjMomentTableViewCell
+                cell.setup(viewModel: moment)
                 return cell
             case .empty():
                 return tableView.dequeueReusableCell(withIdentifier: emptyCellIdentifier, for: indexPath)

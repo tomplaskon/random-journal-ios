@@ -32,6 +32,9 @@ class rjEditMomentTableViewController: UITableViewController {
             let cellViewModel = dataSource[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: cellViewModel.cellIdentifier, for: indexPath)
             
+            // dispose of any previous bindings
+            cell.reactive.bag.dispose()
+            
             // tell cell to configure itself
             if let cell = cell as? rjCellConfigurable {
                 cell.setup(viewModel: cellViewModel)
@@ -40,17 +43,21 @@ class rjEditMomentTableViewController: UITableViewController {
             // setup bindings for Date cells
             if let cell = cell as? rjDateSelectTableViewCell, let cellViewModel = cellViewModel as? rjDateSelectCellViewModel {
                 cellViewModel.dateReadable.bind(to: cell.lblDate)
+                    .dispose(in: cell.reactive.bag)
                 cellViewModel.selectedDate.bidirectionalBind(to: cell.dpDate.reactive.date)
+                    .dispose(in: cell.reactive.bag)
                 
-                _ = cellViewModel.isExpanded.observeNext { [weak tableView, weak cell] isExpanded in
+                cellViewModel.isExpanded.observeNext { [weak tableView, weak cell] isExpanded in
                     cell?.dpHeightConstraint.constant = isExpanded ? rjDateSelectTableViewCell.dpHeight : 0
                     tableView?.beginUpdates()
                     tableView?.endUpdates()
                 }
+                .dispose(in: cell.reactive.bag)
             }
             
             if let cell = cell as? rjEditDetailsTableViewCell, let cellViewModel = cellViewModel as? rjEditDetailsViewModel {
                 cellViewModel.details.bidirectionalBind(to: cell.txtDetails.reactive.text)
+                    .dispose(in: cell.reactive.bag)
             }
             
             return cell

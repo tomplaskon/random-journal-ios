@@ -16,9 +16,7 @@ class rjReminderSettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 40
-        tableView.delegate = self
+        configureTable()
         
         reminderSettingsViewModel.start()
         
@@ -69,6 +67,13 @@ class rjReminderSettingsTableViewController: UITableViewController {
             
             return cell
         }
+    }
+    
+    private func configureTable() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 40
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

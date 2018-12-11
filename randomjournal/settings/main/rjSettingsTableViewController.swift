@@ -17,11 +17,16 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.allowsSelection = false
+        configureTable()
+        bindModels()
+    }
+    
+    func configureTable() {
         rjCommon.registerCommonTitleCell(tableView: tableView)
         rjCommon.registerCommonButtonCell(tableView: tableView)
         
-        bindModels()
+        tableView.allowsSelection = false
+        tableView.tableFooterView = UIView()
     }
     
     func bindModels() {

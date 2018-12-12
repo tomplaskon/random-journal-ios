@@ -16,6 +16,21 @@ class rjEditMomentViewModel {
         case details(rjEditDetailsCellViewModel)
         case spacer(rjCommonSpacerCellViewModel)
         case save(rjCommonButtonCellViewModel)
+        
+        var viewModel: Any {
+            switch self {
+            case .title(let viewModel):
+                return viewModel
+            case .dateSelect(let viewModel):
+                return viewModel
+            case .details(let viewModel):
+                return viewModel
+            case .spacer(let viewModel):
+                return viewModel
+            case .save(let viewModel):
+                return viewModel
+            }
+        }
     }
     
     let cellViewModels = MutableObservableArray<rjCellViewModel>()

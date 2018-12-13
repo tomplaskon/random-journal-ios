@@ -12,32 +12,32 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="KGk-i7-Jjw" customClass="rjMomentTableViewCell" customModule="randomjournal" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="105" id="KGk-i7-Jjw" customClass="rjMomentTableViewCell" customModule="randomjournal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="104.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kM-jk-MEJ">
-                        <rect key="frame" x="16" y="8" width="288" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details 1 Details 2 Details 3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S03-GA-chG">
+                        <rect key="frame" x="16" y="16" width="288" height="54"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details 1 Details 2 Details 3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S03-GA-chG">
-                        <rect key="frame" x="16" y="36.5" width="288" height="47"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kM-jk-MEJ">
+                        <rect key="frame" x="16" y="74" width="288" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="S03-GA-chG" secondAttribute="bottom" constant="8" id="8IC-Mr-u2i"/>
-                    <constraint firstItem="1kM-jk-MEJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="FNF-Sd-FnS"/>
-                    <constraint firstItem="S03-GA-chG" firstAttribute="top" secondItem="1kM-jk-MEJ" secondAttribute="bottom" constant="8" id="U4W-4Z-KrU"/>
+                    <constraint firstItem="1kM-jk-MEJ" firstAttribute="top" secondItem="S03-GA-chG" secondAttribute="bottom" constant="4" id="OcO-m9-PU6"/>
                     <constraint firstItem="1kM-jk-MEJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dNG-FN-OcA"/>
                     <constraint firstAttribute="trailing" secondItem="S03-GA-chG" secondAttribute="trailing" constant="16" id="g2S-6P-b0b"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1kM-jk-MEJ" secondAttribute="bottom" constant="16" id="gbV-cC-6Bb"/>
+                    <constraint firstItem="S03-GA-chG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="iBg-34-74L"/>
                     <constraint firstItem="S03-GA-chG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="tAY-TN-t5A"/>
                     <constraint firstAttribute="trailing" secondItem="1kM-jk-MEJ" secondAttribute="trailing" constant="16" id="xuK-zV-6kv"/>
                 </constraints>
@@ -47,7 +47,7 @@
                 <outlet property="lblDate" destination="1kM-jk-MEJ" id="g1q-c5-1Ub"/>
                 <outlet property="lblDetails" destination="S03-GA-chG" id="nAf-No-QSn"/>
             </connections>
-            <point key="canvasLocation" x="36.799999999999997" y="57.121439280359823"/>
+            <point key="canvasLocation" x="36.799999999999997" y="56.671664167916049"/>
         </tableViewCell>
     </objects>
 </document>

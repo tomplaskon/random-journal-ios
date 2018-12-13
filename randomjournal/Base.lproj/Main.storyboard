@@ -293,6 +293,9 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6c4-ek-dcu" customClass="rjMomentSummaryGraphView" customModule="randomjournal" customModuleProvider="target">
                                             <rect key="frame" x="16" y="16" width="343" height="62.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="62.5" id="sYg-6r-kfZ"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>

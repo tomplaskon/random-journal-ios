@@ -25,7 +25,8 @@ class rjMomentsTableViewController: UITableViewController {
     
     func configureTable() {
         registerMomentCellType()
-        tableView.rowHeight = 92
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 89
         tableView.tableFooterView = UIView()
     }
     

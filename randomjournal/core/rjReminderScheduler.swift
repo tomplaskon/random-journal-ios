@@ -99,20 +99,12 @@ class rjReminderScheduler: NSObject {
         
         for item in notificationRequests {
             if let reminder = reminders[item.identifier] {
-                let dayNum = self.getNumDays(from: today, to: reminder.getTriggerDate())
+                let dayNum = rjCommon.getNumDaysBetween(from: today, to: reminder.getTriggerDate())
                 daysAlreadyScheduled.insert(dayNum)
             }
         }
         
         return daysAlreadyScheduled
-    }
-    
-    func getNumDays(from: Date, to: Date) -> Int {
-        let calendar = Calendar.current
-        let fromAtNoon = self.getDateAtMidDay(from)
-        let toAtNoon = self.getDateAtMidDay(to)
-        let components = calendar.dateComponents([.day], from: fromAtNoon, to: toAtNoon)
-        return components.day!
     }
     
     // which days can we schedule reminders on?
@@ -126,12 +118,6 @@ class rjReminderScheduler: NSObject {
         let schedulableDays = self.getDaysThatCanBeScheduled()
         let daysToSchedule = schedulableDays.subtracting(daysAlreadyScheduled)
         return daysToSchedule
-    }
-    
-    // return a Date on the same day with the time set to noon
-    func getDateAtMidDay(_ date : Date) -> Date {
-        let calendar = Calendar.current
-        return calendar.date(bySettingHour: 12, minute: 00, second: 00, of: calendar.startOfDay(for: date))!
     }
     
     // remove orphaned reminders and notification requests

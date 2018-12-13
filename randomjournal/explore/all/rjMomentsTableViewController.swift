@@ -34,9 +34,13 @@ class rjMomentsTableViewController: UITableViewController {
         momentsViewModel.momentCellViewModels.bind(to: tableView) { [momentCellIdentifier, emptyCellIdentifier] dataSource, indexPath, tableView in
             
             switch dataSource[indexPath.row] {
-            case .moment(let moment):
+            case .moment(let viewModel):
                 let cell = tableView.dequeueReusableCell(withIdentifier: momentCellIdentifier, for: indexPath) as! rjMomentTableViewCell
-                cell.setup(viewModel: moment)
+                cell.setup(viewModel: viewModel)
+                return cell
+            case .summaryGraph(let viewModel):
+                let cell = tableView.dequeueReusableCell(withIdentifier: rjMomentSummaryGraphTableViewCell.cellIdentifier, for: indexPath) as! rjMomentSummaryGraphTableViewCell
+                cell.gvSummary.summaryViewModel = viewModel.summaryViewModel
                 return cell
             case .empty():
                 return tableView.dequeueReusableCell(withIdentifier: emptyCellIdentifier, for: indexPath)

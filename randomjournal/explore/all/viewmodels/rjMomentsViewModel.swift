@@ -12,6 +12,7 @@ import Bond
 class rjMomentsViewModel {
     enum rjCellViewModel: Equatable {
         case empty()
+        case summaryGraph(rjMomentSummaryGraphCellViewModel)
         case moment(rjMomentViewModel)
     }
     
@@ -30,10 +31,31 @@ class rjMomentsViewModel {
         let moments = rjMomentMgr().allMoments().map{ rjCellViewModel.moment($0) }
         
         if !moments.isEmpty {
-            momentCellViewModels.replace(with: moments)
+            var viewModels = [rjCellViewModel]()
+            
+            let summaryCellViewModel = makeGraphSummaryCellViewModel()
+            viewModels.append(.summaryGraph(summaryCellViewModel))
+            
+            viewModels.append(contentsOf: moments)
+            
+            momentCellViewModels.replace(with: viewModels)
         } else {
             momentCellViewModels.replace(with: [.empty()])
         }
+    }
+    
+    func makeGraphSummaryCellViewModel() -> rjMomentSummaryGraphCellViewModel {
+        
+        let today = rjCommon.getDateAtEndOfDay(Date())
+        let sevenDaysAgo = rjCommon.getDateAtBeginningOfDay(rjCommon.subtract(days: 6, from: today))
+        
+        var summaryGraphViewModel = rjMomentSummaryGraphViewModel(startDate: sevenDaysAgo, endDate: today)
+        let graphMoments = rjMomentMgr().getMomentsBetween(from: sevenDaysAgo, to: today)
+        summaryGraphViewModel.add(moments: graphMoments)
+        
+        return rjMomentSummaryGraphCellViewModel(
+            summaryViewModel: summaryGraphViewModel
+        )
     }
     
     func tappedMoment(index: Int) {

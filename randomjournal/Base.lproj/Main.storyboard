@@ -283,6 +283,29 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="summarygraph" rowHeight="95" id="Gwf-la-hye" customClass="rjMomentSummaryGraphTableViewCell" customModule="randomjournal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="95"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gwf-la-hye" id="9PX-h1-NvH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6c4-ek-dcu" customClass="rjMomentSummaryGraphView" customModule="randomjournal" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="16" width="343" height="62.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="6c4-ek-dcu" secondAttribute="trailing" constant="16" id="JNx-sz-NLg"/>
+                                        <constraint firstAttribute="bottom" secondItem="6c4-ek-dcu" secondAttribute="bottom" constant="16" id="Jqu-UG-XTq"/>
+                                        <constraint firstItem="6c4-ek-dcu" firstAttribute="top" secondItem="9PX-h1-NvH" secondAttribute="top" constant="16" id="klN-34-os7"/>
+                                        <constraint firstItem="6c4-ek-dcu" firstAttribute="leading" secondItem="9PX-h1-NvH" secondAttribute="leading" constant="16" id="tAu-Cz-tmL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gvSummary" destination="6c4-ek-dcu" id="deX-R8-j5i"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="8Ho-5v-yt2" id="4YN-vi-Cvb"/>
@@ -296,7 +319,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjx-kf-Wbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2132" y="-931"/>
+            <point key="canvasLocation" x="2132" y="-931.48425787106453"/>
         </scene>
         <!--Rj View Moment Table View Controller-->
         <scene sceneID="raZ-7F-Eqa">

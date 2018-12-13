@@ -94,6 +94,14 @@ class rjMomentMgr {
         return moments[randomIndex]
     }
     
+    func getMomentsBetween(from startDate: Date, to endDate: Date) -> [rjMomentViewModel] {
+        let realm = rjRealmMgr.shared.defaultRealm
+        
+        let predicate = NSPredicate(format: "when >= %d and when <= %d", Int(startDate.timeIntervalSince1970), Int(endDate.timeIntervalSince1970))
+        
+        return realm.objects(rjMoment.self).filter(predicate).map { rjMomentViewModel($0) }
+    }
+    
     func allMoments() -> Array<rjMomentViewModel> {
         let realm = rjRealmMgr.shared.defaultRealm
         let sort = [SortDescriptor(keyPath: "when", ascending: false), SortDescriptor(keyPath: "momentId", ascending: true)]

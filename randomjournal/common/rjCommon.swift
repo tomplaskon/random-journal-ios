@@ -73,4 +73,31 @@ class rjCommon {
         
         return dateString
     }
+    
+    // return a Date on the same day with the time set to noon
+    static func getDateAtMidDay(_ date: Date) -> Date {
+        let calendar = Calendar.current
+        return calendar.date(bySettingHour: 12, minute: 00, second: 00, of: calendar.startOfDay(for: date))!
+    }
+    
+    static func getDateAtEndOfDay(_ date: Date) -> Date {
+        let calendar = Calendar.current
+        return calendar.date(bySettingHour: 23, minute: 59, second: 59, of: date)!
+    }
+
+    static func getNumDaysBetween(from: Date, to: Date) -> Int {
+        let calendar = Calendar.current
+        let fromAtNoon = self.getDateAtMidDay(from)
+        let toAtNoon = self.getDateAtMidDay(to)
+        let components = calendar.dateComponents([.day], from: fromAtNoon, to: toAtNoon)
+        return components.day!
+    }
+    
+    static func add(days: Int, to date: Date) -> Date {
+        return date.addingTimeInterval(TimeInterval(days*86400))
+    }
+    
+    static func subtract(days: Int, from date: Date) -> Date {
+        return date.addingTimeInterval(TimeInterval(days * 86400 * -1))
+    }
 }

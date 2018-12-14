@@ -15,8 +15,8 @@ class rjMomentExporter {
         for moment in moments {
             let lineElements = [
                 moment.id,
-                String(moment.whenInt),
-                rjCommon.getReadableDateLong(moment.when),
+                String(moment.when.intValue),
+                rjCommon.getReadableDateLong(moment.when.date),
                 cleanDetails(moment.details)
             ]
             csvContent += rjExportFileFormat.lineDelimiter + lineElements.joined(separator: rjExportFileFormat.fieldDelimiter)

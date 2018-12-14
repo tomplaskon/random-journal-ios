@@ -49,7 +49,7 @@ class rjEditMomentViewModel {
         let title = rjCommonTitleCellViewModel(title: "Edit Moment")
         cellViewModels.append(.title(title))
         
-        let dateSelect = makeDateSelectCellViewModel(date: moment.when)
+        let dateSelect = makeDateSelectCellViewModel(date: moment.when.date)
         cellViewModels.append(.dateSelect(dateSelect))
         
         let details = makeDetailsCellViewModel(details: moment.details)

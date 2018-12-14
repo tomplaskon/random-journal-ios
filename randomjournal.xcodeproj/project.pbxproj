@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		003DC3E72178EF2E006B42EF /* rjImportMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003DC3E62178EF2E006B42EF /* rjImportMomentsViewController.swift */; };
+		0071BAED21C408DA0009C4CE /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BAEC21C408DA0009C4CE /* DateExtensions.swift */; };
+		0071BAEE21C40E300009C4CE /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BAEC21C408DA0009C4CE /* DateExtensions.swift */; };
 		0075277C21B96C5F00EB0002 /* rjEditMomentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075277B21B96C5F00EB0002 /* rjEditMomentTableViewController.swift */; };
 		0075277F21B96D4400EB0002 /* rjEditMomentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075277E21B96D4400EB0002 /* rjEditMomentViewModel.swift */; };
 		0075278221B9797800EB0002 /* rjDateSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075278121B9797800EB0002 /* rjDateSelectTableViewCell.swift */; };
@@ -148,6 +150,7 @@
 
 /* Begin PBXFileReference section */
 		003DC3E62178EF2E006B42EF /* rjImportMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjImportMomentsViewController.swift; sourceTree = "<group>"; };
+		0071BAEC21C408DA0009C4CE /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		0075277B21B96C5F00EB0002 /* rjEditMomentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjEditMomentTableViewController.swift; sourceTree = "<group>"; };
 		0075277E21B96D4400EB0002 /* rjEditMomentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjEditMomentViewModel.swift; sourceTree = "<group>"; };
 		0075278121B9797800EB0002 /* rjDateSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjDateSelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -542,6 +545,7 @@
 				007DDCD42141A0E700047CE4 /* rjCommon.swift */,
 				00DB088421B6DFBC00A1CA1F /* rjCommon+UI.swift */,
 				007527AF21C2B24B00EB0002 /* StringExtensions.swift */,
+				0071BAEC21C408DA0009C4CE /* DateExtensions.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -1011,6 +1015,7 @@
 				0075277F21B96D4400EB0002 /* rjEditMomentViewModel.swift in Sources */,
 				007DDCF721516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift in Sources */,
 				00DB088821B84CE900A1CA1F /* rjRealmMgr.swift in Sources */,
+				0071BAED21C408DA0009C4CE /* DateExtensions.swift in Sources */,
 				00DB085121ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift in Sources */,
 				007DDCF12144379800047CE4 /* rjReminder.swift in Sources */,
 				007527AE21C1CB6100EB0002 /* rjMomentSummaryGraphCellViewModel.swift in Sources */,
@@ -1060,6 +1065,7 @@
 				00DB088921B8549D00A1CA1F /* rjRealmMgr.swift in Sources */,
 				00DB088321B6DDDB00A1CA1F /* rjCommon.swift in Sources */,
 				00DB088121B6DCD600A1CA1F /* rjMoment.swift in Sources */,
+				0071BAEE21C40E300009C4CE /* DateExtensions.swift in Sources */,
 				00DB088221B6DCD600A1CA1F /* rjMomentMgr.swift in Sources */,
 				00DB088B21B857F100A1CA1F /* rjTodayViewModel.swift in Sources */,
 				00DB087421B6C46800A1CA1F /* TodayViewController.swift in Sources */,

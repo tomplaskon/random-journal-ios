@@ -23,7 +23,7 @@ class rjMoment: Object {
         if updateId {
             self.momentId = momentModel.id
         }
-        self.when = Int(momentModel.when.timeIntervalSince1970)
+        self.when = momentModel.when.intValue
         self.details = momentModel.details
     }
 }

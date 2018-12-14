@@ -59,19 +59,11 @@ class rjCommon {
         var date = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
         date = calendar.date(byAdding: .second, value: time, to: date)!
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
-        let dateString = dateFormatter.string(from: date)
-        
-        return dateString
+        return date.with(format: "h:mm a")
     }
     
     static func getReadableDateLong(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd YYYY hh:mm a"
-        let dateString = dateFormatter.string(from: date)
-        
-        return dateString
+        return date.with(format: "MMM d, YYYY @ h:mm a") // Jan 23, 2017 @ 1:23 PM
     }
     
     // return a Date on the same day with the time set to noon

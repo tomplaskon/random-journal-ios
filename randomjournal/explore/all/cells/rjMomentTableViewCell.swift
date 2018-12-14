@@ -24,7 +24,7 @@ class rjMomentTableViewCell: UITableViewCell {
     }
     
     func setup(viewModel: rjMomentViewModel) {
-        lblDate.text = viewModel.whenReadableLong
+        lblDate.text = viewModel.when.contextual
         lblDetails.text = viewModel.details
     }
 }

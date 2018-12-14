@@ -53,7 +53,7 @@ struct rjMomentSummaryGraphViewModel: Equatable {
             maxValue = numWords > (maxValue ?? numWords) ? numWords : (maxValue ?? numWords)
             minValue = numWords < (minValue ?? numWords) ? numWords : (minValue ?? numWords)
             
-            let dayNum = rjCommon.getNumDaysBetween(from: startDate, to: moment.when)
+            let dayNum = rjCommon.getNumDaysBetween(from: startDate, to: moment.when.date)
             if !(0..<columns.count).contains(dayNum) {
                 // this moment is out of range
                 continue

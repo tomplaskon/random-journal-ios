@@ -27,7 +27,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func bindViewModels() {
         _ = todayViewModel.moment.observeNext { [weak self] momentViewModel in
             if let momentViewModel = momentViewModel {
-                self?.lblDate.text = momentViewModel.whenReadableLong
+                self?.lblDate.text = momentViewModel.when.long
                 self?.lblDescription.text = momentViewModel.details
             } else {
                 self?.lblDate.text = ""

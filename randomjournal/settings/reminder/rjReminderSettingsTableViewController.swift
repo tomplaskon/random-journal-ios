@@ -88,10 +88,7 @@ class rjReminderSettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cellViewModel = reminderSettingsViewModel.cellViewModels[indexPath.row].viewModel as? rjCellViewModelPressable {
-            cellViewModel.cellPressed?()
-        }
-        
+        reminderSettingsViewModel.tappedCell(index: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

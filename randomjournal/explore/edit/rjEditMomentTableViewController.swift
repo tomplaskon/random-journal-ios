@@ -101,11 +101,7 @@ class rjEditMomentTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellViewModel = editMomentViewModel.cellViewModels[indexPath.row].viewModel
-        if let cellViewModel = cellViewModel as? rjCellViewModelPressable {
-            cellViewModel.cellPressed?()
-        }
-        
+        editMomentViewModel.tappedCell(index: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 

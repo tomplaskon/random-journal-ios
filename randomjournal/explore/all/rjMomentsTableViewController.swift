@@ -75,7 +75,8 @@ class rjMomentsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        momentsViewModel.tappedMoment(index: indexPath.row)
+        momentsViewModel.tappedCell(index: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

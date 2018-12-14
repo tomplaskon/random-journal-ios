@@ -96,4 +96,11 @@ class rjEditMomentViewModel {
             returnToRoot.value = true
         }
     }
+    
+    func tappedCell(index: Int) {
+        let cellViewModel = cellViewModels[index].viewModel
+        if let cellViewModel = cellViewModel as? rjCellViewModelPressable {
+            cellViewModel.cellPressed?()
+        }
+    }
 }

@@ -58,7 +58,7 @@ class rjMomentsViewModel {
         )
     }
     
-    func tappedMoment(index: Int) {
+    func tappedCell(index: Int) {
         switch momentCellViewModels[index] {
         case .moment(let moment):
             momentToViewDetails.value = moment

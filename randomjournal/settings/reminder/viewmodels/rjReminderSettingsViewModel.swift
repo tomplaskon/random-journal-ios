@@ -57,10 +57,15 @@ class rjReminderSettingsViewModel {
             startTime?.toggleState()
         }
         _ = startTime.selectedTime.observeNext() { date in
-            rjAppSettings.shared.setReminderStartTimeOffset(rjCommon.getOffset(date: date))
-            let scheduler = rjReminderScheduler.shared
-            scheduler.clearReminders()
-            scheduler.updateReminders()
+            let currentOffset = rjAppSettings.shared.getReminderStartTimeOffset()
+            let newOffset = rjCommon.getOffset(date: date)
+            
+            if newOffset != currentOffset {
+                rjAppSettings.shared.setReminderStartTimeOffset(newOffset)
+                let scheduler = rjReminderScheduler.shared
+                scheduler.clearReminders()
+                scheduler.updateReminders()
+            }
         }
         
         return startTime
@@ -72,10 +77,15 @@ class rjReminderSettingsViewModel {
             endTime?.toggleState()
         }
         _ = endTime.selectedTime.observeNext() { date in
-            rjAppSettings.shared.setReminderEndTimeOffset(rjCommon.getOffset(date: date))
-            let scheduler = rjReminderScheduler.shared
-            scheduler.clearReminders()
-            scheduler.updateReminders()
+            let currentOffset = rjAppSettings.shared.getReminderEndTimeOffset()
+            let newOffset = rjCommon.getOffset(date: date)
+            
+            if newOffset != currentOffset {
+                rjAppSettings.shared.setReminderEndTimeOffset(newOffset)
+                let scheduler = rjReminderScheduler.shared
+                scheduler.clearReminders()
+                scheduler.updateReminders()
+            }
         }
         
         return endTime

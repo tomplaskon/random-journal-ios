@@ -10,15 +10,16 @@ import UIKit
 
 class rjAddMomentViewController: UIViewController {
 
+    //TODO: completely refactor this into MVVM after interface is more settled
+    
     @IBOutlet weak var txtDetails: UITextView!
     @IBOutlet weak var btnSaveBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var colTips: UICollectionView!
     @IBOutlet weak var lblWritingTips: UILabel!
     @IBOutlet weak var lblSwipeForMoreTips: UILabel!
     
-    var currentTip : String?
-    
     var btnSaveBottomConstraintOriginalConstant: CGFloat!
+    let addMomentViewModel = rjAddMomentViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +30,13 @@ class rjAddMomentViewController: UIViewController {
         
         txtDetails.inputAccessoryView = makeAccessoryView()
         
-        self.listenForKeyboardEvents();
-        
         setTipsVisible(false)
+        
+        bindModels()
+    }
+    
+    func bindModels() {
+        addMomentViewModel.momentDetails.bind(to: txtDetails)
     }
     
     func configureTipsCollectionView() {
@@ -65,26 +70,6 @@ class rjAddMomentViewController: UIViewController {
         }
     }
 
-    func listenForKeyboardEvents() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keyBoardWillShow(notification: NSNotification) {
-        /*
-        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            
-            btnSaveBottomConstraint.constant = btnSaveBottomConstraintOriginalConstant + keyboardHeight;
-        }
-        */
-    }
-
-    @objc func keyBoardWillHide(notification: NSNotification) {
-        //btnSaveBottomConstraint.constant = btnSaveBottomConstraintOriginalConstant;
-    }
-    
     @IBAction func btnSavePressed(_ sender: Any) {
         // save the moment
         let when = Date()
@@ -97,9 +82,7 @@ class rjAddMomentViewController: UIViewController {
         momentMgr.notifyMomentsUpdated()
         
         // send us back to the moments list
-        if let tabBarController = appDelegate.window!.rootViewController as? UITabBarController {
-            tabBarController.selectedIndex = 0
-        }
+        NotificationCenter.default.post(name: .selectMomentsTab, object: nil)
         
         // reset the interface
         resetInterface()
@@ -137,7 +120,7 @@ extension rjAddMomentViewController : UICollectionViewDataSource, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView .dequeueReusableCell(withReuseIdentifier: "tip", for: indexPath) as! rjTipCollectionViewCell
-        cell.lblTip.text = rjTipsMgr.getAnotherTip(currentTip)
+        cell.lblTip.text = addMomentViewModel.getAnotherTip()
         return cell
     }
     

@@ -140,4 +140,9 @@ class rjMomentMgr {
     func notifyMomentsUpdated() {
         NotificationCenter.default.post(name: .momentsUpdated, object: nil)
     }
+    
+    var isEmpty: Bool {
+        let realm = rjRealmMgr.shared.defaultRealm
+        return realm.objects(rjMoment.self).isEmpty
+    }
 }

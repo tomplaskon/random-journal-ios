@@ -10,4 +10,6 @@ import Foundation
 
 extension Notification.Name {
     static let momentsUpdated = Notification.Name("rjMomentUpdated")
+    static let selectMomentsTab = Notification.Name("rjSelectMomentsTab")
+    static let selectAddMomentTab = Notification.Name("rjSelectAddMomentTab")
 }

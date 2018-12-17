@@ -15,11 +15,18 @@ class rjTutorialViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.white
+        
+        let proxy: UIPageControl = UIPageControl.appearance(whenContainedInInstancesOf:[rjTutorialViewController.self])
+        proxy.pageIndicatorTintColor = UIColor.lightGray
+        proxy.currentPageIndicatorTintColor = UIColor.black
+        proxy.backgroundColor = UIColor.white
+        
         pages = [
-            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorial1"),
-            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorial2"),
-            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorial3"),
-            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorial4")
+            UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "tutorial1"),
+            UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "tutorial2"),
+            UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "tutorial3"),
+            UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "tutorial4")
         ]
         
         dataSource = self;

@@ -10,7 +10,7 @@ import XCTest
 
 @testable import randomjournal
 
-class rjMomentWhenDateViewModelTest: rjTestCase {
+class rjMomentWhenDateViewModelTest: XCTestCase {
 
     func testDate() {
         let when = rjMomentViewModel.rjMomentWhenDateViewModel(date: Date(timeIntervalSince1970: 1545061969))
@@ -20,11 +20,6 @@ class rjMomentWhenDateViewModelTest: rjTestCase {
     func testLong() {
         let when = rjMomentViewModel.rjMomentWhenDateViewModel(date: Date(timeIntervalSince1970: 1545061969))
         XCTAssertEqual(when.long, "Dec 17, 2018 @ 10:52 AM")
-    }
-    
-    func testExport() {
-        let when = rjMomentViewModel.rjMomentWhenDateViewModel(date: Date(timeIntervalSince1970: 1545061969))
-        XCTAssertEqual(when.export, "2018-12-17 10:52:49")
     }
     
     func testIntValue() {

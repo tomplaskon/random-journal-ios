@@ -84,13 +84,13 @@ class rjEditMomentViewModel {
     func saveMoment() {
         if let moment = moment, let details = momentDetails.value, let when = momentWhen.value {
             
-            let momentMgr = rjMomentMgr()
+            let momentMgr = rjMomentViewModelRepository.shared
             let momentModel = rjMomentViewModel(
                 id: moment.id,
                 when: when,
                 details: details
             )
-            momentMgr.updateMoment(momentModel)
+            momentMgr.update(momentModel)
             momentMgr.notifyMomentsUpdated()
             
             returnToRoot.value = true

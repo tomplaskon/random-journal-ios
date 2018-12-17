@@ -28,7 +28,7 @@ class rjMomentsViewModel {
     }
     
     func reloadMoments() {
-        let moments = rjMomentMgr().allMoments().map{ rjCellViewModel.moment($0) }
+        let moments = rjMomentViewModelRepository.shared.all().map{ rjCellViewModel.moment($0) }
         
         if !moments.isEmpty {
             var viewModels = [rjCellViewModel]()
@@ -50,7 +50,7 @@ class rjMomentsViewModel {
         let sevenDaysAgo = rjCommon.getDateAtBeginningOfDay(rjCommon.subtract(days: 6, from: today))
         
         var summaryGraphViewModel = rjMomentSummaryGraphViewModel(startDate: sevenDaysAgo, endDate: today)
-        let graphMoments = rjMomentMgr().getMomentsBetween(from: sevenDaysAgo, to: today)
+        let graphMoments = rjMomentEntityModelRepository.shared.getBetween(from: sevenDaysAgo, to: today)
         summaryGraphViewModel.add(moments: graphMoments)
         
         return rjMomentSummaryGraphCellViewModel(

@@ -13,7 +13,7 @@
 		0071BAF221C42DC30009C4CE /* rjAddMomentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BAF121C42DC30009C4CE /* rjAddMomentViewModel.swift */; };
 		0071BAF621C43D360009C4CE /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0071BAF521C43D360009C4CE /* Tutorial.storyboard */; };
 		0071BAF921C446720009C4CE /* rjTutorialFinishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BAF821C446720009C4CE /* rjTutorialFinishViewModel.swift */; };
-		0071BB0221C7F8560009C4CE /* rjMomentMgrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCCB2141934700047CE4 /* rjMomentMgrTest.swift */; };
+		0071BB0221C7F8560009C4CE /* rjMomentViewModelRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCCB2141934700047CE4 /* rjMomentViewModelRepositoryTest.swift */; };
 		0071BB0321C7F8560009C4CE /* rjReminderSchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD55216E7BC900047CE4 /* rjReminderSchedulerTest.swift */; };
 		0071BB0421C7F8560009C4CE /* rjCommonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD57216E7C1B00047CE4 /* rjCommonTest.swift */; };
 		0071BB0521C7F8560009C4CE /* rjMomentExportImportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C31C217A3B4900A2FE33 /* rjMomentExportImportTest.swift */; };
@@ -22,6 +22,13 @@
 		0071BB0821C7F8560009C4CE /* rjMomentViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BAFA21C7EF0F0009C4CE /* rjMomentViewModelTest.swift */; };
 		0071BB0A21C7FD500009C4CE /* rjMomentWhenDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB0921C7FD500009C4CE /* rjMomentWhenDateViewModel.swift */; };
 		0071BB0C21C804290009C4CE /* rjMomentSummaryGraphViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB0B21C804290009C4CE /* rjMomentSummaryGraphViewModelTest.swift */; };
+		0071BB0F21C83E270009C4CE /* rjMomentEntityModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB0E21C83E270009C4CE /* rjMomentEntityModelRepository.swift */; };
+		0071BB1121C83E500009C4CE /* rjMomentEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB1021C83E500009C4CE /* rjMomentEntityModel.swift */; };
+		0071BB1221C841550009C4CE /* rjMomentEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB1021C83E500009C4CE /* rjMomentEntityModel.swift */; };
+		0071BB1321C8444D0009C4CE /* rjMomentEntityModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB0E21C83E270009C4CE /* rjMomentEntityModelRepository.swift */; };
+		0071BB1721C849540009C4CE /* rjMomentExportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB1621C849530009C4CE /* rjMomentExportModel.swift */; };
+		0071BB1921C85F2F0009C4CE /* rjMomentEntityModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB1821C85F2F0009C4CE /* rjMomentEntityModelTest.swift */; };
+		0071BB1B21C860D20009C4CE /* rjMomentExportModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB1A21C860D20009C4CE /* rjMomentExportModelTest.swift */; };
 		0075277C21B96C5F00EB0002 /* rjEditMomentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075277B21B96C5F00EB0002 /* rjEditMomentTableViewController.swift */; };
 		0075277F21B96D4400EB0002 /* rjEditMomentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075277E21B96D4400EB0002 /* rjEditMomentViewModel.swift */; };
 		0075278221B9797800EB0002 /* rjDateSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075278121B9797800EB0002 /* rjDateSelectTableViewCell.swift */; };
@@ -46,9 +53,9 @@
 		007DDC942140575E00047CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 007DDC932140575E00047CE4 /* Assets.xcassets */; };
 		007DDCAD2140575E00047CE4 /* randomjournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCAC2140575E00047CE4 /* randomjournalUITests.swift */; };
 		007DDCBB2140881500047CE4 /* rjAddMomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCBA2140881500047CE4 /* rjAddMomentViewController.swift */; };
-		007DDCC62141822800047CE4 /* rjMoment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC52141822800047CE4 /* rjMoment.swift */; };
-		007DDCC92141853700047CE4 /* rjMomentMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC82141853700047CE4 /* rjMomentMgr.swift */; };
-		007DDCD221419F3F00047CE4 /* rjTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD021419F3F00047CE4 /* rjTestCase.swift */; };
+		007DDCC62141822800047CE4 /* rjMomentPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC52141822800047CE4 /* rjMomentPersistenceModel.swift */; };
+		007DDCC92141853700047CE4 /* rjMomentViewModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC82141853700047CE4 /* rjMomentViewModelRepository.swift */; };
+		007DDCD221419F3F00047CE4 /* XCTestCaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD021419F3F00047CE4 /* XCTestCaseExtensions.swift */; };
 		007DDCD52141A0E700047CE4 /* rjCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD42141A0E700047CE4 /* rjCommon.swift */; };
 		007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCDC2142CDCD00047CE4 /* rjMomentsTableViewController.swift */; };
 		007DDCE12142D03B00047CE4 /* rjMomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCDF2142D03B00047CE4 /* rjMomentTableViewCell.swift */; };
@@ -84,8 +91,8 @@
 		00DB087421B6C46800A1CA1F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB087321B6C46800A1CA1F /* TodayViewController.swift */; };
 		00DB087721B6C46800A1CA1F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DB087521B6C46800A1CA1F /* MainInterface.storyboard */; };
 		00DB087B21B6C46800A1CA1F /* todaywidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 00DB086F21B6C46700A1CA1F /* todaywidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		00DB088121B6DCD600A1CA1F /* rjMoment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC52141822800047CE4 /* rjMoment.swift */; };
-		00DB088221B6DCD600A1CA1F /* rjMomentMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC82141853700047CE4 /* rjMomentMgr.swift */; };
+		00DB088121B6DCD600A1CA1F /* rjMomentPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC52141822800047CE4 /* rjMomentPersistenceModel.swift */; };
+		00DB088221B6DCD600A1CA1F /* rjMomentViewModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC82141853700047CE4 /* rjMomentViewModelRepository.swift */; };
 		00DB088321B6DDDB00A1CA1F /* rjCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD42141A0E700047CE4 /* rjCommon.swift */; };
 		00DB088521B6DFBC00A1CA1F /* rjCommon+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB088421B6DFBC00A1CA1F /* rjCommon+UI.swift */; };
 		00DB088821B84CE900A1CA1F /* rjRealmMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB088721B84CE900A1CA1F /* rjRealmMgr.swift */; };
@@ -163,6 +170,11 @@
 		0071BAFA21C7EF0F0009C4CE /* rjMomentViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentViewModelTest.swift; sourceTree = "<group>"; };
 		0071BB0921C7FD500009C4CE /* rjMomentWhenDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentWhenDateViewModel.swift; sourceTree = "<group>"; };
 		0071BB0B21C804290009C4CE /* rjMomentSummaryGraphViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentSummaryGraphViewModelTest.swift; sourceTree = "<group>"; };
+		0071BB0E21C83E270009C4CE /* rjMomentEntityModelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentEntityModelRepository.swift; sourceTree = "<group>"; };
+		0071BB1021C83E500009C4CE /* rjMomentEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentEntityModel.swift; sourceTree = "<group>"; };
+		0071BB1621C849530009C4CE /* rjMomentExportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentExportModel.swift; sourceTree = "<group>"; };
+		0071BB1821C85F2F0009C4CE /* rjMomentEntityModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentEntityModelTest.swift; sourceTree = "<group>"; };
+		0071BB1A21C860D20009C4CE /* rjMomentExportModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentExportModelTest.swift; sourceTree = "<group>"; };
 		0075277B21B96C5F00EB0002 /* rjEditMomentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjEditMomentTableViewController.swift; sourceTree = "<group>"; };
 		0075277E21B96D4400EB0002 /* rjEditMomentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjEditMomentViewModel.swift; sourceTree = "<group>"; };
 		0075278121B9797800EB0002 /* rjDateSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjDateSelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -191,10 +203,10 @@
 		007DDCAC2140575E00047CE4 /* randomjournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomjournalUITests.swift; sourceTree = "<group>"; };
 		007DDCAE2140575E00047CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007DDCBA2140881500047CE4 /* rjAddMomentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjAddMomentViewController.swift; sourceTree = "<group>"; };
-		007DDCC52141822800047CE4 /* rjMoment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMoment.swift; sourceTree = "<group>"; };
-		007DDCC82141853700047CE4 /* rjMomentMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentMgr.swift; sourceTree = "<group>"; };
-		007DDCCB2141934700047CE4 /* rjMomentMgrTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentMgrTest.swift; sourceTree = "<group>"; };
-		007DDCD021419F3F00047CE4 /* rjTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTestCase.swift; sourceTree = "<group>"; };
+		007DDCC52141822800047CE4 /* rjMomentPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentPersistenceModel.swift; sourceTree = "<group>"; };
+		007DDCC82141853700047CE4 /* rjMomentViewModelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentViewModelRepository.swift; sourceTree = "<group>"; };
+		007DDCCB2141934700047CE4 /* rjMomentViewModelRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentViewModelRepositoryTest.swift; sourceTree = "<group>"; };
+		007DDCD021419F3F00047CE4 /* XCTestCaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtensions.swift; sourceTree = "<group>"; };
 		007DDCD42141A0E700047CE4 /* rjCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommon.swift; sourceTree = "<group>"; };
 		007DDCDC2142CDCD00047CE4 /* rjMomentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentsTableViewController.swift; sourceTree = "<group>"; };
 		007DDCDF2142D03B00047CE4 /* rjMomentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentTableViewCell.swift; sourceTree = "<group>"; };
@@ -334,6 +346,17 @@
 				0071BAF821C446720009C4CE /* rjTutorialFinishViewModel.swift */,
 			);
 			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		0071BB0D21C83DA60009C4CE /* moment */ = {
+			isa = PBXGroup;
+			children = (
+				007DDCC52141822800047CE4 /* rjMomentPersistenceModel.swift */,
+				007DDCC82141853700047CE4 /* rjMomentViewModelRepository.swift */,
+				0071BB0E21C83E270009C4CE /* rjMomentEntityModelRepository.swift */,
+				0071BB1021C83E500009C4CE /* rjMomentEntityModel.swift */,
+			);
+			path = moment;
 			sourceTree = "<group>";
 		};
 		0075277A21B96C1D00EB0002 /* edit */ = {
@@ -489,8 +512,8 @@
 			isa = PBXGroup;
 			children = (
 				007DDCA32140575E00047CE4 /* Info.plist */,
-				007DDCCB2141934700047CE4 /* rjMomentMgrTest.swift */,
-				007DDCD021419F3F00047CE4 /* rjTestCase.swift */,
+				007DDCCB2141934700047CE4 /* rjMomentViewModelRepositoryTest.swift */,
+				007DDCD021419F3F00047CE4 /* XCTestCaseExtensions.swift */,
 				007DDD55216E7BC900047CE4 /* rjReminderSchedulerTest.swift */,
 				007DDD57216E7C1B00047CE4 /* rjCommonTest.swift */,
 				00E5C31C217A3B4900A2FE33 /* rjMomentExportImportTest.swift */,
@@ -499,6 +522,8 @@
 				0071BAFA21C7EF0F0009C4CE /* rjMomentViewModelTest.swift */,
 				0071BB0921C7FD500009C4CE /* rjMomentWhenDateViewModel.swift */,
 				0071BB0B21C804290009C4CE /* rjMomentSummaryGraphViewModelTest.swift */,
+				0071BB1821C85F2F0009C4CE /* rjMomentEntityModelTest.swift */,
+				0071BB1A21C860D20009C4CE /* rjMomentExportModelTest.swift */,
 			);
 			path = randomjournalTests;
 			sourceTree = "<group>";
@@ -515,8 +540,7 @@
 		007DDCC4214180A300047CE4 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				007DDCC52141822800047CE4 /* rjMoment.swift */,
-				007DDCC82141853700047CE4 /* rjMomentMgr.swift */,
+				0071BB0D21C83DA60009C4CE /* moment */,
 				007DDCF02144379800047CE4 /* rjReminder.swift */,
 				007DDD592174E3E000047CE4 /* rjReminderMgr.swift */,
 				00E5C32A217E414800A2FE33 /* rjTipsMgr.swift */,
@@ -682,6 +706,7 @@
 				00E5C318217A27A700A2FE33 /* rjMomentExporter.swift */,
 				00E5C31A217A27CE00A2FE33 /* rjMomentImporter.swift */,
 				00E5C31F217A3C2E00A2FE33 /* rjExportFileFormat.swift */,
+				0071BB1621C849530009C4CE /* rjMomentExportModel.swift */,
 			);
 			path = export;
 			sourceTree = "<group>";
@@ -1026,13 +1051,14 @@
 				00E5C33E2188E0AC00A2FE33 /* rjReminderStatusTableViewCell.swift in Sources */,
 				007DDD022162B1BA00047CE4 /* rjTutorialViewController.swift in Sources */,
 				00DB084921A707AE00A1CA1F /* rjCellViewModelPressable.swift in Sources */,
+				0071BB1121C83E500009C4CE /* rjMomentEntityModel.swift in Sources */,
 				0075278C21B9A40B00EB0002 /* rjEditDetailsCellViewModel.swift in Sources */,
 				00DB083921A608D600A1CA1F /* rjTimeSelectTableViewCell.swift in Sources */,
 				007DDCEF2144339F00047CE4 /* rjAppSettings.swift in Sources */,
 				00DB084D21A71B5400A1CA1F /* rjTimeSelectCellViewModel.swift in Sources */,
 				007DDD4F2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift in Sources */,
 				007DDD002162AE9300047CE4 /* rjTabBarController.swift in Sources */,
-				007DDCC92141853700047CE4 /* rjMomentMgr.swift in Sources */,
+				007DDCC92141853700047CE4 /* rjMomentViewModelRepository.swift in Sources */,
 				00DB086A21B5F27200A1CA1F /* rjCSVExportViewModel.swift in Sources */,
 				0075278621B97C4100EB0002 /* rjDateSelectCellViewModel.swift in Sources */,
 				0075278A21B9A1B500EB0002 /* rjEditDetailsTableViewCell.swift in Sources */,
@@ -1040,7 +1066,7 @@
 				007527B021C2B24B00EB0002 /* StringExtensions.swift in Sources */,
 				0075277C21B96C5F00EB0002 /* rjEditMomentTableViewController.swift in Sources */,
 				0075278F21B9A8A300EB0002 /* rjCommonSpacerTableViewCell.swift in Sources */,
-				007DDCC62141822800047CE4 /* rjMoment.swift in Sources */,
+				007DDCC62141822800047CE4 /* rjMomentPersistenceModel.swift in Sources */,
 				007527AC21C18F4900EB0002 /* rjMomentSummaryGraphTableViewCell.swift in Sources */,
 				007DDD442163C20200047CE4 /* rjViewMomentDetailsTableViewCell.swift in Sources */,
 				00E5C319217A27A700A2FE33 /* rjMomentExporter.swift in Sources */,
@@ -1051,6 +1077,7 @@
 				007527AA21C18EEC00EB0002 /* rjMomentSummaryGraphViewModel.swift in Sources */,
 				007527A821C18E7E00EB0002 /* rjMomentSummaryGraphView.swift in Sources */,
 				0075279921BEBD4D00EB0002 /* rjNotificationNameExtension.swift in Sources */,
+				0071BB0F21C83E270009C4CE /* rjMomentEntityModelRepository.swift in Sources */,
 				007DDD482163C6FF00047CE4 /* rjViewMomentTableViewController.swift in Sources */,
 				007DDC8D2140575800047CE4 /* rjAppDelegate.swift in Sources */,
 				007527A321BEF67700EB0002 /* rjMomentsViewModel.swift in Sources */,
@@ -1084,6 +1111,7 @@
 				007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */,
 				00E5C327217B6FA100A2FE33 /* rjMomentPageViewController.swift in Sources */,
 				00E5C31B217A27CE00A2FE33 /* rjMomentImporter.swift in Sources */,
+				0071BB1721C849540009C4CE /* rjMomentExportModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1091,16 +1119,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0071BB0221C7F8560009C4CE /* rjMomentMgrTest.swift in Sources */,
+				0071BB0221C7F8560009C4CE /* rjMomentViewModelRepositoryTest.swift in Sources */,
 				0071BB0321C7F8560009C4CE /* rjReminderSchedulerTest.swift in Sources */,
 				0071BB0A21C7FD500009C4CE /* rjMomentWhenDateViewModel.swift in Sources */,
+				0071BB1B21C860D20009C4CE /* rjMomentExportModelTest.swift in Sources */,
+				0071BB1921C85F2F0009C4CE /* rjMomentEntityModelTest.swift in Sources */,
 				0071BB0421C7F8560009C4CE /* rjCommonTest.swift in Sources */,
 				0071BB0521C7F8560009C4CE /* rjMomentExportImportTest.swift in Sources */,
 				0071BB0621C7F8560009C4CE /* rjMomentExporterTest.swift in Sources */,
 				0071BB0C21C804290009C4CE /* rjMomentSummaryGraphViewModelTest.swift in Sources */,
 				0071BB0721C7F8560009C4CE /* rjMomentImporterTest.swift in Sources */,
 				0071BB0821C7F8560009C4CE /* rjMomentViewModelTest.swift in Sources */,
-				007DDCD221419F3F00047CE4 /* rjTestCase.swift in Sources */,
+				007DDCD221419F3F00047CE4 /* XCTestCaseExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1118,11 +1148,13 @@
 			files = (
 				007527A421BF092700EB0002 /* rjMomentViewModel.swift in Sources */,
 				0075279A21BEC55F00EB0002 /* rjNotificationNameExtension.swift in Sources */,
+				0071BB1221C841550009C4CE /* rjMomentEntityModel.swift in Sources */,
 				00DB088921B8549D00A1CA1F /* rjRealmMgr.swift in Sources */,
 				00DB088321B6DDDB00A1CA1F /* rjCommon.swift in Sources */,
-				00DB088121B6DCD600A1CA1F /* rjMoment.swift in Sources */,
+				00DB088121B6DCD600A1CA1F /* rjMomentPersistenceModel.swift in Sources */,
 				0071BAEE21C40E300009C4CE /* DateExtensions.swift in Sources */,
-				00DB088221B6DCD600A1CA1F /* rjMomentMgr.swift in Sources */,
+				0071BB1321C8444D0009C4CE /* rjMomentEntityModelRepository.swift in Sources */,
+				00DB088221B6DCD600A1CA1F /* rjMomentViewModelRepository.swift in Sources */,
 				00DB088B21B857F100A1CA1F /* rjTodayViewModel.swift in Sources */,
 				00DB087421B6C46800A1CA1F /* TodayViewController.swift in Sources */,
 			);

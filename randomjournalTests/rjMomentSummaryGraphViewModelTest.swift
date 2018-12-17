@@ -9,7 +9,7 @@
 import XCTest
 @testable import randomjournal
 
-class rjMomentSummaryGraphViewModelTest: rjTestCase {
+class rjMomentSummaryGraphViewModelTest: XCTestCase {
 
     var model: rjMomentSummaryGraphViewModel? = nil
     
@@ -25,7 +25,7 @@ class rjMomentSummaryGraphViewModelTest: rjTestCase {
         
         var model = rjMomentSummaryGraphViewModel(startDate: Dec15BOD, endDate: Dec17EOD, dateFormatter: dateFormatter)
         
-        var moments = [rjMomentViewModel]()
+        var moments = [rjMomentEntityModel]()
         
         /*
             Create moments that result in the following situation
@@ -38,26 +38,26 @@ class rjMomentSummaryGraphViewModelTest: rjTestCase {
         */
         
         // one moment on Dec 15
-        var moment = rjMomentViewModel(id: "a", when: Dec15BOD.addingTimeInterval(1), details: "1")
+        var moment = rjMomentEntityModel(id: "a", when: Dec15BOD.addingTimeInterval(1), details: "1")
         moments.append(moment)
         
         // two moments on Dec 16
         let Dec16BOD = Date(timeIntervalSince1970: 1544936400)
-        moment = rjMomentViewModel(id: "b", when: Dec16BOD.addingTimeInterval(1), details: "1")
+        moment = rjMomentEntityModel(id: "b", when: Dec16BOD.addingTimeInterval(1), details: "1")
         moments.append(moment)
 
-        moment = rjMomentViewModel(id: "c", when: Dec16BOD.addingTimeInterval(2), details: "one two")
+        moment = rjMomentEntityModel(id: "c", when: Dec16BOD.addingTimeInterval(2), details: "one two")
         moments.append(moment)
         
         // three moments on Dec 17
         let Dec17BOD = Date(timeIntervalSince1970: 1545022800)
-        moment = rjMomentViewModel(id: "d", when: Dec17BOD.addingTimeInterval(1), details: "1")
+        moment = rjMomentEntityModel(id: "d", when: Dec17BOD.addingTimeInterval(1), details: "1")
         moments.append(moment)
         
-        moment = rjMomentViewModel(id: "e", when: Dec17BOD.addingTimeInterval(2), details: "one two")
+        moment = rjMomentEntityModel(id: "e", when: Dec17BOD.addingTimeInterval(2), details: "one two")
         moments.append(moment)
 
-        moment = rjMomentViewModel(id: "f", when: Dec17BOD.addingTimeInterval(3), details: "one two. three.")
+        moment = rjMomentEntityModel(id: "f", when: Dec17BOD.addingTimeInterval(3), details: "one two. three.")
         moments.append(moment)
         
         model.add(moments: moments)

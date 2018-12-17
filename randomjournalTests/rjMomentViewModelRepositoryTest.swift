@@ -9,7 +9,7 @@
 import XCTest
 @testable import randomjournal
 
-class rjMomentMgrTest: rjTestCase {
+class rjMomentViewModelRepositoryTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -20,33 +20,33 @@ class rjMomentMgrTest: rjTestCase {
     }
     
     func testAddMoment() {
-        let momentMgr = rjMomentMgr();
+        let momentMgr = rjMomentViewModelRepository.shared
         
         // create moment
-        let moment = generateTestMoment();
+        let moment = rjMomentViewModel(generateTestMoment());
 
         // verify it has a valid momentId
         XCTAssertNotEqual(moment.id, "")
         
         // load the moment from the persistence layer
-        if let moment2 = momentMgr.getMomentById(moment.id) {
+        if let moment2 = momentMgr.getById(moment.id) {
             // verify the moments have the same data
             XCTAssertEqual(moment, moment2)
         } else {
-            XCTFail("No moment returned by getMomentById")
+            XCTFail("No moment returned by getById")
         }
     }
     
     func testAllMoments() {
-        let momentMgr = rjMomentMgr();
+        let momentMgr = rjMomentViewModelRepository.shared
 
         // get the current number of moments we have stored
-        let currentNumMoments = momentMgr.allMoments().count
+        let currentNumMoments = momentMgr.all().count
         
         // create a new moment
         let _ = generateTestMoment();
 
-        XCTAssertEqual(currentNumMoments+1, momentMgr.allMoments().count)
+        XCTAssertEqual(currentNumMoments+1, momentMgr.all().count)
         
     }
     

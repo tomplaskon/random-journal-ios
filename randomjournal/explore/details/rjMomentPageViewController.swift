@@ -58,13 +58,13 @@ extension rjMomentPageViewController : UIPopoverPresentationControllerDelegate {
 extension rjMomentPageViewController : UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        let momentMgr = rjMomentMgr()
+        let momentMgr = rjMomentViewModelRepository.shared
         
         if (rjAppSettings.shared.shuffleMoments) {
             return nil
         } else {
             
-            if let currentVC = viewController as? rjViewMomentTableViewController, let currentMoment = currentVC.moment, let prevMoment = momentMgr.getNextMoment(currentMoment) {
+            if let currentVC = viewController as? rjViewMomentTableViewController, let currentMoment = currentVC.moment, let prevMoment = momentMgr.getNext(currentMoment) {
                 
                 let prevMomentVC = makeViewMomentTableViewController()
                 prevMomentVC.moment = prevMoment
@@ -76,10 +76,10 @@ extension rjMomentPageViewController : UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let momentMgr = rjMomentMgr()
+        let momentMgr = rjMomentViewModelRepository.shared
         
         if (rjAppSettings.shared.shuffleMoments) {
-            let randomMoment = momentMgr.getRandomMoment()
+            let randomMoment = momentMgr.getRandom()
             let nextMomentVC = makeViewMomentTableViewController()
             
             if let randomMoment = randomMoment {
@@ -87,7 +87,7 @@ extension rjMomentPageViewController : UIPageViewControllerDataSource {
             }
             return nextMomentVC
         } else {
-            if let currentVC = viewController as? rjViewMomentTableViewController, let currentMoment = currentVC.moment, let nextMoment = momentMgr.getPreviousMoment(currentMoment) {
+            if let currentVC = viewController as? rjViewMomentTableViewController, let currentMoment = currentVC.moment, let nextMoment = momentMgr.getPrevious(currentMoment) {
                 let nextMomentVC = makeViewMomentTableViewController()
                 nextMomentVC.moment = nextMoment
                 

@@ -9,7 +9,7 @@
 import XCTest
 @testable import randomjournal
 
-class rjMomentImporterTest: rjTestCase {
+class rjMomentImporterTest: XCTestCase {
     let headerLine = "ID|WHEN_TIMESTAMP|WHEN_READABLE|MOMENT_DETAILS"
     
     func testProcessMoments_empty() {
@@ -53,7 +53,7 @@ class rjMomentImporterTest: rjTestCase {
         """
 
         let importer = rjMomentImporter()
-        var moments = [rjMomentViewModel]()
+        var moments = [rjMomentExportModel]()
         
         do {
             let result = try importer.processMoments(export) { moment in
@@ -65,12 +65,12 @@ class rjMomentImporterTest: rjTestCase {
             
             var moment = moments[0]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA686")
-            XCTAssertEqual(moment.when.intValue, 1539887921)
+            XCTAssertEqual(moment.when.data, "1539887921")
             XCTAssertEqual(moment.details, "Hello World!")
 
             moment = moments[1]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA687")
-            XCTAssertEqual(moment.when.intValue, 1539887981)
+            XCTAssertEqual(moment.when.data, "1539887981")
             XCTAssertEqual(moment.details, "Hello World 2!")
             
             XCTAssertEqual(result.numMomentsImported, 2)
@@ -90,7 +90,7 @@ class rjMomentImporterTest: rjTestCase {
         """
         
         let importer = rjMomentImporter()
-        var moments = [rjMomentViewModel]()
+        var moments = [rjMomentExportModel]()
         
         do {
             let result = try importer.processMoments(export) { moment in
@@ -102,12 +102,12 @@ class rjMomentImporterTest: rjTestCase {
             
             var moment = moments[0]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA686")
-            XCTAssertEqual(moment.when.intValue, 1539887921)
+            XCTAssertEqual(moment.when.data, "1539887921")
             XCTAssertEqual(moment.details, "Hello World!")
             
             moment = moments[1]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA687")
-            XCTAssertEqual(moment.when.intValue, 1539887981)
+            XCTAssertEqual(moment.when.data, "1539887981")
             XCTAssertEqual(moment.details, "Hello World 2!")
             
             XCTAssertEqual(result.numMomentsImported, 2)
@@ -126,7 +126,7 @@ class rjMomentImporterTest: rjTestCase {
         """
         
         let importer = rjMomentImporter()
-        var moments = [rjMomentViewModel]()
+        var moments = [rjMomentExportModel]()
         
         do {
             let result = try importer.processMoments(export) { moment in
@@ -138,12 +138,12 @@ class rjMomentImporterTest: rjTestCase {
             
             var moment = moments[0]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA686")
-            XCTAssertEqual(moment.when.intValue, 1539887921)
+            XCTAssertEqual(moment.when.data, "1539887921")
             XCTAssertEqual(moment.details, "Hello World!\nHello World Again!")
             
             moment = moments[1]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA687")
-            XCTAssertEqual(moment.when.intValue, 1539887981)
+            XCTAssertEqual(moment.when.data, "1539887981")
             XCTAssertEqual(moment.details, "Hello World 2!")
             
             XCTAssertEqual(result.numMomentsImported, 2)

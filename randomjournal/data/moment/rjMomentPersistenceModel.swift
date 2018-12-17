@@ -6,11 +6,11 @@
 //  Copyright © 2018 Tom Plaskon. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import RealmSwift
 import Realm
 
-class rjMoment: Object {
+class rjMomentPersistenceModel: Object {
     @objc dynamic var momentId = "" // the moment's id
     @objc dynamic var when = 0 // when did the moment take place (unix timestamp)
     @objc dynamic var details = "" // the text details describing the moment
@@ -40,7 +40,7 @@ class rjMoment: Object {
         return "momentId"
     }
 
-    func populate(_ momentModel: rjMomentViewModel, updateId: Bool = true) {
+    func populate(_ momentModel: rjMomentEntityModel, updateId: Bool = true) {
         if updateId {
             self.momentId = momentModel.id
         }

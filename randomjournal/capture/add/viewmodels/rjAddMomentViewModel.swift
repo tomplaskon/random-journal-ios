@@ -18,7 +18,7 @@ class rjAddMomentViewModel {
     
     init() {
         // if we have no moments, get the tutorial tips for our first experience
-        if rjMomentMgr().isEmpty {
+        if rjMomentViewModelRepository.shared.isEmpty {
             tutorialTips = rjTipsMgr.getTutorialTips().reversed()
             momentDetails.value = "Making my first entry in Presently!"
         }

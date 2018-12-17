@@ -9,7 +9,7 @@
 import XCTest
 @testable import randomjournal
 
-class rjCommonTest: rjTestCase {
+class rjCommonTest: XCTestCase {
     func testGetDateAtBeginningOfDay() {
         let date = Date(timeIntervalSince1970: 1539194970)
         let dateAtBeginningOfDay = rjCommon.getDateAtBeginningOfDay(date)

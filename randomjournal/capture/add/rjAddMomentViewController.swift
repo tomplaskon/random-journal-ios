@@ -75,8 +75,8 @@ class rjAddMomentViewController: UIViewController {
         let when = Date()
         let details = txtDetails.text ?? ""
         
-        let momentMgr = rjMomentMgr()
-        momentMgr.addMoment(when: when, details: details)
+        let momentMgr = rjMomentViewModelRepository.shared
+        momentMgr.add(when: when, details: details)
         
         // let everyone else know the moments have been updated
         momentMgr.notifyMomentsUpdated()

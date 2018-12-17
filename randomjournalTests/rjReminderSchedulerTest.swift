@@ -9,7 +9,7 @@
 import XCTest
 @testable import randomjournal
 
-class rjReminderSchedulerTest: rjTestCase {
+class rjReminderSchedulerTest: XCTestCase {
     func testGetDateAtMidDay() {
         let targetTimestampAtNoon = TimeInterval(1539532800)
         

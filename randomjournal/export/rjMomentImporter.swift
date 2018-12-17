@@ -19,7 +19,7 @@ class rjMomentImporterResults {
 
 class rjMomentImporter {
     
-    func processMoments(_ content : String, onSuccess closure: (rjMomentViewModel) -> (Bool)) throws -> rjMomentImporterResults {
+    func processMoments(_ content : String, onSuccess closure: (rjMomentExportModel) -> (Bool)) throws -> rjMomentImporterResults {
         let cleanContent = cleanLineEndings(content)
         let lines = cleanContent.components(separatedBy: rjExportFileFormat.lineDelimiter)
         
@@ -81,7 +81,7 @@ class rjMomentImporter {
         return cleanContent
     }
     
-    func getMomentFromLine(_ line : String) -> rjMomentViewModel? {
+    func getMomentFromLine(_ line : String) -> rjMomentExportModel? {
         // validate fields
         let fields = line.components(separatedBy: rjExportFileFormat.fieldDelimiter)
         if fields.count != 4 {
@@ -100,7 +100,7 @@ class rjMomentImporter {
         
         let details = self.cleanDescription(fields[3]).trimmingCharacters(in: .whitespaces)
         
-        let moment = rjMomentViewModel(id: id, when: when, details: details)
+        let moment = rjMomentExportModel(id: id, when: when, details: details)
         
         return moment
     }
@@ -124,10 +124,10 @@ class rjMomentImporter {
     }
     
     func importMoments(_ content : String) throws -> rjMomentImporterResults {
-        let momentMgr = rjMomentMgr()
+        let repo = rjMomentEntityModelRepository.shared
         
         let result = try self.processMoments(content) { moment in
-            return momentMgr.importMoment(moment)
+            return repo.importEntity(moment.entityModel)
         }
         
         return result

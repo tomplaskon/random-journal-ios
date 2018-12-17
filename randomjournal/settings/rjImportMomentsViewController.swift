@@ -23,7 +23,7 @@ class rjImportMomentsViewController: UIViewController {
             do {
                 let importResults = try momentImporter.importMoments(pasteboardContent)
                 if (importResults.numMomentsImported > 0) {
-                    rjMomentMgr().notifyMomentsUpdated()
+                    rjMomentEntityModelRepository.shared.notifyMomentsUpdated()
                 }
                 self.showResults(importResults)
             } catch {

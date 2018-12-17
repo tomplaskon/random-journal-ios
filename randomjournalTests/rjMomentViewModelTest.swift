@@ -10,7 +10,7 @@ import XCTest
 
 @testable import randomjournal
 
-class rjMomentViewModelTest: rjTestCase {
+class rjMomentViewModelTest: XCTestCase {
     func testInit() {
         let model = rjMomentViewModel(id: "id", when: Date(timeIntervalSince1970: 1545058475), details: "details")
         
@@ -20,7 +20,11 @@ class rjMomentViewModelTest: rjTestCase {
     }
     
     func testInitWithModel() {
-        let dataModel = rjMoment(momentId: "68b696d7-320b-4402-a412-d9cee10fc6a3", when: 1545058476, details: "Some details")
+        let dataModel = rjMomentEntityModel(
+            id: "68b696d7-320b-4402-a412-d9cee10fc6a3",
+            when: Date(timeIntervalSince1970: 1545058476),
+            details: "Some details"
+        )
         let model = rjMomentViewModel(dataModel)
         
         XCTAssertEqual(model.id, "68b696d7-320b-4402-a412-d9cee10fc6a3")

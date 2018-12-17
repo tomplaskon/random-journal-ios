@@ -1,5 +1,5 @@
 //
-//  rjTestCase.swift
+//  XCTestCase.swift
 //  randomjournal
 //
 //  Created by Tom Plaskon on 2018-09-06.
@@ -9,14 +9,14 @@
 import XCTest
 @testable import randomjournal
 
-class rjTestCase: XCTestCase {
-    func generateTestMoment() -> rjMomentViewModel {
-        let momentMgr = rjMomentMgr()
+extension XCTestCase {
+    func generateTestMoment() -> rjMomentEntityModel {
+        let repo = rjMomentEntityModelRepository.shared
         let details = "Test details " + String(rjCommon.unixTimestampMilliseconds())
         let when = Date()
-
-        let momentId = momentMgr.addMoment(when: when, details: details)
-
-        return momentMgr.getMomentById(momentId)!
+        
+        let momentId = repo.add(when: when, details: details)
+        
+        return repo.getById(momentId)!
     }
 }

@@ -1,27 +1,33 @@
 //
-//  rjMomentMgr.swift
+//  rjMomentEntityModelRepository.swift
 //  randomjournal
 //
-//  Created by Tom Plaskon on 2018-09-06.
+//  Created by Tom Plaskon on 2018-12-17.
 //  Copyright © 2018 Tom Plaskon. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import RealmSwift
 
-class rjMomentMgr {
-    @discardableResult
-    func addMoment(when: Date, details: String) -> String {
-        let moment = rjMoment()
+class rjMomentEntityModelRepository {
+    static let shared = rjMomentEntityModelRepository()
+    
+    private init() {
         
-        let momentModel = rjMomentViewModel(id: NSUUID().uuidString, when: when, details: details)
-        moment.populate(momentModel)
-        
-        return addMoment(moment)
     }
     
     @discardableResult
-    private func addMoment(_ moment: rjMoment) -> String {
+    func add(when: Date, details: String) -> String {
+        let moment = rjMomentPersistenceModel()
+        
+        let momentModel = rjMomentEntityModel(id: NSUUID().uuidString, when: when, details: details)
+        moment.populate(momentModel)
+        
+        return add(moment)
+    }
+    
+    @discardableResult
+    private func add(_ moment: rjMomentPersistenceModel) -> String {
         let realm = rjRealmMgr.shared.defaultRealm
         
         try! realm.write {
@@ -31,36 +37,36 @@ class rjMomentMgr {
         return moment.momentId
     }
     
-    func importMoment(_ momentModel: rjMomentViewModel) -> Bool {
-        if let _ = self.getMomentById(momentModel.id) {
+    func importEntity(_ momentModel: rjMomentEntityModel) -> Bool {
+        if let _ = self.getById(momentModel.id) {
             return false
         }
         
-        let moment = rjMoment()
+        let moment = rjMomentPersistenceModel()
         moment.populate(momentModel)
         
-        addMoment(moment)
+        add(moment)
         
         return true
     }
     
-    func getMomentById(_ momentId: String) -> rjMomentViewModel? {
-        if let moment = getMomentDataModelById(momentId) {
-            return rjMomentViewModel(moment)
+    func getById(_ momentId: String) -> rjMomentEntityModel? {
+        if let moment = getPersistenceModelById(momentId) {
+            return rjMomentEntityModel(moment)
         }
         return nil
     }
     
-    private func getMomentDataModelById(_ momentId: String) -> rjMoment? {
+    private func getPersistenceModelById(_ momentId: String) -> rjMomentPersistenceModel? {
         let realm = rjRealmMgr.shared.defaultRealm
-        if let moment = realm.object(ofType: rjMoment.self, forPrimaryKey: momentId) {
+        if let moment = realm.object(ofType: rjMomentPersistenceModel.self, forPrimaryKey: momentId) {
             return moment
         }
         return nil
     }
     
-    func getPreviousMoment(_ momentModel: rjMomentViewModel) -> rjMomentViewModel? {
-        let moments = allMoments()
+    func getPrevious(_ momentModel: rjMomentEntityModel) -> rjMomentEntityModel? {
+        let moments = all()
         if let momentIndex = moments.firstIndex(of: momentModel) {
             let previousMomentIndex = momentIndex + 1
             if (previousMomentIndex < moments.count) {
@@ -70,9 +76,9 @@ class rjMomentMgr {
         
         return nil
     }
-
-    func getNextMoment(_ momentModel: rjMomentViewModel) -> rjMomentViewModel? {
-        let moments = allMoments()
+    
+    func getNext(_ momentModel: rjMomentEntityModel) -> rjMomentEntityModel? {
+        let moments = all()
         if let momentIndex = moments.firstIndex(of: momentModel) {
             let nextMomentIndex = momentIndex - 1
             if (nextMomentIndex >= 0) {
@@ -83,8 +89,8 @@ class rjMomentMgr {
         return nil
     }
     
-    func getRandomMoment() -> rjMomentViewModel? {
-        let moments = allMoments()
+    func getRandom() -> rjMomentEntityModel? {
+        let moments = all()
         
         if moments.isEmpty {
             return nil
@@ -94,26 +100,26 @@ class rjMomentMgr {
         return moments[randomIndex]
     }
     
-    func getMomentsBetween(from startDate: Date, to endDate: Date) -> [rjMomentViewModel] {
+    func getBetween(from startDate: Date, to endDate: Date) -> [rjMomentEntityModel] {
         let realm = rjRealmMgr.shared.defaultRealm
         
         let predicate = NSPredicate(format: "when >= %d and when <= %d", Int(startDate.timeIntervalSince1970), Int(endDate.timeIntervalSince1970))
         
-        return realm.objects(rjMoment.self).filter(predicate).map { rjMomentViewModel($0) }
+        return realm.objects(rjMomentPersistenceModel.self).filter(predicate).map { rjMomentEntityModel($0) }
     }
     
-    func allMoments() -> Array<rjMomentViewModel> {
+    func all() -> Array<rjMomentEntityModel> {
         let realm = rjRealmMgr.shared.defaultRealm
         let sort = [SortDescriptor(keyPath: "when", ascending: false), SortDescriptor(keyPath: "momentId", ascending: true)]
-
-        return Array(realm.objects(rjMoment.self).sorted(by:sort).map { rjMomentViewModel($0) })
+        
+        return Array(realm.objects(rjMomentPersistenceModel.self).sorted(by:sort).map { rjMomentEntityModel($0) })
     }
     
     @discardableResult
-    func deleteMoment(_ momentId: String) -> Bool {
+    func delete(_ momentId: String) -> Bool {
         let realm = rjRealmMgr.shared.defaultRealm
         
-        guard let moment = getMomentDataModelById(momentId) else {
+        guard let moment = getPersistenceModelById(momentId) else {
             return false
         }
         
@@ -125,8 +131,8 @@ class rjMomentMgr {
     }
     
     @discardableResult
-    func updateMoment(_ momentModel: rjMomentViewModel) -> Bool {
-        guard let moment = self.getMomentDataModelById(momentModel.id) else {
+    func update(_ momentModel: rjMomentEntityModel) -> Bool {
+        guard let moment = self.getPersistenceModelById(momentModel.id) else {
             return false
         }
         
@@ -137,12 +143,12 @@ class rjMomentMgr {
         return true
     }
     
-    func notifyMomentsUpdated() {
-        NotificationCenter.default.post(name: .momentsUpdated, object: nil)
-    }
-    
     var isEmpty: Bool {
         let realm = rjRealmMgr.shared.defaultRealm
-        return realm.objects(rjMoment.self).isEmpty
+        return realm.objects(rjMomentPersistenceModel.self).isEmpty
+    }
+    
+    func notifyMomentsUpdated() {
+        NotificationCenter.default.post(name: .momentsUpdated, object: nil)
     }
 }

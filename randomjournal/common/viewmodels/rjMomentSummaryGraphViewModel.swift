@@ -40,11 +40,11 @@ struct rjMomentSummaryGraphViewModel: Equatable {
         self.columns = columns
     }
     
-    mutating func add(moments: [rjMomentViewModel]) {
+    mutating func add(moments: [rjMomentEntityModel]) {
         
         // add the moments word counts to the column word counts
         for moment in moments {
-            let dayNum = rjCommon.getNumDaysBetween(from: startDate, to: moment.when.date)
+            let dayNum = rjCommon.getNumDaysBetween(from: startDate, to: moment.when)
             if !(0..<columns.count).contains(dayNum) {
                 // this moment is out of range
                 continue

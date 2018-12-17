@@ -49,10 +49,6 @@ struct rjMomentViewModel: Equatable {
             
             return date.with(format: "E, MMM d, YYYY @ ha") // Tues, Feb 7, 2016 @ 1PM
         }
-        
-        var export: String {
-            return date.with(format: "YYYY-MM-dd HH:mm:ss")
-        }
     }
     
     var id: String
@@ -65,11 +61,17 @@ struct rjMomentViewModel: Equatable {
         self.details = details
     }
     
-    init(_ moment: rjMoment) {
-        self.id = moment.momentId
-        self.when = rjMomentWhenDateViewModel(date:
-            Date(timeIntervalSince1970: TimeInterval(moment.when))
+    init(_ entityModel: rjMomentEntityModel) {
+        self.id = entityModel.id
+        self.when = rjMomentWhenDateViewModel(date: entityModel.when)
+        self.details = entityModel.details
+    }
+    
+    var entityModel : rjMomentEntityModel {
+        return rjMomentEntityModel(
+            id: id,
+            when: when.date,
+            details: details
         )
-        self.details = moment.details
     }
 }

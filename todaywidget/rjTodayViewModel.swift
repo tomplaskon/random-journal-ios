@@ -17,8 +17,8 @@ class rjTodayViewModel {
     }
     
     func update() {
-        let momentMgr = rjMomentMgr()
-        if let momentModel = momentMgr.getRandomMoment() {
+        let momentMgr = rjMomentViewModelRepository.shared
+        if let momentModel = momentMgr.getRandom() {
             moment.value = momentModel
         } else {
             moment.value = nil

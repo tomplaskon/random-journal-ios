@@ -9,14 +9,14 @@
 import UIKit
 
 class rjMomentExporter {
-    func getCSVContent(_ moments : [rjMomentViewModel]) -> String {
+    func getCSVContent(_ moments : [rjMomentExportModel]) -> String {
         var csvContent = rjExportFileFormat.getHeaderLine()
 
         for moment in moments {
             let lineElements = [
                 moment.id,
-                String(moment.when.intValue),
-                moment.when.export,
+                moment.when.data,
+                moment.when.readable,
                 cleanDetails(moment.details)
             ]
             csvContent += rjExportFileFormat.lineDelimiter + lineElements.joined(separator: rjExportFileFormat.fieldDelimiter)
@@ -53,7 +53,7 @@ class rjMomentExporter {
     }
     
     func exportMomentsToFile() -> URL? {
-        let moments = rjMomentMgr().allMoments()
+        let moments = rjMomentEntityModelRepository.shared.all().map { rjMomentExportModel($0) }
         let content = getCSVContent(moments)
         if let fileURL = getCSVFileURL(getCSVFileName()) {
             if (writeCSVFile(fileURL, content: content)) {

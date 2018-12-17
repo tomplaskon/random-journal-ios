@@ -102,9 +102,9 @@ class rjViewMomentTableViewController: UITableViewController {
     }
     
     func deleteMoment() {
-        let momentMgr = rjMomentMgr()
+        let momentMgr = rjMomentViewModelRepository.shared
         if let mom = self.moment {
-            momentMgr.deleteMoment(mom.id)
+            momentMgr.delete(mom.id)
             self.navigationController?.popToRootViewController(animated: true);
             momentMgr.notifyMomentsUpdated()
         } else {

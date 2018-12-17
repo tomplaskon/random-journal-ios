@@ -9,12 +9,12 @@
 import XCTest
 @testable import randomjournal
 
-class rjMomentExportImportTest: rjTestCase {
+class rjMomentExportImportTest: XCTestCase {
     func testExportAndImport_empty() {
         let exporter = rjMomentExporter()
         let importer = rjMomentImporter()
         
-        let noMoments = [rjMomentViewModel]()
+        let noMoments = [rjMomentExportModel]()
         let export = exporter.getCSVContent(noMoments)
         
         do {
@@ -34,16 +34,16 @@ class rjMomentExportImportTest: rjTestCase {
         let exporter = rjMomentExporter()
         let importer = rjMomentImporter()
         
-        var moments = [rjMomentViewModel]()
+        var moments = [rjMomentExportModel]()
         
-        var moment = rjMomentViewModel(
+        var moment = rjMomentExportModel(
             id: "113716F8-7252-4D17-BA47-703456BDA686",
             when: Date(timeIntervalSince1970: 1539887921),
             details: "Hello World!\nHello World Again!"
         )
         moments.append(moment)
         
-        moment = rjMomentViewModel(
+        moment = rjMomentExportModel(
             id: "113716F8-7252-4D17-BA47-703456BDA687",
             when: Date(timeIntervalSince1970: 1539887981),
             details: "Hello World 2!"
@@ -52,7 +52,7 @@ class rjMomentExportImportTest: rjTestCase {
         
         let export = exporter.getCSVContent(moments)
         
-        var exportedMoments = [rjMomentViewModel]()
+        var exportedMoments = [rjMomentExportModel]()
         
         do {
             let result = try importer.processMoments(export) { moment in

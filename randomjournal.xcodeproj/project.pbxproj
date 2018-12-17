@@ -13,6 +13,15 @@
 		0071BAF221C42DC30009C4CE /* rjAddMomentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BAF121C42DC30009C4CE /* rjAddMomentViewModel.swift */; };
 		0071BAF621C43D360009C4CE /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0071BAF521C43D360009C4CE /* Tutorial.storyboard */; };
 		0071BAF921C446720009C4CE /* rjTutorialFinishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BAF821C446720009C4CE /* rjTutorialFinishViewModel.swift */; };
+		0071BB0221C7F8560009C4CE /* rjMomentMgrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCCB2141934700047CE4 /* rjMomentMgrTest.swift */; };
+		0071BB0321C7F8560009C4CE /* rjReminderSchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD55216E7BC900047CE4 /* rjReminderSchedulerTest.swift */; };
+		0071BB0421C7F8560009C4CE /* rjCommonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD57216E7C1B00047CE4 /* rjCommonTest.swift */; };
+		0071BB0521C7F8560009C4CE /* rjMomentExportImportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C31C217A3B4900A2FE33 /* rjMomentExportImportTest.swift */; };
+		0071BB0621C7F8560009C4CE /* rjMomentExporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C321217A3D5F00A2FE33 /* rjMomentExporterTest.swift */; };
+		0071BB0721C7F8560009C4CE /* rjMomentImporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C323217A480B00A2FE33 /* rjMomentImporterTest.swift */; };
+		0071BB0821C7F8560009C4CE /* rjMomentViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BAFA21C7EF0F0009C4CE /* rjMomentViewModelTest.swift */; };
+		0071BB0A21C7FD500009C4CE /* rjMomentWhenDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB0921C7FD500009C4CE /* rjMomentWhenDateViewModel.swift */; };
+		0071BB0C21C804290009C4CE /* rjMomentSummaryGraphViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BB0B21C804290009C4CE /* rjMomentSummaryGraphViewModelTest.swift */; };
 		0075277C21B96C5F00EB0002 /* rjEditMomentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075277B21B96C5F00EB0002 /* rjEditMomentTableViewController.swift */; };
 		0075277F21B96D4400EB0002 /* rjEditMomentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075277E21B96D4400EB0002 /* rjEditMomentViewModel.swift */; };
 		0075278221B9797800EB0002 /* rjDateSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075278121B9797800EB0002 /* rjDateSelectTableViewCell.swift */; };
@@ -39,7 +48,6 @@
 		007DDCBB2140881500047CE4 /* rjAddMomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCBA2140881500047CE4 /* rjAddMomentViewController.swift */; };
 		007DDCC62141822800047CE4 /* rjMoment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC52141822800047CE4 /* rjMoment.swift */; };
 		007DDCC92141853700047CE4 /* rjMomentMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC82141853700047CE4 /* rjMomentMgr.swift */; };
-		007DDCCC2141934700047CE4 /* rjMomentMgrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCCB2141934700047CE4 /* rjMomentMgrTest.swift */; };
 		007DDCD221419F3F00047CE4 /* rjTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD021419F3F00047CE4 /* rjTestCase.swift */; };
 		007DDCD52141A0E700047CE4 /* rjCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD42141A0E700047CE4 /* rjCommon.swift */; };
 		007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCDC2142CDCD00047CE4 /* rjMomentsTableViewController.swift */; };
@@ -62,8 +70,6 @@
 		007DDD502163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007DDD4E2163DF0A00047CE4 /* rjCommonTitleTableViewCell.xib */; };
 		007DDD532166551A00047CE4 /* rjCommonButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD512166551A00047CE4 /* rjCommonButtonTableViewCell.swift */; };
 		007DDD542166551A00047CE4 /* rjCommonButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007DDD522166551A00047CE4 /* rjCommonButtonTableViewCell.xib */; };
-		007DDD56216E7BCA00047CE4 /* rjReminderSchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD55216E7BC900047CE4 /* rjReminderSchedulerTest.swift */; };
-		007DDD58216E7C1B00047CE4 /* rjCommonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD57216E7C1B00047CE4 /* rjCommonTest.swift */; };
 		007DDD5A2174E3E000047CE4 /* rjReminderMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD592174E3E000047CE4 /* rjReminderMgr.swift */; };
 		00DB083921A608D600A1CA1F /* rjTimeSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB083821A608D600A1CA1F /* rjTimeSelectTableViewCell.swift */; };
 		00DB084921A707AE00A1CA1F /* rjCellViewModelPressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB084821A707AE00A1CA1F /* rjCellViewModelPressable.swift */; };
@@ -87,10 +93,7 @@
 		00DB088B21B857F100A1CA1F /* rjTodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB088A21B857F100A1CA1F /* rjTodayViewModel.swift */; };
 		00E5C319217A27A700A2FE33 /* rjMomentExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C318217A27A700A2FE33 /* rjMomentExporter.swift */; };
 		00E5C31B217A27CE00A2FE33 /* rjMomentImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C31A217A27CE00A2FE33 /* rjMomentImporter.swift */; };
-		00E5C31D217A3B4900A2FE33 /* rjMomentExportImportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C31C217A3B4900A2FE33 /* rjMomentExportImportTest.swift */; };
 		00E5C320217A3C2E00A2FE33 /* rjExportFileFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C31F217A3C2E00A2FE33 /* rjExportFileFormat.swift */; };
-		00E5C322217A3D5F00A2FE33 /* rjMomentExporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C321217A3D5F00A2FE33 /* rjMomentExporterTest.swift */; };
-		00E5C324217A480B00A2FE33 /* rjMomentImporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C323217A480B00A2FE33 /* rjMomentImporterTest.swift */; };
 		00E5C327217B6FA100A2FE33 /* rjMomentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C326217B6FA100A2FE33 /* rjMomentPageViewController.swift */; };
 		00E5C329217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C328217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift */; };
 		00E5C32B217E414800A2FE33 /* rjTipsMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E5C32A217E414800A2FE33 /* rjTipsMgr.swift */; };
@@ -157,6 +160,9 @@
 		0071BAF121C42DC30009C4CE /* rjAddMomentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjAddMomentViewModel.swift; sourceTree = "<group>"; };
 		0071BAF521C43D360009C4CE /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		0071BAF821C446720009C4CE /* rjTutorialFinishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTutorialFinishViewModel.swift; sourceTree = "<group>"; };
+		0071BAFA21C7EF0F0009C4CE /* rjMomentViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentViewModelTest.swift; sourceTree = "<group>"; };
+		0071BB0921C7FD500009C4CE /* rjMomentWhenDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentWhenDateViewModel.swift; sourceTree = "<group>"; };
+		0071BB0B21C804290009C4CE /* rjMomentSummaryGraphViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentSummaryGraphViewModelTest.swift; sourceTree = "<group>"; };
 		0075277B21B96C5F00EB0002 /* rjEditMomentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjEditMomentTableViewController.swift; sourceTree = "<group>"; };
 		0075277E21B96D4400EB0002 /* rjEditMomentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjEditMomentViewModel.swift; sourceTree = "<group>"; };
 		0075278121B9797800EB0002 /* rjDateSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjDateSelectTableViewCell.swift; sourceTree = "<group>"; };
@@ -490,6 +496,9 @@
 				00E5C31C217A3B4900A2FE33 /* rjMomentExportImportTest.swift */,
 				00E5C321217A3D5F00A2FE33 /* rjMomentExporterTest.swift */,
 				00E5C323217A480B00A2FE33 /* rjMomentImporterTest.swift */,
+				0071BAFA21C7EF0F0009C4CE /* rjMomentViewModelTest.swift */,
+				0071BB0921C7FD500009C4CE /* rjMomentWhenDateViewModel.swift */,
+				0071BB0B21C804290009C4CE /* rjMomentSummaryGraphViewModelTest.swift */,
 			);
 			path = randomjournalTests;
 			sourceTree = "<group>";
@@ -1082,12 +1091,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E5C322217A3D5F00A2FE33 /* rjMomentExporterTest.swift in Sources */,
-				007DDCCC2141934700047CE4 /* rjMomentMgrTest.swift in Sources */,
-				007DDD56216E7BCA00047CE4 /* rjReminderSchedulerTest.swift in Sources */,
-				00E5C324217A480B00A2FE33 /* rjMomentImporterTest.swift in Sources */,
-				007DDD58216E7C1B00047CE4 /* rjCommonTest.swift in Sources */,
-				00E5C31D217A3B4900A2FE33 /* rjMomentExportImportTest.swift in Sources */,
+				0071BB0221C7F8560009C4CE /* rjMomentMgrTest.swift in Sources */,
+				0071BB0321C7F8560009C4CE /* rjReminderSchedulerTest.swift in Sources */,
+				0071BB0A21C7FD500009C4CE /* rjMomentWhenDateViewModel.swift in Sources */,
+				0071BB0421C7F8560009C4CE /* rjCommonTest.swift in Sources */,
+				0071BB0521C7F8560009C4CE /* rjMomentExportImportTest.swift in Sources */,
+				0071BB0621C7F8560009C4CE /* rjMomentExporterTest.swift in Sources */,
+				0071BB0C21C804290009C4CE /* rjMomentSummaryGraphViewModelTest.swift in Sources */,
+				0071BB0721C7F8560009C4CE /* rjMomentImporterTest.swift in Sources */,
+				0071BB0821C7F8560009C4CE /* rjMomentViewModelTest.swift in Sources */,
 				007DDCD221419F3F00047CE4 /* rjTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

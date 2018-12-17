@@ -65,12 +65,12 @@ class rjMomentImporterTest: rjTestCase {
             
             var moment = moments[0]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA686")
-            XCTAssertEqual(moment.when, Date(timeIntervalSince1970: 1539887921))
+            XCTAssertEqual(moment.when.intValue, 1539887921)
             XCTAssertEqual(moment.details, "Hello World!")
 
             moment = moments[1]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA687")
-            XCTAssertEqual(moment.when, Date(timeIntervalSince1970: 1539887981))
+            XCTAssertEqual(moment.when.intValue, 1539887981)
             XCTAssertEqual(moment.details, "Hello World 2!")
             
             XCTAssertEqual(result.numMomentsImported, 2)
@@ -102,12 +102,12 @@ class rjMomentImporterTest: rjTestCase {
             
             var moment = moments[0]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA686")
-            XCTAssertEqual(moment.when, Date(timeIntervalSince1970: 1539887921))
+            XCTAssertEqual(moment.when.intValue, 1539887921)
             XCTAssertEqual(moment.details, "Hello World!")
             
             moment = moments[1]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA687")
-            XCTAssertEqual(moment.when, Date(timeIntervalSince1970: 1539887981))
+            XCTAssertEqual(moment.when.intValue, 1539887981)
             XCTAssertEqual(moment.details, "Hello World 2!")
             
             XCTAssertEqual(result.numMomentsImported, 2)
@@ -138,12 +138,12 @@ class rjMomentImporterTest: rjTestCase {
             
             var moment = moments[0]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA686")
-            XCTAssertEqual(moment.when, Date(timeIntervalSince1970: 1539887921))
+            XCTAssertEqual(moment.when.intValue, 1539887921)
             XCTAssertEqual(moment.details, "Hello World!\nHello World Again!")
             
             moment = moments[1]
             XCTAssertEqual(moment.id, "113716F8-7252-4D17-BA47-703456BDA687")
-            XCTAssertEqual(moment.when, Date(timeIntervalSince1970: 1539887981))
+            XCTAssertEqual(moment.when.intValue, 1539887981)
             XCTAssertEqual(moment.details, "Hello World 2!")
             
             XCTAssertEqual(result.numMomentsImported, 2)

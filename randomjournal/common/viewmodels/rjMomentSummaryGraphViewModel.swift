@@ -13,8 +13,10 @@ struct rjMomentSummaryGraphViewModel: Equatable {
     let endDate: Date
     var columns: [rjGraphColumn]
     
-    var maxValue : Int?
-    var minValue : Int?
+    var maxValue: Int?
+    var minValue: Int?
+    
+    private let dateFormatter: DateFormatter
     
     struct rjGraphColumn: Equatable {
         var data: Int
@@ -22,45 +24,38 @@ struct rjMomentSummaryGraphViewModel: Equatable {
         var labelName: String
     }
     
-    init(startDate: Date, endDate: Date) {
+    init(startDate: Date, endDate: Date, dateFormatter: DateFormatter = DateFormatter()) {
         self.startDate = startDate
         self.endDate = endDate
+        self.dateFormatter = dateFormatter
         
-        let numDays = rjCommon.getNumDaysBetween(from: startDate, to: endDate)
+        let numDays = rjCommon.getNumDaysBetween(from: startDate, to: endDate, calendar: dateFormatter.calendar)
         var columns = [rjGraphColumn]()
         for dayNum in 0...numDays {
             let date = rjCommon.add(days: dayNum, to: startDate)
-            let labelName = rjMomentSummaryGraphViewModel.getLabelName(for: date)
+            let labelName = date.with(format: "EEEEE", dateFormatter: dateFormatter) // one character day of the week
             let column = rjGraphColumn(data: 0, ratio: 0, labelName: labelName)
             columns.append(column)
         }
         self.columns = columns
     }
     
-    private static func getLabelName(for date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEEE" // one character day of the week
-        return dateFormatter.string(from: date)
-    }
-    
     mutating func add(moments: [rjMomentViewModel]) {
         
         // add the moments word counts to the column word counts
         for moment in moments {
-            let numWords = moment.details.wordCount
-            
-            // keep the max and min counts up to date
-            maxValue = numWords > (maxValue ?? numWords) ? numWords : (maxValue ?? numWords)
-            minValue = numWords < (minValue ?? numWords) ? numWords : (minValue ?? numWords)
-            
             let dayNum = rjCommon.getNumDaysBetween(from: startDate, to: moment.when.date)
             if !(0..<columns.count).contains(dayNum) {
                 // this moment is out of range
                 continue
             }
-            
-            columns[dayNum].data += numWords
+
+            columns[dayNum].data += moment.details.wordCount
         }
+
+        // calculate max and min values
+        maxValue = dataValues.max()
+        minValue = dataValues.min()
         
         // calculate the ratio for the columns
         for i in 0..<columns.count {

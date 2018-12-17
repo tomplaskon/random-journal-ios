@@ -27,11 +27,21 @@ class rjCommon {
         return Int(beginningOfDay.timeIntervalSince1970)
     }
     
-    static func getDateAtBeginningOfDay(_ date: Date) -> Date {
-        let calendar = Calendar.current
+    static func getDateAtBeginningOfDay(_ date: Date, calendar: Calendar = Calendar.current) -> Date {
         let beginningOfDay = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: date)
         return beginningOfDay!
     }
+
+    // return a Date on the same day with the time set to noon
+    static func getDateAtMidDay(_ date: Date, calendar: Calendar = Calendar.current) -> Date {
+        return calendar.date(bySettingHour: 12, minute: 00, second: 00, of: calendar.startOfDay(for: date))!
+    }
+    
+    static func getDateAtEndOfDay(_ date: Date, calendar: Calendar = Calendar.current) -> Date {
+        let calendar = Calendar.current
+        return calendar.date(bySettingHour: 23, minute: 59, second: 59, of: date)!
+    }
+
     
     static func getRandomInt(from : Int, to : Int) -> Int {
         return Int(arc4random_uniform(UInt32(to-from)) + UInt32(from))
@@ -55,30 +65,17 @@ class rjCommon {
     
     static func getReadableTimeOffset(_ time : Int) -> String {
         let calendar = Calendar.current
-        
         var date = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
         date = calendar.date(byAdding: .second, value: time, to: date)!
         
         return date.with(format: "h:mm a")
     }
     
-    static func getReadableDateLong(_ date: Date) -> String {
-        return date.with(format: "MMM d, YYYY @ h:mm a") // Jan 23, 2017 @ 1:23 PM
+    static func getReadableDateLong(_ date: Date, dateFormatter: DateFormatter = DateFormatter()) -> String {
+        return date.with(format: "MMM d, YYYY @ h:mm a", dateFormatter: dateFormatter) // Jan 23, 2017 @ 1:23 PM
     }
     
-    // return a Date on the same day with the time set to noon
-    static func getDateAtMidDay(_ date: Date) -> Date {
-        let calendar = Calendar.current
-        return calendar.date(bySettingHour: 12, minute: 00, second: 00, of: calendar.startOfDay(for: date))!
-    }
-    
-    static func getDateAtEndOfDay(_ date: Date) -> Date {
-        let calendar = Calendar.current
-        return calendar.date(bySettingHour: 23, minute: 59, second: 59, of: date)!
-    }
-
-    static func getNumDaysBetween(from: Date, to: Date) -> Int {
-        let calendar = Calendar.current
+    static func getNumDaysBetween(from: Date, to: Date, calendar: Calendar = Calendar.current) -> Int {
         let fromAtNoon = self.getDateAtMidDay(from)
         let toAtNoon = self.getDateAtMidDay(to)
         let components = calendar.dateComponents([.day], from: fromAtNoon, to: toAtNoon)

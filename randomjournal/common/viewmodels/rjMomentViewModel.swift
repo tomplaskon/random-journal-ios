@@ -28,21 +28,30 @@ struct rjMomentViewModel: Equatable {
             let daysSinceReferenceDate = date.numDays(since: referenceDate)
             
             let isToday = daysSinceReferenceDate == 0
-            if (isToday) {
+            if isToday {
                 return date.with(format: "'Today' @ h:mm a") // Today @ 4:01 PM
             }
             
+            let isYesterday = daysSinceReferenceDate == 1
+            if isYesterday {
+                return date.with(format: "'Yesterday' @ h:mm a") // Yesterday @ 4:01 PM
+            }
+            
             let withinAWeek = (1...7).contains(daysSinceReferenceDate)
-            if (withinAWeek) {
+            if withinAWeek {
                 return date.with(format: "EEEE @ h:mm a") // Thursday @ 1:12 PM
             }
 
             let inSameYear = date.year == referenceDate.year
-            if (inSameYear) {
+            if inSameYear {
                 return date.with(format: "E, MMMM d @ h:mm a") // Mon, December 2 @ 11:21 AM
             }
             
             return date.with(format: "E, MMM d, YYYY @ ha") // Tues, Feb 7, 2016 @ 1PM
+        }
+        
+        var export: String {
+            return date.with(format: "YYYY-MM-dd HH:mm:ss")
         }
     }
     

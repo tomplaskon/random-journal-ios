@@ -13,8 +13,7 @@ extension Date {
         return rjCommon.getNumDaysBetween(from: self, to: endDate)
     }
     
-    func with(format: String) -> String {
-        let dateFormatter = DateFormatter()
+    func with(format: String, dateFormatter: DateFormatter = DateFormatter()) -> String {
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
     }

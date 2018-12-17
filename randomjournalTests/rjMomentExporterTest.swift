@@ -24,7 +24,7 @@ class rjMomentExporterTest: rjTestCase {
     func testGetCSVContent_oneMoment() {
         let expectedExport = """
         \(headerLine)
-        113716F8-7252-4D17-BA47-703456BDA686|1539887921|Oct 18 2018 02:38 PM|Hello World!
+        113716F8-7252-4D17-BA47-703456BDA686|1539887921|2018-10-18 14:38:41|Hello World!
         """
         
         let moment = rjMomentViewModel(
@@ -42,7 +42,7 @@ class rjMomentExporterTest: rjTestCase {
     func testGetCSVContent_momentWithDelim() {
         let expectedExport = """
         \(headerLine)
-        113716F8-7252-4D17-BA47-703456BDA686|1539887921|Oct 18 2018 02:38 PM|Hello World!
+        113716F8-7252-4D17-BA47-703456BDA686|1539887921|2018-10-18 14:38:41|Hello World!
         """
         
         let moment = rjMomentViewModel(
@@ -60,8 +60,8 @@ class rjMomentExporterTest: rjTestCase {
     func testGetCSVContent_twoMoments() {
         let expectedExport = """
         \(headerLine)
-        113716F8-7252-4D17-BA47-703456BDA686|1539887921|Oct 18 2018 02:38 PM|Hello World!
-        113716F8-7252-4D17-BA47-703456BDA687|1539887981|Oct 18 2018 02:39 PM|Hello World 2!
+        113716F8-7252-4D17-BA47-703456BDA686|1539887921|2018-10-18 14:38:41|Hello World!
+        113716F8-7252-4D17-BA47-703456BDA687|1539887981|2018-10-18 14:39:41|Hello World 2!
         """
         
         var moments = [rjMomentViewModel]()
@@ -89,8 +89,8 @@ class rjMomentExporterTest: rjTestCase {
     func testGetCSVContent_momentWithNewLineInDetails() {
         let expectedExport = """
         \(headerLine)
-        113716F8-7252-4D17-BA47-703456BDA686|1539887921|Oct 18 2018 02:38 PM|Hello World!\\nHello World Again!
-        113716F8-7252-4D17-BA47-703456BDA687|1539887981|Oct 18 2018 02:39 PM|Hello World 2!
+        113716F8-7252-4D17-BA47-703456BDA686|1539887921|2018-10-18 14:38:41|Hello World!\\nHello World Again!
+        113716F8-7252-4D17-BA47-703456BDA687|1539887981|2018-10-18 14:39:41|Hello World 2!
         """
         
         var moments = [rjMomentViewModel]()

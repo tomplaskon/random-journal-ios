@@ -19,4 +19,8 @@ extension XCTestCase {
         
         return repo.getById(momentId)!
     }
+    
+    func generateMockEntityModelRepository() -> rjMockMomentEntityModelRepositoryProtocol {
+        return rjMockMomentEntityModelRepository()
+    }
 }

@@ -11,6 +11,12 @@ import Foundation
 struct rjMomentViewModel: Equatable {
     struct rjMomentWhenDateViewModel: Equatable {
         let date: Date
+        fileprivate let referenceDate: Date
+        
+        init(date: Date, referenceDate: Date = Date()) {
+            self.date = date
+            self.referenceDate = referenceDate
+        }
         
         var long: String {
             return rjCommon.getReadableDateLong(date)
@@ -21,7 +27,7 @@ struct rjMomentViewModel: Equatable {
         }
         
         var contextual: String {
-            return self.getContextualDate()
+            return self.getContextualDate(relativeTo: referenceDate)
         }
         
         func getContextualDate(relativeTo referenceDate: Date = Date()) -> String {
@@ -49,21 +55,25 @@ struct rjMomentViewModel: Equatable {
             
             return date.with(format: "E, MMM d, YYYY @ ha") // Tues, Feb 7, 2016 @ 1PM
         }
+        
+        static func == (lhs: rjMomentWhenDateViewModel, rhs: rjMomentWhenDateViewModel) -> Bool {
+            return lhs.date == rhs.date
+        }
     }
     
     var id: String
     var when: rjMomentWhenDateViewModel
     var details: String
     
-    init(id: String, when: Date, details: String) {
+    init(id: String, when: Date, details: String, referenceDate: Date = Date()) {
         self.id = id
-        self.when = rjMomentWhenDateViewModel(date: when)
+        self.when = rjMomentWhenDateViewModel(date: when, referenceDate: referenceDate)
         self.details = details
     }
     
-    init(_ entityModel: rjMomentEntityModel) {
+    init(_ entityModel: rjMomentEntityModel, referenceDate: Date = Date()) {
         self.id = entityModel.id
-        self.when = rjMomentWhenDateViewModel(date: entityModel.when)
+        self.when = rjMomentWhenDateViewModel(date: entityModel.when, referenceDate: referenceDate)
         self.details = entityModel.details
     }
     

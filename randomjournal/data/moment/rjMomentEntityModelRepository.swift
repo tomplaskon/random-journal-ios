@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class rjMomentEntityModelRepository {
+class rjMomentEntityModelRepository: rjMomentEntityModelRepositoryProtocol {
     static let shared = rjMomentEntityModelRepository()
     
     private init() {

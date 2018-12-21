@@ -262,14 +262,14 @@
         <!--Rj Moments Table View Controller-->
         <scene sceneID="WpT-tb-IFW">
             <objects>
-                <tableViewController id="8Ho-5v-yt2" customClass="rjMomentsTableViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="rjMomentsTableViewController" id="8Ho-5v-yt2" customClass="rjMomentsTableViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0bt-lQ-DUp" customClass="uiviewcontroller">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="emptystate" rowHeight="82" id="xyo-Cp-FC4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="emptystate" rowHeight="82" id="xyo-Cp-FC4" customClass="rjEmptyStateTableViewCell" customModule="randomjournal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xyo-Cp-FC4" id="lb6-ip-6KF">
@@ -293,6 +293,9 @@
                                         <constraint firstAttribute="trailing" secondItem="hZN-2j-1tc" secondAttribute="trailing" constant="16" id="xHb-ho-IUE"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblEmptyState" destination="hZN-2j-1tc" id="mtM-7N-azb"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="summarygraph" rowHeight="95" id="Gwf-la-hye" customClass="rjMomentSummaryGraphTableViewCell" customModule="randomjournal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="110" width="375" height="95"/>

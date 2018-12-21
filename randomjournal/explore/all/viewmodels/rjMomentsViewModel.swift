@@ -9,15 +9,20 @@
 import Foundation
 import Bond
 
-class rjMomentsViewModel {
+class rjMomentsViewModel: rjMomentsViewModelProtocol {
     enum rjCellViewModel: Equatable {
         case empty()
         case summaryGraph(rjMomentSummaryGraphCellViewModel)
         case moment(rjMomentViewModel)
     }
-    
+
     let momentCellViewModels = MutableObservableArray<rjCellViewModel>()
     let momentToViewDetails = Observable<rjMomentViewModel?>(nil)
+    fileprivate let momentRepository: rjMomentEntityModelRepositoryProtocol
+
+    init(momentRepository: rjMomentEntityModelRepositoryProtocol = rjMomentEntityModelRepository.shared) {
+        self.momentRepository = momentRepository
+    }
     
     func start() {
         reloadMoments()
@@ -27,8 +32,8 @@ class rjMomentsViewModel {
         reloadMoments()
     }
     
-    func reloadMoments() {
-        let moments = rjMomentViewModelRepository.shared.all().map{ rjCellViewModel.moment($0) }
+    fileprivate func reloadMoments() {
+        let moments = momentRepository.all().map{ rjCellViewModel.moment(rjMomentViewModel($0)) }
         
         if !moments.isEmpty {
             var viewModels = [rjCellViewModel]()
@@ -44,7 +49,7 @@ class rjMomentsViewModel {
         }
     }
     
-    func makeGraphSummaryCellViewModel() -> rjMomentSummaryGraphCellViewModel {
+    fileprivate func makeGraphSummaryCellViewModel() -> rjMomentSummaryGraphCellViewModel {
         
         let today = rjCommon.getDateAtEndOfDay(Date())
         let sevenDaysAgo = rjCommon.getDateAtBeginningOfDay(rjCommon.subtract(days: 6, from: today))

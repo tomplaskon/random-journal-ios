@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		002E684021CBDDFA00DCFE4E /* rjEmptyStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E683F21CBDDFA00DCFE4E /* rjEmptyStateTableViewCell.swift */; };
+		002E684221CD3E5400DCFE4E /* rjMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E684121CD3E5300DCFE4E /* rjMomentsViewController.swift */; };
+		002E684421CD4AA500DCFE4E /* rjExploreNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E684321CD4AA500DCFE4E /* rjExploreNavigationController.swift */; };
+		002E684921CD597700DCFE4E /* rjEmptyStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E684721CD597700DCFE4E /* rjEmptyStateTableViewCell.swift */; };
+		002E684A21CD597700DCFE4E /* rjEmptyStateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002E684821CD597700DCFE4E /* rjEmptyStateTableViewCell.xib */; };
+		002E685121CD609900DCFE4E /* rjMomentSummaryGraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E684F21CD609900DCFE4E /* rjMomentSummaryGraphTableViewCell.swift */; };
+		002E685221CD609900DCFE4E /* rjMomentSummaryGraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002E685021CD609900DCFE4E /* rjMomentSummaryGraphTableViewCell.xib */; };
 		003DC3E72178EF2E006B42EF /* rjImportMomentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003DC3E62178EF2E006B42EF /* rjImportMomentsViewController.swift */; };
 		0071BAED21C408DA0009C4CE /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BAEC21C408DA0009C4CE /* DateExtensions.swift */; };
 		0071BAEE21C40E300009C4CE /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071BAEC21C408DA0009C4CE /* DateExtensions.swift */; };
@@ -53,7 +58,6 @@
 		007527A421BF092700EB0002 /* rjMomentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075279F21BEED2800EB0002 /* rjMomentViewModel.swift */; };
 		007527A821C18E7E00EB0002 /* rjMomentSummaryGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007527A721C18E7E00EB0002 /* rjMomentSummaryGraphView.swift */; };
 		007527AA21C18EEC00EB0002 /* rjMomentSummaryGraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007527A921C18EEC00EB0002 /* rjMomentSummaryGraphViewModel.swift */; };
-		007527AC21C18F4900EB0002 /* rjMomentSummaryGraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007527AB21C18F4900EB0002 /* rjMomentSummaryGraphTableViewCell.swift */; };
 		007527AE21C1CB6100EB0002 /* rjMomentSummaryGraphCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007527AD21C1CB6100EB0002 /* rjMomentSummaryGraphCellViewModel.swift */; };
 		007527B021C2B24B00EB0002 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007527AF21C2B24B00EB0002 /* StringExtensions.swift */; };
 		007DDC8D2140575800047CE4 /* rjAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDC8C2140575800047CE4 /* rjAppDelegate.swift */; };
@@ -65,7 +69,6 @@
 		007DDCC92141853700047CE4 /* rjMomentViewModelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCC82141853700047CE4 /* rjMomentViewModelRepository.swift */; };
 		007DDCD221419F3F00047CE4 /* XCTestCaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD021419F3F00047CE4 /* XCTestCaseExtensions.swift */; };
 		007DDCD52141A0E700047CE4 /* rjCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCD42141A0E700047CE4 /* rjCommon.swift */; };
-		007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCDC2142CDCD00047CE4 /* rjMomentsTableViewController.swift */; };
 		007DDCE12142D03B00047CE4 /* rjMomentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCDF2142D03B00047CE4 /* rjMomentTableViewCell.swift */; };
 		007DDCE22142D03B00047CE4 /* rjMomentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007DDCE02142D03B00047CE4 /* rjMomentTableViewCell.xib */; };
 		007DDCE521441FD000047CE4 /* rjReminderScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDCE421441FD000047CE4 /* rjReminderScheduler.swift */; };
@@ -170,7 +173,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		002E683F21CBDDFA00DCFE4E /* rjEmptyStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjEmptyStateTableViewCell.swift; sourceTree = "<group>"; };
+		002E684121CD3E5300DCFE4E /* rjMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentsViewController.swift; sourceTree = "<group>"; };
+		002E684321CD4AA500DCFE4E /* rjExploreNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjExploreNavigationController.swift; sourceTree = "<group>"; };
+		002E684721CD597700DCFE4E /* rjEmptyStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjEmptyStateTableViewCell.swift; sourceTree = "<group>"; };
+		002E684821CD597700DCFE4E /* rjEmptyStateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rjEmptyStateTableViewCell.xib; sourceTree = "<group>"; };
+		002E684F21CD609900DCFE4E /* rjMomentSummaryGraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentSummaryGraphTableViewCell.swift; sourceTree = "<group>"; };
+		002E685021CD609900DCFE4E /* rjMomentSummaryGraphTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rjMomentSummaryGraphTableViewCell.xib; sourceTree = "<group>"; };
 		003DC3E62178EF2E006B42EF /* rjImportMomentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjImportMomentsViewController.swift; sourceTree = "<group>"; };
 		0071BAEC21C408DA0009C4CE /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		0071BAF121C42DC30009C4CE /* rjAddMomentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjAddMomentViewModel.swift; sourceTree = "<group>"; };
@@ -204,7 +212,6 @@
 		007527A221BEF67700EB0002 /* rjMomentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentsViewModel.swift; sourceTree = "<group>"; };
 		007527A721C18E7E00EB0002 /* rjMomentSummaryGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentSummaryGraphView.swift; sourceTree = "<group>"; };
 		007527A921C18EEC00EB0002 /* rjMomentSummaryGraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentSummaryGraphViewModel.swift; sourceTree = "<group>"; };
-		007527AB21C18F4900EB0002 /* rjMomentSummaryGraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentSummaryGraphTableViewCell.swift; sourceTree = "<group>"; };
 		007527AD21C1CB6100EB0002 /* rjMomentSummaryGraphCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentSummaryGraphCellViewModel.swift; sourceTree = "<group>"; };
 		007527AF21C2B24B00EB0002 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		007DDC892140575800047CE4 /* randomjournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = randomjournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,7 +230,6 @@
 		007DDCCB2141934700047CE4 /* rjMomentViewModelRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentViewModelRepositoryTest.swift; sourceTree = "<group>"; };
 		007DDCD021419F3F00047CE4 /* XCTestCaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtensions.swift; sourceTree = "<group>"; };
 		007DDCD42141A0E700047CE4 /* rjCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommon.swift; sourceTree = "<group>"; };
-		007DDCDC2142CDCD00047CE4 /* rjMomentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentsTableViewController.swift; sourceTree = "<group>"; };
 		007DDCDF2142D03B00047CE4 /* rjMomentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjMomentTableViewCell.swift; sourceTree = "<group>"; };
 		007DDCE02142D03B00047CE4 /* rjMomentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = rjMomentTableViewCell.xib; sourceTree = "<group>"; };
 		007DDCE421441FD000047CE4 /* rjReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderScheduler.swift; sourceTree = "<group>"; };
@@ -438,7 +444,7 @@
 			children = (
 				0075279521B9D0A200EB0002 /* cells */,
 				007527A121BEEE9300EB0002 /* viewmodels */,
-				007DDCDC2142CDCD00047CE4 /* rjMomentsTableViewController.swift */,
+				002E684121CD3E5300DCFE4E /* rjMomentsViewController.swift */,
 			);
 			path = all;
 			sourceTree = "<group>";
@@ -448,8 +454,10 @@
 			children = (
 				007DDCDF2142D03B00047CE4 /* rjMomentTableViewCell.swift */,
 				007DDCE02142D03B00047CE4 /* rjMomentTableViewCell.xib */,
-				007527AB21C18F4900EB0002 /* rjMomentSummaryGraphTableViewCell.swift */,
-				002E683F21CBDDFA00DCFE4E /* rjEmptyStateTableViewCell.swift */,
+				002E684721CD597700DCFE4E /* rjEmptyStateTableViewCell.swift */,
+				002E684821CD597700DCFE4E /* rjEmptyStateTableViewCell.xib */,
+				002E684F21CD609900DCFE4E /* rjMomentSummaryGraphTableViewCell.swift */,
+				002E685021CD609900DCFE4E /* rjMomentSummaryGraphTableViewCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -618,6 +626,7 @@
 				0075279421B9D07900EB0002 /* all */,
 				0075279621B9D0CA00EB0002 /* details */,
 				0075277A21B96C1D00EB0002 /* edit */,
+				002E684321CD4AA500DCFE4E /* rjExploreNavigationController.swift */,
 			);
 			path = explore;
 			sourceTree = "<group>";
@@ -923,6 +932,8 @@
 				007DDCE22142D03B00047CE4 /* rjMomentTableViewCell.xib in Resources */,
 				007DDC942140575E00047CE4 /* Assets.xcassets in Resources */,
 				0075279021B9A8A300EB0002 /* rjCommonSpacerTableViewCell.xib in Resources */,
+				002E684A21CD597700DCFE4E /* rjEmptyStateTableViewCell.xib in Resources */,
+				002E685221CD609900DCFE4E /* rjMomentSummaryGraphTableViewCell.xib in Resources */,
 				007DDCF9215FBB2000047CE4 /* LaunchScreen.storyboard in Resources */,
 				007DDD542166551A00047CE4 /* rjCommonButtonTableViewCell.xib in Resources */,
 				0071BAF621C43D360009C4CE /* Tutorial.storyboard in Resources */,
@@ -1103,9 +1114,9 @@
 				00DB086621B5C82600A1CA1F /* rjCommonButtonCellViewModel.swift in Sources */,
 				007527B021C2B24B00EB0002 /* StringExtensions.swift in Sources */,
 				0075277C21B96C5F00EB0002 /* rjEditMomentTableViewController.swift in Sources */,
+				002E684421CD4AA500DCFE4E /* rjExploreNavigationController.swift in Sources */,
 				0075278F21B9A8A300EB0002 /* rjCommonSpacerTableViewCell.swift in Sources */,
 				007DDCC62141822800047CE4 /* rjMomentPersistenceModel.swift in Sources */,
-				007527AC21C18F4900EB0002 /* rjMomentSummaryGraphTableViewCell.swift in Sources */,
 				007DDD442163C20200047CE4 /* rjViewMomentDetailsTableViewCell.swift in Sources */,
 				00E5C319217A27A700A2FE33 /* rjMomentExporter.swift in Sources */,
 				00E5C32B217E414800A2FE33 /* rjTipsMgr.swift in Sources */,
@@ -1116,6 +1127,7 @@
 				007527A821C18E7E00EB0002 /* rjMomentSummaryGraphView.swift in Sources */,
 				0071BB3121CAD8AF0009C4CE /* rjMomentsViewModelProtocol.swift in Sources */,
 				0075279921BEBD4D00EB0002 /* NotificationExtension.swift in Sources */,
+				002E685121CD609900DCFE4E /* rjMomentSummaryGraphTableViewCell.swift in Sources */,
 				0071BB0F21C83E270009C4CE /* rjMomentEntityModelRepository.swift in Sources */,
 				007DDD482163C6FF00047CE4 /* rjViewMomentTableViewController.swift in Sources */,
 				007DDC8D2140575800047CE4 /* rjAppDelegate.swift in Sources */,
@@ -1124,12 +1136,12 @@
 				007DDCBB2140881500047CE4 /* rjAddMomentViewController.swift in Sources */,
 				007DDCE12142D03B00047CE4 /* rjMomentTableViewCell.swift in Sources */,
 				007DDD5A2174E3E000047CE4 /* rjReminderMgr.swift in Sources */,
-				002E684021CBDDFA00DCFE4E /* rjEmptyStateTableViewCell.swift in Sources */,
 				00E5C33B2188DA3C00A2FE33 /* rjReminderSettingsTableViewController.swift in Sources */,
 				007DDCF521514F5100047CE4 /* rjSettingsButtonTableViewCell.swift in Sources */,
 				007DDD042162C05F00047CE4 /* rjTutorialFinishViewController.swift in Sources */,
 				007DDCE521441FD000047CE4 /* rjReminderScheduler.swift in Sources */,
 				007527A021BEED2800EB0002 /* rjMomentViewModel.swift in Sources */,
+				002E684221CD3E5400DCFE4E /* rjMomentsViewController.swift in Sources */,
 				0075279221B9A90900EB0002 /* rjCommonSpacerCellViewModel.swift in Sources */,
 				00DB088521B6DFBC00A1CA1F /* rjCommon+UI.swift in Sources */,
 				0075277F21B96D4400EB0002 /* rjEditMomentViewModel.swift in Sources */,
@@ -1137,6 +1149,7 @@
 				00DB088821B84CE900A1CA1F /* rjRealmMgr.swift in Sources */,
 				0071BAED21C408DA0009C4CE /* DateExtensions.swift in Sources */,
 				00DB085121ADE05A00A1CA1F /* rjReminderSettingsViewModel.swift in Sources */,
+				002E684921CD597700DCFE4E /* rjEmptyStateTableViewCell.swift in Sources */,
 				007DDCF12144379800047CE4 /* rjReminder.swift in Sources */,
 				007527AE21C1CB6100EB0002 /* rjMomentSummaryGraphCellViewModel.swift in Sources */,
 				00DB086421B5C7DE00A1CA1F /* rjSettingsViewModel.swift in Sources */,
@@ -1149,7 +1162,6 @@
 				003DC3E72178EF2E006B42EF /* rjImportMomentsViewController.swift in Sources */,
 				007DDCD52141A0E700047CE4 /* rjCommon.swift in Sources */,
 				0071BB2721CAA09B0009C4CE /* rjMomentEntityModelRepositoryProtocol.swift in Sources */,
-				007DDCDD2142CDCD00047CE4 /* rjMomentsTableViewController.swift in Sources */,
 				00E5C327217B6FA100A2FE33 /* rjMomentPageViewController.swift in Sources */,
 				00E5C31B217A27CE00A2FE33 /* rjMomentImporter.swift in Sources */,
 				0071BB1721C849540009C4CE /* rjMomentExportModel.swift in Sources */,

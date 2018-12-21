@@ -33,8 +33,8 @@ class rjMomentsTableViewControllerTest: XCTestCase {
         }
     }
     
-    func generateMomentsTableViewController() -> rjMomentsTableViewController {
-        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rjMomentsTableViewController") as! rjMomentsTableViewController
+    func generateMomentsTableViewController(viewModel: rjMomentsViewModelProtocol) -> rjMomentsViewController {
+        let vc = rjMomentsViewController(viewModel: viewModel)
         vc.loadViewIfNeeded()
         return vc
     }
@@ -44,10 +44,10 @@ class rjMomentsTableViewControllerTest: XCTestCase {
     }
     
     func testEmptyState() {
-        let vc = generateMomentsTableViewController()
         let vm = generateMockMomentsViewModel()
         vm.nextMomentCellViewModels = [.empty()]
-        vc.momentsViewModel = vm
+
+        let vc = generateMomentsTableViewController(viewModel: vm)
         
         XCTAssertEqual(vc.tableView.numberOfRows(inSection: 0), 1)
         
@@ -59,7 +59,6 @@ class rjMomentsTableViewControllerTest: XCTestCase {
     }
     
     func testMoment() {
-        let vc = generateMomentsTableViewController()
         let vm = generateMockMomentsViewModel()
         vm.nextMomentCellViewModels = [
             .moment(rjMomentViewModel(
@@ -69,7 +68,8 @@ class rjMomentsTableViewControllerTest: XCTestCase {
                 referenceDate: Date(timeIntervalSince1970: 1545319232)
             ))
         ]
-        vc.momentsViewModel = vm
+
+        let vc = generateMomentsTableViewController(viewModel: vm)
         
         XCTAssertEqual(vc.tableView.numberOfRows(inSection: 0), 1)
 

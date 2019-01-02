@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_todaywidget : NSObject
+@interface PodsDummy_Pods_TodayWidget : NSObject
 @end
-@implementation PodsDummy_Pods_todaywidget
+@implementation PodsDummy_Pods_TodayWidget
 @end

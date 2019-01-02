@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_TodayWidgetVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_TodayWidgetVersionString[];
+FOUNDATION_EXPORT double Pods_PresentlyVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_PresentlyVersionString[];
 

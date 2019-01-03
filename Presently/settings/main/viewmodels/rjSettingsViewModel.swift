@@ -36,27 +36,30 @@ class rjSettingsViewModel {
             }
         ))
         cellViewModels.append(.button(
-            rjCommonButtonCellViewModel(buttonText: "Tutorial") { [weak self] in
-                self?.showTutorial.value = true
-            }
-        ))
-        cellViewModels.append(.button(
-            rjCommonButtonCellViewModel(buttonText: "Export CSV") { [weak self] in
+            rjCommonButtonCellViewModel(buttonText: "Export Moments") { [weak self] in
                 self?.exportCSV()
             }
         ))
         cellViewModels.append(.button(
-            rjCommonButtonCellViewModel(buttonText: "Import CSV") { [weak self] in
+            rjCommonButtonCellViewModel(buttonText: "Import Moments") { [weak self] in
                 self?.destination.value = "import"
             }
         ))
-        cellViewModels.append(.button(
-            rjCommonButtonCellViewModel(buttonText: "Show Reminder Schedule") { [weak self] in
-                rjReminderScheduler.shared.getCurrentScheduleReadable() { schedule in
-                    self?.reminderSchedule.value = schedule
+        
+        if rjEnvironment.isTestBuild {
+            cellViewModels.append(.button(
+                rjCommonButtonCellViewModel(buttonText: "Tutorial") { [weak self] in
+                    self?.showTutorial.value = true
                 }
-            }
-        ))
+                ))
+            cellViewModels.append(.button(
+                rjCommonButtonCellViewModel(buttonText: "Show Reminder Schedule") { [weak self] in
+                    rjReminderScheduler.shared.getCurrentScheduleReadable() { schedule in
+                        self?.reminderSchedule.value = schedule
+                    }
+                }
+            ))
+        }
     }
     
     func exportCSV() {

@@ -89,6 +89,7 @@
 		007DDD532166551A00047CE4 /* rjCommonButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD512166551A00047CE4 /* rjCommonButtonTableViewCell.swift */; };
 		007DDD542166551A00047CE4 /* rjCommonButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007DDD522166551A00047CE4 /* rjCommonButtonTableViewCell.xib */; };
 		007DDD5A2174E3E000047CE4 /* rjReminderMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DDD592174E3E000047CE4 /* rjReminderMgr.swift */; };
+		00C7927521DE64B400B5738F /* rjEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7927421DE64B400B5738F /* rjEnvironment.swift */; };
 		00DB083921A608D600A1CA1F /* rjTimeSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB083821A608D600A1CA1F /* rjTimeSelectTableViewCell.swift */; };
 		00DB084921A707AE00A1CA1F /* rjCellViewModelPressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB084821A707AE00A1CA1F /* rjCellViewModelPressable.swift */; };
 		00DB084D21A71B5400A1CA1F /* rjTimeSelectCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB084C21A71B5400A1CA1F /* rjTimeSelectCellViewModel.swift */; };
@@ -252,6 +253,7 @@
 		007DDD55216E7BC900047CE4 /* rjReminderSchedulerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderSchedulerTest.swift; sourceTree = "<group>"; };
 		007DDD57216E7C1B00047CE4 /* rjCommonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCommonTest.swift; sourceTree = "<group>"; };
 		007DDD592174E3E000047CE4 /* rjReminderMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjReminderMgr.swift; sourceTree = "<group>"; };
+		00C7927421DE64B400B5738F /* rjEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjEnvironment.swift; sourceTree = "<group>"; };
 		00DB083821A608D600A1CA1F /* rjTimeSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTimeSelectTableViewCell.swift; sourceTree = "<group>"; };
 		00DB084821A707AE00A1CA1F /* rjCellViewModelPressable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCellViewModelPressable.swift; sourceTree = "<group>"; };
 		00DB084C21A71B5400A1CA1F /* rjTimeSelectCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTimeSelectCellViewModel.swift; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 				007DDCE421441FD000047CE4 /* rjReminderScheduler.swift */,
 				007DDCEE2144339F00047CE4 /* rjAppSettings.swift */,
 				007DDCF621516C3000047CE4 /* rjReminderNotificationCenterDelegate.swift */,
+				00C7927421DE64B400B5738F /* rjEnvironment.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -1121,6 +1124,7 @@
 				00DB083921A608D600A1CA1F /* rjTimeSelectTableViewCell.swift in Sources */,
 				007DDCEF2144339F00047CE4 /* rjAppSettings.swift in Sources */,
 				00DB084D21A71B5400A1CA1F /* rjTimeSelectCellViewModel.swift in Sources */,
+				00C7927521DE64B400B5738F /* rjEnvironment.swift in Sources */,
 				007DDD4F2163DF0A00047CE4 /* rjCommonTitleTableViewCell.swift in Sources */,
 				007DDD002162AE9300047CE4 /* rjTabBarController.swift in Sources */,
 				007DDCC92141853700047CE4 /* rjMomentViewModelRepository.swift in Sources */,

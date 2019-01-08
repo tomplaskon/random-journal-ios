@@ -25,9 +25,8 @@ class rjReminderStatusCellViewModel {
     }
     
     func updateState() {
-        UNUserNotificationCenter.current().getNotificationSettings { [weak self] settings in
-            let state = settings.authorizationStatus == .authorized && settings.alertSetting == .enabled && rjAppSettings.shared.areRemindersEnabled()
-            self?.remindersEnabled.value = state
+        rjReminderScheduler.shared.areNotificationsEnabled { [weak self] enabled in
+            self?.remindersEnabled.value = enabled
         }
     }
     

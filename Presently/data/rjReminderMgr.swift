@@ -45,4 +45,14 @@ class rjReminderMgr {
             realm.delete(realm.objects(rjReminder.self))
         }
     }
+    
+    func getNextReminder() -> rjReminder? {
+        let realm = rjRealmMgr.shared.defaultRealm
+        let sort = [
+            SortDescriptor(keyPath: "triggerTime", ascending: true),
+            SortDescriptor(keyPath: "reminderId", ascending: true)
+        ]
+        
+        return realm.objects(rjReminder.self).sorted(by:sort).first
+    }
 }

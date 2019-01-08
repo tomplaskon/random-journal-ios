@@ -228,6 +228,13 @@ class rjReminderScheduler: NSObject {
         }
     }
     
+    func areNotificationsEnabled(completion: @escaping (Bool) -> ()) {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            let state = settings.authorizationStatus == .authorized && settings.alertSetting == .enabled && rjAppSettings.shared.areRemindersEnabled()
+            completion(state)
+        }
+    }
+    
     func clearReminders() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }

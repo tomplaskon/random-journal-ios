@@ -25,11 +25,13 @@ class rjReminderSettingsViewModel {
     }
     
     let cellViewModels = MutableObservableArray<rjCellViewModel>()
+    var nextReminderAt = Observable("")
     
     private var reminderStatusCellViewModel: rjReminderStatusCellViewModel?
     
     func start() {
         buildViewModels()
+        updateNextReminderAt()
         reminderStatusCellViewModel?.start()
     }
     
@@ -43,6 +45,32 @@ class rjReminderSettingsViewModel {
         
         let endTime = makeEndTimeCellViewModel()
         cellViewModels.append(.timeSelect(endTime))
+        
+        // update the Next Reminder text if the reminder settings are changed
+        _ = reminderStatus.remindersEnabled.observeNext { [weak self] enabled in
+            self?.updateNextReminderAt()
+        }
+        _ = startTime.selectedTime.observeNext { [weak self] time in
+            self?.updateNextReminderAt()
+        }
+        _ = endTime.selectedTime.observeNext { [weak self] time in
+            self?.updateNextReminderAt()
+        }
+    }
+    
+    func updateNextReminderAt() {
+        rjReminderScheduler.shared.areNotificationsEnabled { [weak self] enabled in
+            if enabled {
+                if let reminder = rjReminderMgr().getNextReminder() {
+                    let format = "MMM d @ h:mm a" // Jan 8 @ 4:05 PM
+                    self?.nextReminderAt.value = "Next reminder at " + reminder.getTriggerDate().with(format: format)
+                } else {
+                    self?.nextReminderAt.value = "No reminders scheduled"
+                }
+            } else {
+                self?.nextReminderAt.value = "No reminders scheduled"
+            }
+        }
     }
     
     func makeReminderStatusCellViewModel() -> rjReminderStatusCellViewModel {

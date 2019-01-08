@@ -12,6 +12,7 @@ import Bond
 class rjReminderSettingsTableViewController: UITableViewController {
 
     var reminderSettingsViewModel = rjReminderSettingsViewModel()
+    var nextReminderView: rjNextReminderView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +49,22 @@ class rjReminderSettingsTableViewController: UITableViewController {
                 return cell
             }
         }
+        
+        if let nextReminderView = nextReminderView {
+            reminderSettingsViewModel.nextReminderAt.bind(to: nextReminderView.nextReminderAt)
+        }
     }
     
     private func configureTable() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 40
         tableView.delegate = self
-        tableView.tableFooterView = UIView()
+        nextReminderView = makeTableFooterView()
+        tableView.tableFooterView = nextReminderView
+    }
+    
+    private func makeTableFooterView() -> rjNextReminderView {
+        return rjNextReminderView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
     }
     
     private func bindReminderStatus(cell: rjReminderStatusTableViewCell, viewModel: rjReminderStatusCellViewModel) {

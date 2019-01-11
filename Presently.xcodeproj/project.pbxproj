@@ -92,6 +92,7 @@
 		00BFF90521E52F1A00F0E6E7 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BFF90321E52F1A00F0E6E7 /* UIColorExtensions.swift */; };
 		00BFF90621E52F1A00F0E6E7 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BFF90421E52F1A00F0E6E7 /* UIViewExtensions.swift */; };
 		00BFF90921E52F3B00F0E6E7 /* rjNextReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BFF90821E52F3B00F0E6E7 /* rjNextReminderView.swift */; };
+		00BFF90B21E8E8F600F0E6E7 /* rjTutorialStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BFF90A21E8E8F500F0E6E7 /* rjTutorialStartViewController.swift */; };
 		00C7927521DE64B400B5738F /* rjEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C7927421DE64B400B5738F /* rjEnvironment.swift */; };
 		00DB083921A608D600A1CA1F /* rjTimeSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB083821A608D600A1CA1F /* rjTimeSelectTableViewCell.swift */; };
 		00DB084921A707AE00A1CA1F /* rjCellViewModelPressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB084821A707AE00A1CA1F /* rjCellViewModelPressable.swift */; };
@@ -259,6 +260,7 @@
 		00BFF90321E52F1A00F0E6E7 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		00BFF90421E52F1A00F0E6E7 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		00BFF90821E52F3B00F0E6E7 /* rjNextReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rjNextReminderView.swift; sourceTree = "<group>"; };
+		00BFF90A21E8E8F500F0E6E7 /* rjTutorialStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTutorialStartViewController.swift; sourceTree = "<group>"; };
 		00C7927421DE64B400B5738F /* rjEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjEnvironment.swift; sourceTree = "<group>"; };
 		00DB083821A608D600A1CA1F /* rjTimeSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjTimeSelectTableViewCell.swift; sourceTree = "<group>"; };
 		00DB084821A707AE00A1CA1F /* rjCellViewModelPressable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rjCellViewModelPressable.swift; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 				0071BAF721C4462D0009C4CE /* viewmodels */,
 				007DDD012162B1BA00047CE4 /* rjTutorialViewController.swift */,
 				007DDD032162C05F00047CE4 /* rjTutorialFinishViewController.swift */,
+				00BFF90A21E8E8F500F0E6E7 /* rjTutorialStartViewController.swift */,
 			);
 			path = tutorial;
 			sourceTree = "<group>";
@@ -1195,6 +1198,7 @@
 				00DB086421B5C7DE00A1CA1F /* rjSettingsViewModel.swift in Sources */,
 				00E5C329217BBF3700A2FE33 /* rjViewMomentOptionsViewController.swift in Sources */,
 				00E5C320217A3C2E00A2FE33 /* rjExportFileFormat.swift in Sources */,
+				00BFF90B21E8E8F600F0E6E7 /* rjTutorialStartViewController.swift in Sources */,
 				00DB086821B5C95000A1CA1F /* rjCommonTitleCellViewModel.swift in Sources */,
 				00DB084F21A71E8500A1CA1F /* rjReminderStatusCellViewModel.swift in Sources */,
 				00E5C32F217E4C4800A2FE33 /* rjTipCollectionViewCell.swift in Sources */,

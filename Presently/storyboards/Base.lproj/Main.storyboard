@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="1138" y="450"/>
         </scene>
-        <!--rjTutorialViewController-->
+        <!--tutorialcontainer-->
         <scene sceneID="Kdc-Mf-nxr">
             <objects>
-                <viewControllerPlaceholder storyboardName="Tutorial" referencedIdentifier="rjTutorialViewController" id="DYL-1r-zkr" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Tutorial" referencedIdentifier="tutorialcontainer" id="DYL-1r-zkr" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99m-C8-bnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1147" y="1057"/>
@@ -38,14 +38,14 @@
         <!--Settings-->
         <scene sceneID="rVi-Xt-6DO">
             <objects>
-                <tableViewController id="dbZ-cr-s4V" customClass="rjSettingsTableViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dbZ-cr-s4V" customClass="rjSettingsTableViewController" customModule="Presently" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0a7-nH-42m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="button" id="D2X-mL-sq7" customClass="rjSettingsButtonTableViewCell" customModule="randomjournal" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="button" id="D2X-mL-sq7" customClass="rjSettingsButtonTableViewCell" customModule="Presently" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D2X-mL-sq7" id="yp8-Ai-mQG">
@@ -88,7 +88,7 @@
         <!--Rj Import Moments View Controller-->
         <scene sceneID="Vvp-YM-Gfd">
             <objects>
-                <viewController id="KBz-QU-iI5" customClass="rjImportMomentsViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KBz-QU-iI5" customClass="rjImportMomentsViewController" customModule="Presently" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M3Q-ge-nkS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,13 +129,14 @@
         <!--Rj Reminder Settings Table View Controller-->
         <scene sceneID="Dwg-Rd-9f3">
             <objects>
-                <tableViewController id="EeH-xj-Irj" customClass="rjReminderSettingsTableViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="EeH-xj-Irj" customClass="rjReminderSettingsTableViewController" customModule="Presently" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CJT-oK-1Vd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reminderstatus" id="xwL-D5-9t4" customClass="rjReminderStatusTableViewCell" customModule="randomjournal" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reminderstatus" id="xwL-D5-9t4" customClass="rjReminderStatusTableViewCell" customModule="Presently" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xwL-D5-9t4" id="SM2-Od-D7g">
@@ -150,6 +151,7 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0oZ-dy-gEq">
                                             <rect key="frame" x="310" y="6.5" width="51" height="31"/>
+                                            <color key="onTintColor" red="0.69019607839999997" green="0.97254901959999995" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </switch>
                                     </subviews>
                                     <constraints>
@@ -165,7 +167,7 @@
                                     <outlet property="swRemindersEnabled" destination="0oZ-dy-gEq" id="BvE-Ha-UNZ"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeselect" rowHeight="230" id="m8o-kU-7dj" customClass="rjTimeSelectTableViewCell" customModule="randomjournal" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeselect" rowHeight="230" id="m8o-kU-7dj" customClass="rjTimeSelectTableViewCell" customModule="Presently" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="230"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="m8o-kU-7dj" id="L4r-4y-z6S">
@@ -245,7 +247,7 @@
         <!--Moments-->
         <scene sceneID="rFO-3R-LdG">
             <objects>
-                <navigationController id="Ykr-sL-T5N" customClass="rjExploreNavigationController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="Ykr-sL-T5N" customClass="rjExploreNavigationController" customModule="Presently" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Moments" image="database" id="i2y-e7-2ib"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KPm-XQ-Icj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -259,13 +261,13 @@
         <!--Rj View Moment Table View Controller-->
         <scene sceneID="raZ-7F-Eqa">
             <objects>
-                <tableViewController storyboardIdentifier="rjViewMomentTableViewController" id="A4p-BP-9ZB" customClass="rjViewMomentTableViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="rjViewMomentTableViewController" id="A4p-BP-9ZB" customClass="rjViewMomentTableViewController" customModule="Presently" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mfC-Uk-vNY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="details" id="hlx-id-38g" customClass="rjViewMomentDetailsTableViewCell" customModule="randomjournal" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="details" id="hlx-id-38g" customClass="rjViewMomentDetailsTableViewCell" customModule="Presently" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hlx-id-38g" id="qMt-XZ-nKO">
@@ -307,7 +309,7 @@
         <!--Rj View Moment Options View Controller-->
         <scene sceneID="tWy-hE-SNp">
             <objects>
-                <viewController id="0pj-gi-Aqw" customClass="rjViewMomentOptionsViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0pj-gi-Aqw" customClass="rjViewMomentOptionsViewController" customModule="Presently" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Tp-Fr-Tq6">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -320,6 +322,7 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T8K-MT-2XZ">
                                 <rect key="frame" x="135" y="9.5" width="51" height="31"/>
+                                <color key="onTintColor" red="0.69019607839999997" green="0.97254901959999995" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -346,13 +349,13 @@
         <!--Rj Edit Moment Table View Controller-->
         <scene sceneID="M4H-6K-cUc">
             <objects>
-                <tableViewController id="GVb-dl-rI5" customClass="rjEditMomentTableViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="GVb-dl-rI5" customClass="rjEditMomentTableViewController" customModule="Presently" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="b6V-JQ-uRT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dateselect" rowHeight="230" id="eBq-5N-m9j" customClass="rjDateSelectTableViewCell" customModule="randomjournal" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dateselect" rowHeight="230" id="eBq-5N-m9j" customClass="rjDateSelectTableViewCell" customModule="Presently" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="230"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eBq-5N-m9j" id="vWa-kB-Ukc">
@@ -418,7 +421,7 @@
                                     <outlet property="lblTitle" destination="Dba-3b-rUo" id="J2B-Q8-L4G"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="details" rowHeight="167" id="FST-n6-aFg" customClass="rjEditDetailsTableViewCell" customModule="randomjournal" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="details" rowHeight="167" id="FST-n6-aFg" customClass="rjEditDetailsTableViewCell" customModule="Presently" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="258" width="375" height="167"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FST-n6-aFg" id="GQ0-XX-Wcn">
@@ -465,7 +468,7 @@
         <!--Add-->
         <scene sceneID="J1U-DQ-oyb">
             <objects>
-                <viewController id="AKF-8r-UhC" customClass="rjAddMomentViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AKF-8r-UhC" customClass="rjAddMomentViewController" customModule="Presently" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jkH-Ef-2mn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -497,6 +500,9 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.broderColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKe-0g-WOq">
@@ -520,7 +526,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tip" id="Ori-jj-Xfp" customClass="rjTipCollectionViewCell" customModule="randomjournal" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tip" id="Ori-jj-Xfp" customClass="rjTipCollectionViewCell" customModule="Presently" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="11.5" width="297" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -623,11 +629,11 @@
         <!--Rj Tab Bar Controller-->
         <scene sceneID="YfT-8r-HyB">
             <objects>
-                <tabBarController storyboardIdentifier="rjTabBarController" id="GTe-l3-fdK" customClass="rjTabBarController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="rjTabBarController" id="GTe-l3-fdK" customClass="rjTabBarController" customModule="Presently" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DXs-Ah-K9z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.69019607839999997" green="0.97254901959999995" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Ykr-sL-T5N" kind="relationship" relationship="viewControllers" id="CsC-lF-sXe"/>
@@ -643,7 +649,7 @@
         <!--Rj Moment Page View Controller-->
         <scene sceneID="MSu-5L-gbC">
             <objects>
-                <pageViewController storyboardIdentifier="rjMomentPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gR9-2s-v1B" customClass="rjMomentPageViewController" customModule="randomjournal" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="rjMomentPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gR9-2s-v1B" customClass="rjMomentPageViewController" customModule="Presently" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="gej-AR-UOV">
                         <barButtonItem key="rightBarButtonItem" title="Options" id="Ofi-iw-Rzq">
                             <connections>

@@ -27,7 +27,7 @@ class rjNextReminderView: UIView {
         let label = UILabel()
     
         label.font = .systemFont(ofSize: 14)
-        label.textColor = .rjGray
+        label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
     
         return label

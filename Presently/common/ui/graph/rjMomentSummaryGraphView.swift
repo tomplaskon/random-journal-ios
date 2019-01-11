@@ -13,7 +13,7 @@ class rjMomentSummaryGraphView: UIView {
     private let legendFontColor = UIColor.gray
     private let legendHeight = CGFloat(20)
     private let barWidthRatio = CGFloat(0.9)
-    private let barColor = UIColor.blue
+    private let barColor: UIColor = .rjGreen
     
     var summaryViewModel: rjMomentSummaryGraphViewModel? {
         didSet {

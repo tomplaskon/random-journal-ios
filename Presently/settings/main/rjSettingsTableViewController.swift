@@ -78,7 +78,7 @@ class rjSettingsTableViewController: UITableViewController, MFMailComposeViewCon
     }
     
     @objc func showTutorial() {
-        let tutorialViewController = UIStoryboard.init(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "rjTutorialViewController")
+        let tutorialViewController = UIStoryboard.init(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "tutorialcontainer")
         self.present(tutorialViewController, animated: true, completion: nil)
     }
     

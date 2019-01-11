@@ -18,15 +18,13 @@ class rjTutorialViewController: UIPageViewController {
         view.backgroundColor = UIColor.white
         
         let proxy: UIPageControl = UIPageControl.appearance(whenContainedInInstancesOf:[rjTutorialViewController.self])
-        proxy.pageIndicatorTintColor = UIColor.lightGray
-        proxy.currentPageIndicatorTintColor = UIColor.black
+        proxy.pageIndicatorTintColor = .lightGray
+        proxy.currentPageIndicatorTintColor = .rjGreen
         proxy.backgroundColor = UIColor.white
         
         pages = [
             UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "tutorial1"),
             UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "tutorial2"),
-            UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "tutorial3"),
-            UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "tutorial4")
         ]
         
         dataSource = self;
@@ -79,6 +77,13 @@ extension rjTutorialViewController : UIPageViewControllerDataSource {
         }
         
         return firstViewControllerIndex
+    }
+    
+    @objc func nextPage() {
+        if let currentVC = viewControllers?[0],
+            let nextVC = dataSource?.pageViewController(self, viewControllerAfter: currentVC) {
+            setViewControllers([nextVC], direction: .forward, animated: true, completion: nil)
+        }
     }
     
 }

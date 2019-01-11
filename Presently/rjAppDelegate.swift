@@ -30,18 +30,24 @@ class rjAppDelegate: UIResponder, UIApplicationDelegate {
         // make sure a full schedule of reminders have been scheduled
         handleUpdatingReminders()
         
+        applyGlobalStyles()
+        
         return true
     }
 
-    func registerNotificationCenterDelegate() {
+    private func registerNotificationCenterDelegate() {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = notificationDelegate
     }
     
-    func handleUpdatingReminders() {
+    private func handleUpdatingReminders() {
         if rjAppSettings.shared.areRemindersEnabled() {
             rjReminderScheduler.shared.updateReminders()
         }
+    }
+    
+    private func applyGlobalStyles() {
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.black], for: .selected)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

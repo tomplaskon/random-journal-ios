@@ -10,4 +10,10 @@ import UIKit
 
 class rjEmptyStateTableViewCell: UITableViewCell {
     @IBOutlet var lblEmptyState: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        selectionStyle = .none
+    }
 }
